@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MolBridge — Shobhit Vats Sharma</title>
+  <meta name="description" content="MolBridge: NonCovalent Atlas — a production-ready platform for detecting 15+ noncovalent interaction families in protein structures."/>
+  <link rel="stylesheet" href="../css/style.css"/>
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">Shobhit <span>Vats</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="index.html" class="active">Projects</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- PROJECT HERO -->
+<div class="project-hero">
+  <div class="container">
+    <div class="project-hero-meta">
+      <div class="project-breadcrumb"><a href="index.html">Projects</a> / <span>MolBridge</span></div>
+      <span class="badge badge-live">Live · molbridge.streamlit.app</span>
+      <span class="badge badge-research">IISER Pune Research</span>
+    </div>
+    <h1 style="font-size:clamp(2rem,4vw,3.2rem);margin-bottom:0.5rem">🌿 MolBridge: NonCovalent Atlas</h1>
+    <p style="font-size:1.1rem;font-family:var(--font-serif);font-style:italic;color:var(--text-secondary);margin-bottom:1.5rem">
+      High-fidelity detection, visualisation, and reporting of noncovalent interactions in protein structures — with performance instrumentation, provenance, and extensibility built in.
+    </p>
+    <div class="stat-row">
+      <div class="stat-pill"><span class="stat-num">15+</span><span class="stat-label">Interaction Families</span></div>
+      <div class="stat-pill"><span class="stat-num">60%</span><span class="stat-label">Runtime Reduction</span></div>
+      <div class="stat-pill"><span class="stat-num">40%</span><span class="stat-label">Faster Exploration</span></div>
+      <div class="stat-pill"><span class="stat-num">4</span><span class="stat-label">Interfaces</span></div>
+    </div>
+    <div class="tags" style="margin-top:1rem">
+      <span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">FastAPI</span>
+      <span class="tag">BioPython</span><span class="tag">SciPy</span><span class="tag">Plotly</span>
+      <span class="tag">Docker</span><span class="tag">Numba</span><span class="tag">NetworkX</span><span class="tag">py3Dmol</span>
+    </div>
+    <div style="margin-top:1.5rem;display:flex;gap:1rem;flex-wrap:wrap">
+      <a href="https://molbridge.streamlit.app" target="_blank" rel="noopener" class="btn btn-primary">🌐 Launch Live App</a>
+      <a href="index.html" class="btn btn-ghost">← All Projects</a>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- TL;DR -->
+  <div class="tldr-box reveal">
+    <h4>TL;DR — Quick Summary</h4>
+    <ul>
+      <li>A production-ready Streamlit + FastAPI platform for analysing noncovalent interactions (NCIs) in protein PDB structures, born from IISER Pune Masters research on pnictogen and tetrel bonding.</li>
+      <li>Detects 15+ NCI families including hydrogen bonds, halogen bonds, chalcogen, pnictogen, tetrel bonds, π–π stacking, cation–π, salt bridges, metal coordination, and more.</li>
+      <li>High-performance core: KD-tree spatial pruning, vectorised geometry, shared-memory parallelism, optional Numba/Rust acceleration — achieving a 60% reduction in total computational runtime on the ParamBrahma HPC cluster.</li>
+      <li>Outputs interactive 3D visualisations, Ramachandran plots, interaction network graphs, PDF/PPTX/Excel reports, and a full REST API for programmatic access.</li>
+      <li>Reduced data exploration time by 40% for early users by centralising fragmented datasets and integrating LLM-assisted interpretation.</li>
+    </ul>
+  </div>
+
+  <!-- DEEP DIVE -->
+  <div class="deep-dive-section reveal">
+    <h2 class="section-title">Problem & Motivation</h2>
+    <div style="height:1rem"></div>
+    <p style="line-height:1.85;margin-bottom:1rem">Noncovalent interactions (NCIs) are the molecular forces that determine protein folding, stability, enzyme catalysis, drug binding, and macromolecular assembly. Yet, existing tools for studying them are fragmented — one tool for hydrogen bonds, another for π-stacking, none with a unified, reproducible analysis pipeline for all 15+ known NCI families simultaneously.</p>
+    <p style="line-height:1.85;margin-bottom:1rem">During my Masters research at IISER Pune on chalcogen, pnictogen, and tetrel bonding in protein structures, I repeatedly faced this gap. Analysing a single protein required stitching together outputs from multiple incompatible tools, with no provenance tracking and inconsistent geometric criteria. MolBridge was built to be the unified, literature-grounded platform I wished had existed.</p>
+  </div>
+
+  <div class="deep-dive-section reveal">
+    <h2 class="section-title">Architecture</h2>
+    <div style="height:1rem"></div>
+    <p style="margin-bottom:1rem">MolBridge follows a layered architecture separating detection logic, computation strategy, and interfaces.</p>
+    <div class="grid-2" style="gap:1.2rem;margin-bottom:1.5rem">
+      <div class="card"><h4>🔬 Detection Layer</h4><p style="font-size:0.88rem;margin-top:0.4rem">A decorator-based detector registry allows each NCI family to define its own geometric criteria, parameter presets, and detection logic independently — making the system fully extensible by adding new detectors without touching core code.</p></div>
+      <div class="card"><h4>⚡ Performance Layer</h4><p style="font-size:0.88rem;margin-top:0.4rem">Vector geometry fast-paths (NumPy), KD-tree spatial pruning, adaptive threshold tuning, task graph precompute stage, shared-memory parallelism (POSIX), and optional Numba/Rust kernels. Auto-profile mode selects the right strategy per structure size.</p></div>
+      <div class="card"><h4>📡 API Layer</h4><p style="font-size:0.88rem;margin-top:0.4rem">FastAPI REST backend with async job execution, progress tracking, and multiple output formats (JSON, CSV, PDF, Excel). Full Swagger documentation at <code class="mono">/docs</code>. Supports programmatic batch processing of hundreds of PDB structures.</p></div>
+      <div class="card"><h4>🎨 UI Layer</h4><p style="font-size:0.88rem;margin-top:0.4rem">Streamlit web interface with interactive py3Dmol 3D viewer, Plotly heatmaps and distribution charts, Ramachandran plots, force-directed interaction network graphs, command palette (Ctrl+K), and scenario profiles as YAML templates.</p></div>
+    </div>
+
+    <h3 style="margin-bottom:0.75rem">Interaction Families Detected</h3>
+    <div class="grid-2" style="gap:0.5rem;margin-bottom:1.5rem">
+      <div style="display:flex;flex-direction:column;gap:0.35rem">
+        <div style="font-size:0.88rem;display:flex;align-items:center;gap:0.5rem"><span style="color:var(--accent)">→</span> Hydrogen Bonds (conventional, low-barrier, C5-type)</div>
+        <div style="font-size:0.88rem;display:flex;align-items:center;gap:0.5rem"><span style="color:var(--accent)">→</span> Halogen Bonds (Cl, Br, I, F — sigma hole)</div>
+        <div style="font-size:0.88rem;display:flex;align-items:center;gap:0.5rem"><span style="color:var(--accent)">→</span> π–π Stacking (face-to-face & edge-to-face)</div>
+        <div style="font-size:0.88rem;display:flex;align-items:center;gap:0.5rem"><span style="color:var(--accent)">→</span> Cation–π Interactions</div>
+        <div style="font-size:0.88rem;display:flex;align-items:center;gap:0.5rem"><span style="color:var(--accent)">→</span> Anion–π Interactions</div>
+        <div style="font-size:0.88rem;display:flex;align-items:center;gap:0.5rem"><span style="color:var(--accent)">→</span> CH–π Interactions</div>
+        <div style="font-size:0.88rem;display:flex;align-items:center;gap:0.5rem"><span style="color:var(--accent)">→</span> Sulfur–π Interactions</div>
+        <div style="font-size:0.88rem;display:flex;align-items:center;gap:0.5rem"><span style="color:var(--accent)">→</span> n→π* Orbital Interactions</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:0.35rem">
+        <div style="font-size:0.88rem;display:flex;align-items:center;gap:0.5rem"><span style="color:var(--accent)">→</span> Chalcogen Bonds (S, Se, Te)</div>
+        <div style="font-size:0.88rem;display:flex;align-items:center;gap:0.5rem"><span style="color:var(--accent)">→</span> Pnictogen Bonds (N, P, As)</div>
+        <div style="font-size:0.88rem;display:flex;align-items:center;gap:0.5rem"><span style="color:var(--accent)">→</span> Tetrel Bonds (C, Si, Ge)</div>
+        <div style="font-size:0.88rem;display:flex;align-items:center;gap:0.5rem"><span style="color:var(--accent)">→</span> Salt Bridges (ARG/LYS vs ASP/GLU)</div>
+        <div style="font-size:0.88rem;display:flex;align-items:center;gap:0.5rem"><span style="color:var(--accent)">→</span> Hydrophobic Contacts</div>
+        <div style="font-size:0.88rem;display:flex;align-items:center;gap:0.5rem"><span style="color:var(--accent)">→</span> London Dispersion Forces</div>
+        <div style="font-size:0.88rem;display:flex;align-items:center;gap:0.5rem"><span style="color:var(--accent)">→</span> Metal Coordination (Zn, Fe, Mg, Ca, Cu…)</div>
+        <div style="font-size:0.88rem;display:flex;align-items:center;gap:0.5rem"><span style="color:var(--accent)">→</span> H-bond Subtype Classification (5 classes)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="deep-dive-section reveal">
+    <h2 class="section-title">Performance Engineering</h2>
+    <div style="height:1rem"></div>
+    <div class="callout">Key innovation: an adaptive auto-profile system that inspects atom count, detector count, and estimated workload — then selects the optimal combination of performance features automatically.</div>
+    <table class="cs-table" style="margin-top:1rem">
+      <thead><tr><th>Technique</th><th>What it does</th><th>Impact</th></tr></thead>
+      <tbody>
+        <tr><td>Vector Geometry Fast-Paths</td><td>Batched distance/angle math via NumPy matrices instead of nested loops</td><td>2-5x speedup on angular calculations</td></tr>
+        <tr><td>KD-Tree Spatial Pruning</td><td>Partitions 3D space to eliminate irrelevant atom pairs in O(N log N)</td><td>Eliminates billions of irrelevant calculations</td></tr>
+        <tr><td>Adaptive Threshold Tuning</td><td>Dynamically relaxes/tightens distance cutoffs per detector based on candidate density</td><td>Balances accuracy and speed per structure</td></tr>
+        <tr><td>Shared Memory Parallelism</td><td>POSIX shared memory blocks for coords, ring centroids, H-bond donor/acceptors across process pool</td><td>Near-zero copy overhead for large structures</td></tr>
+        <tr><td>Numba JIT Kernels</td><td>JIT-compiled pairwise distance and geometry primitives</td><td>C-speed execution without C++ complexity</td></tr>
+        <tr><td>Rust Geometry Extension (opt-in)</td><td>PyO3 pairwise_sq_dists — fastest available backend</td><td>Maximum performance for massive proteins</td></tr>
+        <tr><td>Task Graph Precompute</td><td>Extracts aromatic rings, centroids, donors/acceptors once per structure, fans out to all detectors</td><td>Eliminates redundant recomputation across 15 detectors</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="deep-dive-section reveal">
+    <h2 class="section-title">Reproducibility & Scientific Rigour</h2>
+    <div style="height:1rem"></div>
+    <p style="line-height:1.8;margin-bottom:1rem">MolBridge treats reproducibility as a first-class concern — something often absent in research-grade bioinformatics tools.</p>
+    <div class="grid-2" style="gap:1rem">
+      <div class="card"><h4>🔐 Provenance Hashing</h4><p style="font-size:0.88rem;margin-top:0.4rem">Every export embeds a provenance digest: structure signature + parameters + detector set + version tag. Researchers can cite this in manuscripts for full reproducibility.</p></div>
+      <div class="card"><h4>📊 Golden Regression Framework</h4><p style="font-size:0.88rem;margin-top:0.4rem">A curated set of PDB structures forms a golden baseline. CI enforces that interaction counts and timing don't deviate beyond 5% between versions.</p></div>
+      <div class="card"><h4>📐 Literature-Anchored Criteria</h4><p style="font-size:0.88rem;margin-top:0.4rem">All geometric thresholds are derived from published crystallographic literature (CSD studies). Three presets: Conservative, Literature Default, and Exploratory.</p></div>
+      <div class="card"><h4>🔁 Normalised Records</h4><p style="font-size:0.88rem;margin-top:0.4rem">Interaction records are normalised to a common schema regardless of which detector produced them, enabling cross-family analysis and consistent CSV/Excel exports.</p></div>
+    </div>
+  </div>
+
+  <div class="deep-dive-section reveal">
+    <h2 class="section-title">Outcomes & Impact</h2>
+    <div style="height:1rem"></div>
+    <div class="grid-2" style="gap:1rem">
+      <div class="card"><div style="font-size:1.5rem;margin-bottom:0.5rem">📉</div><h4>60% Runtime Reduction</h4><p style="font-size:0.88rem;margin-top:0.4rem">Redesigned HPC data workflows on IISER Pune's ParamBrahma cluster, delivering 60% reduction in total computational runtime and enabling higher-throughput protein analysis.</p></div>
+      <div class="card"><div style="font-size:1.5rem;margin-bottom:0.5rem">⚡</div><h4>40% Faster Data Exploration</h4><p style="font-size:0.88rem;margin-top:0.4rem">By centralising fragmented datasets and automating schema validation, reduced data exploration time by 40% for early users compared to previous ad hoc methods.</p></div>
+      <div class="card"><div style="font-size:1.5rem;margin-bottom:0.5rem">🌐</div><h4>Live Deployed Application</h4><p style="font-size:0.88rem;margin-top:0.4rem">The only project in the portfolio with a publicly accessible live deployment. Accessible to the global structural biology community at molbridge.streamlit.app.</p></div>
+      <div class="card"><div style="font-size:1.5rem;margin-bottom:0.5rem">🔬</div><h4>Research Integration</h4><p style="font-size:0.88rem;margin-top:0.4rem">Directly integrates into ongoing Masters research on pnictogen and tetrel bonding — serving as both the analytical tool and the web-based validation platform for the thesis.</p></div>
+    </div>
+  </div>
+
+  <div class="deep-dive-section reveal">
+    <h2 class="section-title">Roadmap</h2>
+    <div style="height:1rem"></div>
+    <ul style="display:flex;flex-direction:column;gap:0.6rem">
+      <li style="font-size:0.92rem;color:var(--text-secondary);display:flex;gap:0.5rem"><span style="color:var(--accent)">→</span> AI-Agentic Interpretations: LLM synthesis of complex NCI profiles into plain-English narratives</li>
+      <li style="font-size:0.92rem;color:var(--text-secondary);display:flex;gap:0.5rem"><span style="color:var(--accent)">→</span> Distributed Execution: Ray/Dask scaffold for multi-node large-batch processing</li>
+      <li style="font-size:0.92rem;color:var(--text-secondary);display:flex;gap:0.5rem"><span style="color:var(--accent)">→</span> Ligand & Small Molecule Support: Extending detection beyond protein-only structures</li>
+      <li style="font-size:0.92rem;color:var(--text-secondary);display:flex;gap:0.5rem"><span style="color:var(--accent)">→</span> Expanded Rust Kernel Coverage: Broaden geometry acceleration to all 15 detector families</li>
+    </ul>
+  </div>
+
+  <div style="margin:3rem 0;text-align:center">
+    <a href="https://molbridge.streamlit.app" target="_blank" rel="noopener" class="btn btn-primary" style="margin-right:1rem">🌐 Open Live App</a>
+    <a href="index.html" class="btn btn-ghost">← All Projects</a>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Shobhit Vats Sharma · <a href="mailto:shobhitvats1122@gmail.com">shobhitvats1122@gmail.com</a></p>
+</footer>
+<script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HEPBlenderFusion — Shobhit Vats Sharma</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">Shobhit <span>Vats</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li><li><a href="../about.html">About</a></li>
+      <li><a href="index.html" class="active">Projects</a></li><li><a href="../contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="project-hero">
+  <div class="container">
+    <div class="project-hero-meta">
+      <div class="project-breadcrumb"><a href="index.html">Projects</a> / <span>HEPBlenderFusion</span></div>
+      <span class="badge badge-local">Local Research Project</span>
+    </div>
+    <h1 style="font-size:clamp(1.8rem,4vw,3rem);margin-bottom:0.5rem">⚛️ HEPBlenderFusion</h1>
+    <p style="font-size:1.05rem;font-family:var(--font-serif);font-style:italic;color:var(--text-secondary);margin-bottom:1.5rem">Bridging High-Energy Physics with High-Fidelity 3D Visualisation — a real-time gRPC bridge between Geant4 particle physics simulations and Blender's rendering engine.</p>
+    <div class="stat-row">
+      <div class="stat-pill"><span class="stat-num">&lt;100ms</span><span class="stat-label">Latency</span></div>
+      <div class="stat-pill"><span class="stat-num">10-50x</span><span class="stat-label">Viewport Perf</span></div>
+      <div class="stat-pill"><span class="stat-num">8</span><span class="stat-label">Physics Lists</span></div>
+      <div class="stat-pill"><span class="stat-num">v1.0</span><span class="stat-label">Production Ready</span></div>
+    </div>
+    <div class="tags" style="margin-top:1rem">
+      <span class="tag">C++17</span><span class="tag">Python 3.8+</span><span class="tag">gRPC</span>
+      <span class="tag">Protocol Buffers</span><span class="tag">Geant4</span><span class="tag">Blender API</span><span class="tag">BMesh</span>
+    </div>
+    <div style="margin-top:1.5rem"><a href="index.html" class="btn btn-ghost">← All Projects</a></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="tldr-box reveal">
+    <h4>TL;DR — Quick Summary</h4>
+    <ul>
+      <li>Solves a long-standing gap in the HEP community: Geant4 has world-class physics accuracy but poor visualisation. Blender has world-class rendering but no physics. HEPBlenderFusion bridges them via gRPC bidirectional streaming.</li>
+      <li>Architecture: C++ Geant4 daemon (gRPC server) ↔ gRPC bridge (bidirectional streaming, CRC32 checksums) ↔ Python Blender addon (gRPC client + BMesh visualiser).</li>
+      <li>Single-Mesh BMesh Architecture: all tracks consolidated into one Blender mesh object instead of one-object-per-track — achieving 10-50x viewport performance (30-60 FPS even with 10,000+ track segments).</li>
+      <li>Energy deposition visualised via Geometry Nodes: particle energy stored in vertex colour alpha channel → modulates track thickness in real-time, producing a visual "Bragg Peak" effect.</li>
+      <li>Interactive run control state machine allows pausing, stepping, and resuming a live Geant4 simulation from inside Blender — a world-first for HEP visualisation tools.</li>
+    </ul>
+  </div>
+
+  <div class="deep-dive-section reveal">
+    <h2 class="section-title">The Bridge-First Architecture</h2>
+    <div style="height:1rem"></div>
+    <p style="line-height:1.85;margin-bottom:1.25rem">The defining architectural decision is language-agnostic API design using Protocol Buffers and gRPC over HTTP/2. Instead of tightly coupling two very different systems (C++ Geant4 and Python Blender), the project defines a clean contract in <code class="mono">hep.proto</code> and implements it independently in both languages.</p>
+    <div class="grid-2" style="gap:1rem">
+      <div class="card"><h4>C++ Geant4 Daemon — The Engine</h4><p style="font-size:0.87rem;margin-top:0.4rem">A persistent background server managing the Geant4 run manager, GDML geometry loading, and physics processes. Implements a custom G4SteppingAction to capture track data at every simulation step. Serves as the gRPC server, streaming TrackFrame messages to the client. Thread-safe state machine governs run control.</p></div>
+      <div class="card"><h4>gRPC Bridge — The Nervous System</h4><p style="font-size:0.87rem;margin-top:0.4rem">Bidirectional streaming over HTTP/2: the client sends commands (Start, Pause, Stop, Step) while simultaneously receiving a stream of track data. TrackFrame objects group particle steps into chunks to minimise latency. CRC32 checksums on every frame ensure data integrity during high-speed streaming.</p></div>
+      <div class="card"><h4>Blender Python Addon — The Interface</h4><p style="font-size:0.87rem;margin-top:0.4rem">Context-aware Blender UI panel for simulation configuration. Background thread for non-blocking gRPC communication (prevents Blender UI freeze during streaming). BMesh-based Single-Mesh Architecture for ultra-fast rendering. Geometry Nodes for energy-dependent track thickness.</p></div>
+      <div class="card"><h4>Interactive State Machine</h4><p style="font-size:0.87rem;margin-top:0.4rem">IDLE → RUNNING → PAUSED → FINISHED. C++ std::condition_variable suspends the Geant4 event loop without consuming CPU cycles. "Step Event" mode processes exactly one physics event then pauses — ideal for debugging complex shower topologies.</p></div>
+    </div>
+  </div>
+
+  <div class="deep-dive-section reveal">
+    <h2 class="section-title">Technical Innovations</h2>
+    <div style="height:1rem"></div>
+    <div style="display:flex;flex-direction:column;gap:1.2rem">
+      <div class="card">
+        <h4>🚀 Single-Mesh BMesh Architecture</h4>
+        <p style="font-size:0.88rem;margin-top:0.5rem;line-height:1.75">Traditional Blender addons create one object per particle track. In a HEP event with 1,000+ tracks, this causes thousands of draw calls and materials — freezing the viewport. The solution: all tracks consolidated into a <strong>single Blender Mesh object</strong> using the low-level BMesh API. Vertices and edges are added dynamically as data streams in. Result: 10-50x viewport performance improvement, maintaining 30-60 FPS even with 10,000+ track segments.</p>
+      </div>
+      <div class="card">
+        <h4>🎨 Vertex Colour Particle Identification</h4>
+        <p style="font-size:0.88rem;margin-top:0.5rem;line-height:1.75">Instead of thousands of materials (one per particle type), each particle species is encoded as a specific RGB value in the vertex colour layer (Electrons = Green, Photons = Yellow, Muons = Blue, etc.). A single material renders all 20+ particle types with clear visual distinction. The alpha channel is reserved for energy encoding.</p>
+      </div>
+      <div class="card">
+        <h4>⚡ Geometry Nodes Energy Modulation — "Bragg Peak" Visualisation</h4>
+        <p style="font-size:0.88rem;margin-top:0.5rem;line-height:1.75">The energy deposited at each simulation step is stored in the alpha channel of the vertex colour. A Geometry Nodes modifier reads this alpha value and modulates the track thickness in real-time — thicker tracks where more energy is deposited. This creates an immediate, intuitive visual representation of the Bragg Peak (the characteristic energy loss spike as charged particles slow to a stop), requiring zero post-processing.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="deep-dive-section reveal">
+    <h2 class="section-title">Scientific Foundation</h2>
+    <div style="height:1rem"></div>
+    <p style="margin-bottom:1rem;line-height:1.8">HEPBlenderFusion supports 8 industry-standard Geant4 physics lists via the G4PhysListFactory, covering the full range of HEP use cases:</p>
+    <div class="grid-2" style="gap:0.5rem">
+      <div style="font-size:0.88rem;padding:0.5rem 0.75rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm)"><strong>FTFP_BERT</strong> — Recommended default for HEP (balanced)</div>
+      <div style="font-size:0.88rem;padding:0.5rem 0.75rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm)"><strong>QGSP_BERT</strong> — Standard for LHC experiments</div>
+      <div style="font-size:0.88rem;padding:0.5rem 0.75rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm)"><strong>QGSP_BIC</strong> — Proton & ion therapy simulations</div>
+      <div style="font-size:0.88rem;padding:0.5rem 0.75rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm)"><strong>QBBC</strong> — Fast & accurate for medical physics</div>
+      <div style="font-size:0.88rem;padding:0.5rem 0.75rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm)"><strong>Shielding</strong> — Radiation protection studies</div>
+      <div style="font-size:0.88rem;padding:0.5rem 0.75rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm)"><strong>QGSP_BERT_HP</strong> — High-precision neutron transport</div>
+      <div style="font-size:0.88rem;padding:0.5rem 0.75rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm)"><strong>LBE</strong> — Low-background experiment optimisation</div>
+      <div style="font-size:0.88rem;padding:0.5rem 0.75rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm)"><strong>G4EmStandardPhysics</strong> — Pure EM for fast testing</div>
+    </div>
+    <p style="margin-top:1rem;font-size:0.88rem;color:var(--text-muted)">Particle support: e⁻, e⁺, γ, proton, neutron, μ⁺/⁻, π⁺/⁻, and more. Energy ranges from MeV to TeV.</p>
+  </div>
+
+  <div class="deep-dive-section reveal">
+    <h2 class="section-title">Outcomes</h2>
+    <div style="height:1rem"></div>
+    <div class="grid-2" style="gap:1rem">
+      <div class="achievement-card"><div class="achievement-icon">⚡</div><div><div class="achievement-title">&lt;100ms Physics-to-Render Latency</div><div class="achievement-sub">From Geant4 physics event to 3D visualisation in Blender — zero perceptible delay</div></div></div>
+      <div class="achievement-card"><div class="achievement-icon">🛡️</div><div><div class="achievement-title">17 Error Recovery Paths</div><div class="achievement-sub">Zero known crash scenarios after 11 major development patches and production stability testing</div></div></div>
+      <div class="achievement-card"><div class="achievement-icon">🔬</div><div><div class="achievement-title">Scientific Validation</div><div class="achievement-sub">Energy conservation and particle identification verified across all 8 supported physics lists</div></div></div>
+      <div class="achievement-card"><div class="achievement-icon">🌍</div><div><div class="achievement-title">Community Accessibility</div><div class="achievement-sub">Non-C++ experts can access full Geant4 power through a user-friendly Blender UI — democratising HEP visualisation</div></div></div>
+    </div>
+  </div>
+
+  <div style="margin:3rem 0;text-align:center">
+    <a href="index.html" class="btn btn-ghost">← All Projects</a>
+  </div>
+</div>
+
+<footer><p>© 2026 Shobhit Vats Sharma · <a href="mailto:shobhitvats1122@gmail.com">shobhitvats1122@gmail.com</a></p></footer>
+<script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Project Clarity — Shobhit Vats Sharma</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">Shobhit <span>Vats</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li><li><a href="../about.html">About</a></li>
+      <li><a href="index.html" class="active">Projects</a></li><li><a href="../contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="project-hero">
+  <div class="container">
+    <div class="project-hero-meta">
+      <div class="project-breadcrumb"><a href="index.html">Projects</a> / <span>Project Clarity</span></div>
+      <span class="badge badge-local">Local Research Project</span>
+    </div>
+    <h1 style="font-size:clamp(1.8rem,4vw,3rem);margin-bottom:0.5rem">🕸️ Project Clarity</h1>
+    <p style="font-size:1.05rem;font-family:var(--font-serif);font-style:italic;color:var(--text-secondary);margin-bottom:1.5rem">Code Intelligence & Knowledge Graph Visualisation — transforming opaque Python repositories into interactive, human-readable dependency maps with semantic decomposition and zero-loss reconstruction.</p>
+    <div class="stat-row">
+      <div class="stat-pill"><span class="stat-num">100%</span><span class="stat-label">Code Reconstruction</span></div>
+      <div class="stat-pill"><span class="stat-num">V5</span><span class="stat-label">Current Version</span></div>
+      <div class="stat-pill"><span class="stat-num">3</span><span class="stat-label">Abstraction Levels</span></div>
+      <div class="stat-pill"><span class="stat-num">1000+</span><span class="stat-label">Node Graph Scale</span></div>
+    </div>
+    <div class="tags" style="margin-top:1rem">
+      <span class="tag">Python</span><span class="tag">AST</span><span class="tag">Pyvis / vis.js</span>
+      <span class="tag">Streamlit</span><span class="tag">Docker</span><span class="tag">GitPython</span><span class="tag">Radon</span><span class="tag">Pydantic</span>
+    </div>
+    <div style="margin-top:1.5rem"><a href="index.html" class="btn btn-ghost">← All Projects</a></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="tldr-box reveal">
+    <h4>TL;DR — Quick Summary</h4>
+    <ul>
+      <li>Treats source code not as flat text, but as a dynamic, interconnected knowledge graph — decomposing Python repositories into CodeChunk objects (functions, classes, module-level scopes) and mapping their dependencies as a weighted directed graph.</li>
+      <li>Custom AST NodeVisitor performs multi-pass analysis: identification → dependency mapping → data linkage. Resolves aliased imports (import pandas as pd) to reflect true dependency origins.</li>
+      <li>Three levels of abstraction: Function-level (granular), File-level (structural), and Directory-level (architectural) — all rendered as interactive physics-based force-directed graphs via vis.js.</li>
+      <li>Zero-Loss Rebuild Engine: takes granular CodeChunk objects, sorts by original line numbers, and reconstructs the entire repository from scratch. If the rebuilt repo runs identically to the original, semantic decomposition is verified complete.</li>
+      <li>Dockerised for zero-config deployment; analysed real-world research codebases including protein structure analysis and data engineering pipelines.</li>
+    </ul>
+  </div>
+
+  <div class="deep-dive-section reveal">
+    <h2 class="section-title">The Core Idea</h2>
+    <div style="height:1rem"></div>
+    <p style="line-height:1.85;margin-bottom:1rem">Most code understanding tools are text-based search — grep, regex, static text analysis. Project Clarity takes a fundamentally different approach: it treats a Python codebase as a <strong>graph of logical entities</strong>, where every function, class, and module is a node, and every call/import relationship is an edge with a weight (how many times does A call B?).</p>
+    <p style="line-height:1.85;margin-bottom:1rem">This graph representation enables capabilities impossible with text search: visualising hidden circular dependencies, identifying "god functions" with hundreds of dependents, finding dead code islands, simulating execution flows, and — most uniquely — proving that the system understands the code completely by reconstructing the entire repository from the extracted graph.</p>
+  </div>
+
+  <div class="deep-dive-section reveal">
+    <h2 class="section-title">Technical Architecture</h2>
+    <div style="height:1rem"></div>
+    <div class="grid-2" style="gap:1rem;margin-bottom:1.5rem">
+      <div class="card"><h4>📥 Data Acquisition Layer</h4><p style="font-size:0.87rem;margin-top:0.4rem">Two input modes: (1) Remote repositories — clones any public/private GitHub repo via GitPython into secured temporary storage; (2) Local directories — direct filesystem analysis with MD5-based change detection to manage state across incremental runs.</p></div>
+      <div class="card"><h4>🧠 Semantic Intelligence Engine</h4><p style="font-size:0.87rem;margin-top:0.4rem">Custom AST NodeVisitor performing three passes: First Pass (Identification) — locates all functions and classes with source segments and line numbers. Second Pass (Dependency Mapping) — resolves aliased imports and tracks inter-function calls. Third Pass (Data Linkage) — tracks variable assignments from function returns.</p></div>
+      <div class="card"><h4>🎨 Visualisation Layer</h4><p style="font-size:0.87rem;margin-top:0.4rem">Streamlit dashboard with three abstraction levels (Function/File/Directory). Interactive physics-based force-directed graphs via Pyvis (vis.js under the hood) — nodes repel and edges attract based on dependency weight. Optimised for 1000+ node graphs.</p></div>
+      <div class="card"><h4>🔁 Rebuild Engine</h4><p style="font-size:0.87rem;margin-top:0.4rem">The repo_builder module takes CodeChunk objects, sorts them by original line numbers, and reconstructs the entire repository from scratch. Integration with Black for automated code formatting during rebuild. Serves as both a proof-of-correctness and a codebase-wide refactoring tool.</p></div>
+    </div>
+
+    <h3 style="margin-bottom:0.75rem">The CodeChunk Data Model</h3>
+    <p style="font-size:0.9rem;line-height:1.8;margin-bottom:0.75rem">Every logical block of code is encapsulated as a <code class="mono">CodeChunk</code> Pydantic object with:</p>
+    <div class="grid-2" style="gap:0.5rem">
+      <div style="font-size:0.87rem;padding:0.5rem 0.75rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm)"><strong>Unique ID</strong> — deterministic hash from file path + function signature</div>
+      <div style="font-size:0.87rem;padding:0.5rem 0.75rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm)"><strong>Source Segment</strong> — exact code with start_line, end_line for perfect reconstruction</div>
+      <div style="font-size:0.87rem;padding:0.5rem 0.75rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm)"><strong>Dependency Counter</strong> — weighted adjacency list (not just who, but how many times)</div>
+      <div style="font-size:0.87rem;padding:0.5rem 0.75rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm)"><strong>Complexity Metrics</strong> — Cyclomatic Complexity via Radon + Lines of Code</div>
+      <div style="font-size:0.87rem;padding:0.5rem 0.75rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm)"><strong>Inputs/Outputs</strong> — extracted from function signatures and return statements</div>
+      <div style="font-size:0.87rem;padding:0.5rem 0.75rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm)"><strong>Hash-based Identity</strong> — detects code changes across incremental runs</div>
+    </div>
+  </div>
+
+  <div class="deep-dive-section reveal">
+    <h2 class="section-title">The V1 → V5 Development Journey</h2>
+    <div style="height:1rem"></div>
+    <table class="cs-table">
+      <thead><tr><th>Version</th><th>Milestone</th></tr></thead>
+      <tbody>
+        <tr><td><strong>V1.0</strong></td><td>Parser Foundation — first recursive AST visitor for Python files. Proved the CodeChunk concept.</td></tr>
+        <tr><td><strong>V2.0</strong></td><td>Visual Revolution — Pyvis + Streamlit integration. Interactive force-directed graphs became the core UI.</td></tr>
+        <tr><td><strong>V3.0</strong></td><td>Intelligence Layer — Radon for complexity metrics, GitPython for remote repo handling, aliased import resolution.</td></tr>
+        <tr><td><strong>V4.0</strong></td><td>Rebuild Engine — repo_builder proved semantic completeness by reconstructing repos from graph data.</td></tr>
+        <tr><td><strong>V5.0 (Current)</strong></td><td>Containerisation & Scale — full Docker support, optimised rendering for 1000+ node graphs, DataLink model for data flow tracking.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="deep-dive-section reveal">
+    <h2 class="section-title">Outcomes</h2>
+    <div style="height:1rem"></div>
+    <div class="grid-2" style="gap:1rem">
+      <div class="achievement-card"><div class="achievement-icon">🔁</div><div><div class="achievement-title">100% Semantic Reconstruction Accuracy</div><div class="achievement-sub">Rebuilt repos run identically to originals — proving complete semantic decomposition</div></div></div>
+      <div class="achievement-card"><div class="achievement-icon">🔬</div><div><div class="achievement-title">X-Ray Code Analysis</div><div class="achievement-sub">Revealed hidden circular imports and high-complexity hotspots in real-world research codebases</div></div></div>
+      <div class="achievement-card"><div class="achievement-icon">🚀</div><div><div class="achievement-title">Zero-Config Deployment</div><div class="achievement-sub">Docker: any developer can analyse their entire codebase with a single command</div></div></div>
+      <div class="achievement-card"><div class="achievement-icon">📚</div><div><div class="achievement-title">Educational Use</div><div class="achievement-sub">Used as a pedagogical tool to teach code modularity and dependency management principles</div></div></div>
+    </div>
+  </div>
+
+  <div style="margin:3rem 0;text-align:center">
+    <a href="index.html" class="btn btn-ghost">← All Projects</a>
+  </div>
+</div>
+
+<footer><p>© 2026 Shobhit Vats Sharma · <a href="mailto:shobhitvats1122@gmail.com">shobhitvats1122@gmail.com</a></p></footer>
+<script src="../js/main.js"></script>
+</body>
+</html>

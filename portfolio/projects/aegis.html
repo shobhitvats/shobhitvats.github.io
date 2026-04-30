@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aegis Intelligence Platform — Shobhit Vats Sharma</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">Shobhit <span>Vats</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li><li><a href="../about.html">About</a></li>
+      <li><a href="index.html" class="active">Projects</a></li><li><a href="../contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="project-hero">
+  <div class="container">
+    <div class="project-hero-meta">
+      <div class="project-breadcrumb"><a href="index.html">Projects</a> / <span>Aegis</span></div>
+      <span class="badge badge-local">Local Research Project</span>
+    </div>
+    <h1 style="font-size:clamp(1.8rem,4vw,3rem);margin-bottom:0.5rem">🔱 Aegis Intelligence Platform</h1>
+    <p style="font-size:1.05rem;font-family:var(--font-serif);font-style:italic;color:var(--text-secondary);margin-bottom:1.5rem">Instagram Data-as-a-Service (DaaS) engine — zero-API-cost intelligence extraction via stealth browser automation, Chrome Extension engineering, and multi-page analytics dashboards.</p>
+    <div class="stat-row">
+      <div class="stat-pill"><span class="stat-num">$0</span><span class="stat-label">API Cost</span></div>
+      <div class="stat-pill"><span class="stat-num">15</span><span class="stat-label">DaaS Products</span></div>
+      <div class="stat-pill"><span class="stat-num">20</span><span class="stat-label">Blockers Solved</span></div>
+      <div class="stat-pill"><span class="stat-num">4</span><span class="stat-label">Dashboard Pages</span></div>
+    </div>
+    <div class="tags" style="margin-top:1rem">
+      <span class="tag">Python</span><span class="tag">Playwright</span><span class="tag">Streamlit</span>
+      <span class="tag">SQLite</span><span class="tag">Chrome MV3</span><span class="tag">JavaScript</span><span class="tag">Plotly</span>
+    </div>
+    <div style="margin-top:1.5rem"><a href="index.html" class="btn btn-ghost">← All Projects</a></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="tldr-box reveal">
+    <h4>TL;DR — Quick Summary</h4>
+    <ul>
+      <li>A full-stack Instagram intelligence system built entirely from scratch — no third-party APIs, no paid subscriptions. Replaces $500–$3,000/month commercial tools.</li>
+      <li>Core engine: stealth Playwright browser intercepts Instagram's private GraphQL API traffic in real-time, parses posts/comments, and persists to SQLite — supporting 4 scrape modes (profile, hashtag, location, keyword).</li>
+      <li>Custom Chrome Extension (Manifest V3) solves the hardest problem: embedding live Instagram content inside Streamlit iframes by stripping X-Frame-Options headers, bypassing React 18's isTrusted lock via PopState warping, and implementing an Authentication Killswitch to prevent IP bans.</li>
+      <li>20 major engineering blockers catalogued and solved across Meta's security architecture, React 18 internals, and Chromium browser limitations.</li>
+      <li>Powers 15 DaaS intelligence products across Creator Tools, Brand Tools, Market Intelligence, and Advanced Analytics — all with a "Mission Control" Streamlit dashboard.</li>
+    </ul>
+  </div>
+
+  <div class="deep-dive-section reveal">
+    <h2 class="section-title">Why It Was Built</h2>
+    <div style="height:1rem"></div>
+    <p style="line-height:1.85;margin-bottom:1rem">Instagram's official API provides only 200 calls/hour, requires business verification, and costs thousands per month at enterprise tier. The same data Instagram serves to its own users — posts, captions, engagement metrics, comment streams, audio trends — is observable through legitimate browser-based interception.</p>
+    <p style="line-height:1.85">This project proves that a skilled engineer can build the same intelligence pipeline that powers $500–$3,000/month SaaS products (Sprout Social, Brandwatch, Iconosquare) for $0 — using open-source tools, a stealth browser, and deep knowledge of Instagram's React frontend and GraphQL API architecture.</p>
+  </div>
+
+  <div class="deep-dive-section reveal">
+    <h2 class="section-title">The Scraper Engine — How It Works</h2>
+    <div style="height:1rem"></div>
+    <div class="callout">Key architecture: <strong>context.route("**/*")</strong> — a transparent man-in-the-middle network proxy inside Playwright that intercepts every GraphQL response, parses it recursively, and saves to SQLite without modifying any traffic.</div>
+    <div style="margin-top:1.25rem;display:flex;flex-direction:column;gap:0.75rem">
+      <div style="display:flex;gap:1rem;align-items:flex-start"><span style="background:var(--accent);color:white;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;font-size:0.85rem">1</span><div><strong>Session Bootstrap</strong><p style="font-size:0.88rem;color:var(--text-secondary)">One-time human login saves cookies/localStorage to state.json. All subsequent headless sessions load this state — bypassing Instagram's CAPTCHA and device fingerprinting entirely by inheriting trust from a genuine login event.</p></div></div>
+      <div style="display:flex;gap:1rem;align-items:flex-start"><span style="background:var(--accent);color:white;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;font-size:0.85rem">2</span><div><strong>Traffic Interception</strong><p style="font-size:0.88rem;color:var(--text-secondary)">Playwright routes ALL network traffic through handle_route(). Each intercepted response is fetched, inspected, and passed through unmodified to avoid detection.</p></div></div>
+      <div style="display:flex;gap:1rem;align-items:flex-start"><span style="background:var(--accent);color:white;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;font-size:0.85rem">3</span><div><strong>Recursive JSON Parsing</strong><p style="font-size:0.88rem;color:var(--text-secondary)">Instead of hard-coding API schema paths (which change constantly), the parser recursively walks every dict/list, identifying posts by heuristic signature: (shortcode OR code) AND (owner OR user). This makes the system immune to Instagram's A/B format changes — handling 5 known schema variants simultaneously.</p></div></div>
+      <div style="display:flex;gap:1rem;align-items:flex-start"><span style="background:var(--accent);color:white;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;font-size:0.85rem">4</span><div><strong>Anti-Detection Stack</strong><p style="font-size:0.88rem;color:var(--text-secondary)">playwright-stealth patches 23 fingerprinting signals. Windows Chrome 120 UA string. Randomised 2–5s human-timing delays. Random scroll depths (800–1200px). Probabilistic organic engagement (5% like, 3% save) to maintain authentic trust ratios.</p></div></div>
+    </div>
+  </div>
+
+  <div class="deep-dive-section reveal">
+    <h2 class="section-title">The GodMode Chrome Extension — The Hardest Problem</h2>
+    <div style="height:1rem"></div>
+    <p style="line-height:1.85;margin-bottom:1rem">Embedding live Instagram content in Streamlit iframes requires solving three layers of browser security that Instagram enforces:</p>
+    <table class="cs-table">
+      <thead><tr><th>Blocker</th><th>Engineering Solution</th></tr></thead>
+      <tbody>
+        <tr><td><strong>X-Frame-Options + CSP frame-ancestors</strong> — browsers refuse to render iframe</td><td>declarativeNetRequest MV3 rules strip these headers at the network layer before the browser processes them</td></tr>
+        <tr><td><strong>JavaScript Framebusters</strong> — JS redirects parent tab if in iframe</td><td>Initialise iframes on /explore/ — this origin does not execute Instagram's framebuster payload</td></tr>
+        <tr><td><strong>React's isTrusted=true lock</strong> — synthetic click events rejected by navigation components</td><td>Direct PopState Warp: manipulate window.history.pushState to trigger React Router without ever clicking</td></tr>
+        <tr><td><strong>Session Expiration Death-Loop</strong> — all 16 iframes hit login page simultaneously, triggering IP ban</td><td>Authentication Killswitch: first frame to hit login sets localStorage flag; all subsequent frames halt before touching the server</td></tr>
+        <tr><td><strong>Chromium 6-connection limit</strong> — 7th–16th iframes blocked</td><td>Row-Based Batching Matrix: 4 iframes/row, throttled by IntersectionObserver viewport gating</td></tr>
+        <tr><td><strong>CPU saturation</strong> from 16 concurrent React SPA hydrations</td><td>8,500ms DOM evaluation timeout — gives processor time to complete hydration before checking for rendered content</td></tr>
+        <tr><td><strong>Speed-scroll DDOS cascade</strong> — fast scroll triggers all IntersectionObservers simultaneously</td><td>Distributed Atomic Semaphore Lock in localStorage: enforces 1,200ms minimum gap between frame activations</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="deep-dive-section reveal">
+    <h2 class="section-title">Dashboard Features — 15 Intelligence Products</h2>
+    <div style="height:1rem"></div>
+    <div class="grid-2" style="gap:1rem">
+      <div class="card"><h4>🏆 Creator Tools</h4><ul class="skill-list"><li>True-Fan Audience Mapper — identifies superfans from comment frequency analysis</li><li>Viral Formula Deconstructor — reverse-engineers competitor viral content patterns</li><li>Audio Trend Predictor — surfaces accelerating Reels audios before they peak</li></ul></div>
+      <div class="card"><h4>🛡️ Brand Tools</h4><ul class="skill-list"><li>Brand-Safe Influencer Audit — bot-risk score (0–100) based on engagement ratios</li><li>PR Crisis Sentiment Thermometer — real-time keyword sentiment monitoring</li><li>Hyper-Local UGC Discovery — high-quality user content from specific locations</li><li>Competitor Ad Spy — identifies influencers and estimates competitor spend</li></ul></div>
+      <div class="card"><h4>📊 Market Intelligence</h4><ul class="skill-list"><li>Authentic Consumer Review Aggregator — raw, unfiltered product feedback</li><li>Micro-Influencer Discovery Engine — 10K–50K follower accounts with >15% engagement</li><li>Geo-Fenced Event Analytics — organic social volume by physical location</li></ul></div>
+      <div class="card"><h4>⚡ Advanced Tools</h4><ul class="skill-list"><li>Hashtag Optimiser — statistically optimal hashtag clusters from viral data</li><li>Customer Persona Builder — psychographic analysis from organic engager bios</li><li>Audience Poaching — frustrated competitor users as high-intent leads</li><li>Copyright Enforcer — DMCA-ready digital theft reports</li><li>Subculture Mapper — VC-grade influence web of emerging communities</li></ul></div>
+    </div>
+  </div>
+
+  <div style="margin:3rem 0;text-align:center">
+    <a href="index.html" class="btn btn-ghost">← All Projects</a>
+  </div>
+</div>
+
+<footer><p>© 2026 Shobhit Vats Sharma · <a href="mailto:shobhitvats1122@gmail.com">shobhitvats1122@gmail.com</a></p></footer>
+<script src="../js/main.js"></script>
+</body>
+</html>

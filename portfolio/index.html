@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shobhit Vats Sharma — Researcher & Problem Solver</title>
+  <meta name="description"
+    content="Portfolio of Shobhit Vats Sharma — Interdisciplinary Researcher and Data Strategy & Problem Solver at IISER Pune. Computational biology, AI automation, and full-stack scientific software." />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Hero extra styles */
+    .hero-badges {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.2rem;
+    }
+
+    .location-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0.8rem;
+    }
+
+    .location-pill span {
+      font-size: 1rem;
+    }
+
+    /* Preview cards section */
+    .preview-section {
+      padding: 5rem 0;
+    }
+
+    .preview-featured-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+      background: linear-gradient(135deg, var(--surface) 0%, var(--sand-light) 100%);
+      border: 1.5px solid var(--sand);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .preview-featured-card .side-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .preview-featured-card h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.6rem;
+    }
+
+    .preview-featured-card p {
+      font-size: 0.93rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .preview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+    }
+
+    .preview-card {
+      padding: 1.4rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .preview-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .preview-card .p-icon {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .preview-card h4 {
+      font-size: 0.98rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .preview-card p {
+      font-size: 0.83rem;
+    }
+
+    /* Quick facts */
+    .facts-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .preview-featured-card {
+        grid-template-columns: 1fr;
+      }
+
+      .preview-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .preview-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Shobhit <span>Vats</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects/index.html">Projects</a></li>
+        <li><a href="beyond.html">Beyond</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero-section" aria-label="Hero">
+    <!-- Molecule background -->
+    <svg id="moleculeSvg" class="molecule-bg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"></svg>
+
+    <div class="container hero-content">
+      <div class="hero-grid">
+        <!-- Text Side -->
+        <div>
+          <p class="hero-label">Welcome to my portfolio</p>
+          <div class="location-pill"><span>📍</span> Pune, Maharashtra, India</div>
+          <h1 class="hero-name">Shobhit Vats<br />Sharma</h1>
+          <p class="hero-tagline">Interdisciplinary Researcher · Data Strategy & Problem Solver</p>
+          <div class="hero-badges">
+            <span class="badge badge-research">IISER Pune '26</span>
+            <span class="badge badge-research">Computational Biology</span>
+            <span class="badge badge-live">AIC-SEED Fellow</span>
+          </div>
+          <p class="hero-bio">
+            Systems thinker and builder at the intersection of structural bioinformatics,
+            AI automation, and scientific software engineering. I translate complex
+            interdisciplinary problems into production-ready solutions — from GPU-accelerated
+            protein engines to full-stack data intelligence platforms.
+          </p>
+          <div class="hero-actions">
+            <a href="projects/index.html" class="btn btn-primary">→ View My Work</a>
+            <a href="about.html" class="btn btn-outline">About Me</a>
+            <a href="contact.html" class="btn btn-ghost">Get In Touch</a>
+          </div>
+
+          <!-- Quick Stats -->
+          <div class="stats-ribbon reveal" style="margin-top: 3.5rem; display: flex; gap: 3rem; flex-wrap: wrap; padding-top: 2.5rem; border-top: 1px solid var(--border);">
+            <div class="stat-box">
+              <div style="font-size: 2.5rem; font-weight: 700; color: var(--accent); line-height: 1;">60%</div>
+              <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--text-muted); margin-top: 0.6rem; font-weight: 600;">Runtime reduction in<br>HPC pipelines</div>
+            </div>
+            <div class="stat-box">
+              <div style="font-size: 2.5rem; font-weight: 700; color: var(--accent); line-height: 1;">15+</div>
+              <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--text-muted); margin-top: 0.6rem; font-weight: 600;">Noncovalent<br>families mapped</div>
+            </div>
+            <div class="stat-box">
+              <div style="font-size: 2.5rem; font-weight: 700; color: var(--accent); line-height: 1;">₹10L+</div>
+              <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--text-muted); margin-top: 0.6rem; font-weight: 600;">Managed Budget &<br>Institutional Scale</div>
+            </div>
+            <div class="stat-box">
+              <div style="font-size: 2.5rem; font-weight: 700; color: var(--accent); line-height: 1;">9M</div>
+              <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--text-muted); margin-top: 0.6rem; font-weight: 600;">Industry research<br>experience</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo Side -->
+        <div class="hero-photo-wrap reveal">
+          <div class="hero-photo-bg"></div>
+          <div class="hero-photo-frame">
+            <img src="assets/profile.jpg" alt="Shobhit Vats Sharma"
+              onerror="this.style.display='none'; this.parentElement.querySelector('.monogram-fallback').style.display='flex'" />
+            <div class="monogram-fallback" style="display:none">SVS</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- What I Do strip -->
+      <div class="whatido-strip reveal" style="margin-top:3.5rem">
+        <div class="whatido-item">
+          <div class="icon">🔬</div>
+          <h4>Research</h4>
+          <p>Structural bioinformatics, protein interaction analysis & HPC pipelines at IISER Pune</p>
+        </div>
+        <div class="whatido-item">
+          <div class="icon">🏗️</div>
+          <h4>Engineering</h4>
+          <p>Full-stack scientific software — APIs, automation tools & data platforms</p>
+        </div>
+        <div class="whatido-item">
+          <div class="icon">🤝🏻</div>
+          <h4>Leadership</h4>
+          <p>Institutional coordination — managing 2000+ attendee festivals, ₹10L+ budgets & multi-departmental teams</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED PROJECTS PREVIEW -->
+  <section class="preview-section section-alt">
+    <div class="container">
+      <h2 class="section-title reveal">Featured Work</h2>
+      <p class="section-subtitle reveal">A selection of research and engineering projects</p>
+
+      <!-- MolBridge Featured -->
+      <a href="projects/molbridge.html" class="preview-featured-card reveal"
+        style="text-decoration:none;color:inherit;display:grid">
+        <div>
+          <p class="side-label">🌿 Flagship Project · Live Application</p>
+          <h3>MolBridge: NonCovalent Atlas</h3>
+          <p>A production-ready platform for detecting and visualizing 15+ noncovalent interaction families in protein
+            structures. Features a Streamlit web UI, REST API, 3D visualization, and high-performance computing with
+            optional Numba/Rust kernels.</p>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">FastAPI</span>
+            <span class="tag">BioPython</span><span class="tag">Docker</span><span class="tag">Numba</span>
+          </div>
+          <div style="margin-top:1.2rem;display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap">
+            <span class="badge badge-live">Live Application</span>
+            <span class="badge badge-research" style="background:var(--accent);color:white;border:none">Scientific Research</span>
+            <span class="badge badge-research">Open Access</span>
+            <span style="color:var(--accent);font-size:0.9rem;font-weight:500">Explore Atlas →</span>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:0.8rem;justify-content:center">
+          <div class="stat-pill"><span class="stat-num">15+</span><span class="stat-label">Interaction Families</span>
+          </div>
+          <div class="stat-pill"><span class="stat-num">60%</span><span class="stat-label">Runtime Reduction</span>
+          </div>
+          <div class="stat-pill"><span class="stat-num">40%</span><span class="stat-label">Faster Data
+              Exploration</span></div>
+        </div>
+      </a>
+
+      <!-- Other Projects Grid -->
+      <div class="preview-grid">
+        <a href="projects/ddg.html" class="preview-card" style="text-decoration:none;color:inherit">
+        <div class="p-icon">🧬</div>
+        <div style="margin-bottom:0.8rem;display:flex;gap:0.4rem"><span class="badge badge-research" style="font-size:0.65rem">GPU Computing</span><span class="badge badge-research" style="font-size:0.65rem">Validated</span></div>
+        <h4>ΔΔG Calculator</h4>
+        <p>GPU-accelerated protein stability prediction engine using AMBER ff14SB parameters and CUDA acceleration.</p>
+        <div class="tags" style="margin-top:0.6rem"><span class="tag">Numba</span><span class="tag">CUDA</span><span class="tag">BioPython</span></div>
+      </a>
+      <a href="projects/aegis.html" class="preview-card" style="text-decoration:none;color:inherit">
+        <div class="p-icon">🔱</div>
+        <div style="margin-bottom:0.8rem;display:flex;gap:0.4rem"><span class="badge badge-research" style="font-size:0.65rem">DaaS Architecture</span><span class="badge badge-research" style="font-size:0.65rem">Commercial</span></div>
+        <h4>Aegis Intelligence</h4>
+        <p>Full-stack Data-as-a-Service (DaaS) engine. Stealth scrapers, MV3 extensions & Streamlit dashboards.</p>
+        <div class="tags" style="margin-top:0.6rem"><span class="tag">Playwright</span><span class="tag">MV3</span><span class="tag">SQLite</span></div>
+      </a>
+        <a href="projects/hep.html" class="preview-card" style="text-decoration:none;color:inherit">
+          <div class="p-icon">⚛️</div>
+          <h4>HEPBlenderFusion</h4>
+          <p>Geant4 ↔ Blender bridge via gRPC & Protobuf. Real-time particle physics visualization.</p>
+          <div class="tags" style="margin-top:0.6rem"><span class="tag">C++</span><span class="tag">gRPC</span><span
+              class="tag">Blender</span></div>
+        </a>
+        <a href="projects/optiscan.html" class="preview-card" style="text-decoration:none;color:inherit">
+        <div class="p-icon">🔍</div>
+        <div style="margin-bottom:0.8rem;display:flex;gap:0.4rem"><span class="badge badge-research" style="font-size:0.65rem">Zero False-Pos</span><span class="badge badge-research" style="font-size:0.65rem">AI Ready</span></div>
+        <h4>OptiScan Engine</h4>
+        <p>Zero-false-positive static analysis for Python. Designed for autonomous AI refactoring agents.</p>
+        <div class="tags" style="margin-top:0.6rem"><span class="tag">LibCST</span><span class="tag">AST</span><span class="tag">Docker</span></div>
+      </a>
+        <a href="projects/clarity.html" class="preview-card" style="text-decoration:none;color:inherit">
+          <div class="p-icon">🕸️</div>
+          <h4>Project Clarity</h4>
+          <p>Code knowledge graph visualizer. Transforms Python repos into interactive force-directed dependency maps.
+          </p>
+          <div class="tags" style="margin-top:0.6rem"><span class="tag">AST</span><span class="tag">Pyvis</span><span
+              class="tag">Streamlit</span></div>
+        </a>
+        <a href="projects/computational-astrology.html" class="preview-card" style="text-decoration:none;color:inherit">
+        <div class="p-icon">📐</div>
+        <div style="margin-bottom:0.8rem;display:flex;gap:0.4rem"><span class="badge badge-research" style="font-size:0.65rem">Systems Modeling</span><span class="badge badge-research" style="font-size:0.65rem">Recursive Logic</span></div>
+        <h4>Computational Astrology</h4>
+        <p>50+ module mathematical modeling suite. Swiss Ephemeris C-Bridge and recursive timing logic.</p>
+        <div class="tags" style="margin-top:0.6rem"><span class="tag">Python</span><span class="tag">C-Bridge</span><span class="tag">Modeling</span></div>
+      </a>
+      </div>
+
+      <div style="text-align:center;margin-top:2.5rem">
+        <a href="projects/index.html" class="btn btn-outline">View All Projects →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">Shobhit <span>Vats</span></a>
+          <p style="margin-top:1rem;font-size:0.9rem;color:var(--text-muted)">
+            Interdisciplinary Researcher · Data Strategy & Problem Solver
+          </p>
+        </div>
+        <div class="footer-links">
+          <div>
+            <h4>Navigation</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="projects/index.html">Projects</a></li>
+              <li><a href="beyond.html">Beyond</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Connect</h4>
+            <ul>
+              <li><a href="mailto:shobhitvats1122@gmail.com">Email</a></li>
+              <li><a href="https://linkedin.com/in/shobhit-vats-s-204427132" target="_blank">LinkedIn</a></li>
+              <li><a href="https://github.com/shobhitvats" target="_blank">GitHub</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 Shobhit Vats Sharma. Built with precision and aesthetic care.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
