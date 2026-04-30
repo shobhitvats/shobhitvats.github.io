@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Shobhit Vats Sharma</title>
+  <meta name="description"
+    content="About Shobhit Vats Sharma — education, skills, research, experience, achievements and personal interests." />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .letter-box {
+      background: var(--bg-alt); 
+      border: 1px solid transparent;
+      border-radius: var(--radius-md); 
+      padding: 0 2.5rem; 
+      max-height: 0; 
+      overflow: hidden;
+      transition: max-height 0.7s cubic-bezier(0.4, 0, 0.2, 1), padding 0.5s ease, border-color 0.4s ease, margin 0.5s ease;
+      margin-top: 0;
+    }
+    .letter-box.open { 
+      max-height: 2500px; 
+      padding: 3rem 2.5rem; 
+      border-color: var(--border);
+      margin-top: 2.5rem;
+    }
+    .letter-box p { font-size: 1rem; line-height: 1.9; margin-bottom: 1.25rem; color: var(--text); }
+    
+    #recommendation { scroll-margin-top: 100px; }
+
+    .expand-btn {
+      display: flex; align-items: center; gap: 0.75rem; cursor: pointer;
+      background: var(--surface); border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm); padding: 0.85rem 1.75rem;
+      font-size: 0.95rem; color: var(--text-secondary);
+      font-family: var(--font-sans); transition: var(--transition);
+      font-weight: 500;
+    }
+    .expand-btn:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-3px); box-shadow: var(--shadow-sm); }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Shobhit <span>Vats</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="projects/index.html">Projects</a></li>
+        <li><a href="beyond.html">Beyond</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section
+    style="padding: calc(var(--nav-height) + 3rem) 0 3rem; background: linear-gradient(135deg, var(--bg) 0%, var(--bg-alt) 100%); border-bottom: 1px solid var(--border);">
+    <div class="container">
+      <p
+        style="font-size:0.78rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.5rem">
+        About Me</p>
+      <h1 style="font-size:clamp(2rem,4vw,3rem);margin-bottom:0.75rem">The Person Behind the Work</h1>
+      <p style="max-width:580px;font-size:1rem">A snapshot of who I am — my background, skills, research, and what
+        drives me beyond the code.</p>
+    </div>
+  </section>
+
+  <!-- ABOUT ME -->
+  <section class="section">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start">
+        <!-- Bio -->
+        <div class="reveal">
+          <h2 class="section-title">Who I Am</h2>
+          <div style="height:1.5rem"></div>
+          <p style="font-size:1.02rem;line-height:1.85;margin-bottom:1rem">
+            I'm Shobhit — a final-year BS-MS student at the Indian Institute of Science Education and Research (IISER),
+            Pune, specialising in Computational Biology. My work lives at the intersection of rigorous science and
+            pragmatic engineering.
+          </p>
+          <p style="font-size:0.97rem;line-height:1.8;margin-bottom:1rem">
+            Over four years at IISER, I've developed a research identity that spans structural bioinformatics, HPC
+            pipeline optimization, and the development of full-stack scientific software tools. In parallel, I've had
+            the privilege of applying these skills in industry — automating validation workflows at Velsera and
+            evaluating large language models at Outlier.
+          </p>
+          <p style="font-size:0.97rem;line-height:1.8;margin-bottom:1rem">
+            I believe the best solutions emerge when deep domain knowledge meets thoughtful engineering — and I'm
+            constantly working to deepen both. Whether I'm building a GPU-accelerated molecular mechanics engine or a
+            zero-API-cost intelligence platform, the core philosophy is the same: understand the problem deeply, then
+            engineer an honest solution.
+          </p>
+          <p style="font-size:0.97rem;line-height:1.8">
+            Outside the lab and the terminal, I'm a musician (flute, guitar, keyboard), a digital artist, a chess
+            enthusiast, and someone who genuinely enjoys mentoring and team building. I've led large-scale institutional
+            events, coordinated science and art clubs, and been part of the entrepreneurship ecosystem at IISER —
+            because good ideas deserve good execution at every level.
+          </p>
+        </div>
+
+        <!-- Quick Facts + Interests -->
+        <div>
+          <div class="card reveal" style="margin-bottom:1.5rem">
+            <h4
+              style="margin-bottom:1.2rem;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--accent)">
+              Quick Facts</h4>
+            <div style="display:flex;flex-direction:column;gap:0.85rem">
+              <div style="display:flex;gap:0.75rem;align-items:start">
+                <span style="font-size:1.2rem">🎓</span>
+                <div>
+                  <div style="font-weight:600;font-size:0.93rem">BS-MS Dual Degree — IISER Pune</div>
+                  <div style="font-size:0.82rem;color:var(--text-muted)">Interdisciplinary Science (Comp. Biology Focus)
+                    · 2021–2026</div>
+                </div>
+              </div>
+              <div style="display:flex;gap:0.75rem;align-items:start">
+                <span style="font-size:1.2rem">📍</span>
+                <div>
+                  <div style="font-weight:600;font-size:0.93rem">Pune, Maharashtra, India</div>
+                </div>
+              </div>
+              <div style="display:flex;gap:0.75rem;align-items:start">
+                <span style="font-size:1.2rem">🏅</span>
+                <div>
+                  <div style="font-weight:600;font-size:0.93rem">AIC-SEED StEP Fellow</div>
+                  <div style="font-size:0.82rem;color:var(--text-muted)">Entrepreneurship & Innovation — IISER Pune
+                  </div>
+                </div>
+              </div>
+              <div style="display:flex;gap:0.75rem;align-items:start">
+                <span style="font-size:1.2rem">🔬</span>
+                <div>
+                  <div style="font-weight:600;font-size:0.93rem">Research: Pnictogen & Tetrel Bonding</div>
+                  <div style="font-size:0.82rem;color:var(--text-muted)">Ongoing Masters project — Sai Lab, IISER Pune
+                  </div>
+                </div>
+              </div>
+              <div style="display:flex;gap:0.75rem;align-items:start">
+                <span style="font-size:1.2rem">✉️</span>
+                <div>
+                  <div style="font-weight:600;font-size:0.93rem"><a href="mailto:shobhitvats1122@gmail.com"
+                      style="color:inherit;text-decoration:none">shobhitvats1122@gmail.com</a></div>
+                </div>
+              </div>
+              <div style="display:flex;gap:0.75rem;align-items:start">
+                <span style="font-size:1.2rem">💼</span>
+                <div>
+                  <div style="font-weight:600;font-size:0.93rem"><a
+                      href="https://linkedin.com/in/shobhit-vats-s-204427132" target="_blank"
+                      style="color:inherit;text-decoration:none">LinkedIn Profile</a></div>
+                </div>
+              </div>
+              <div style="display:flex;gap:0.75rem;align-items:start">
+                <span style="font-size:1.2rem">🐙</span>
+                <div>
+                  <div style="font-weight:600;font-size:0.93rem"><a href="https://github.com/shobhitvats"
+                      target="_blank" style="color:inherit;text-decoration:none">GitHub Profile</a></div>
+                </div>
+              </div>
+              <div style="display:flex;gap:0.75rem;align-items:start">
+                <span style="font-size:1.2rem">📸</span>
+                <div>
+                  <div style="font-weight:600;font-size:0.93rem"><a href="https://www.instagram.com/hyper_phoenix_18/"
+                      target="_blank" style="color:inherit;text-decoration:none">Instagram: @hyper_phoenix_18</a></div>
+                </div>
+              </div>
+              <div style="display:flex;gap:0.75rem;align-items:start">
+                <span style="font-size:1.2rem">📞</span>
+                <div>
+                  <div style="font-weight:600;font-size:0.93rem"><a href="tel:+918652773701"
+                      style="color:inherit;text-decoration:none">+91 8652773701</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHY SECTION -->
+  <section class="section reveal" style="background: var(--bg-alt); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="container" style="max-width: 950px;">
+      <h2 class="section-title" style="text-align: center; margin-bottom: 3rem;">Philosophy: Bridging Science & Engineering</h2>
+      <div class="grid-2" style="gap: 3.5rem;">
+        <div>
+          <h4 style="margin-bottom: 1.2rem; color: var(--accent); display: flex; align-items: center; gap: 0.6rem; font-size: 1.1rem;"><span>🔬</span> Research-First Mindset</h4>
+          <p style="font-size: 1rem; line-height: 1.85; color: var(--text-secondary);">
+            I believe that building great scientific tools starts with a deep respect for the underlying domain. Whether it's the physics of a noncovalent bond or the recursive logic of a temporal period, I start by understanding the <strong>Ground Truth</strong> before writing a single line of code.
+          </p>
+        </div>
+        <div>
+          <h4 style="margin-bottom: 1.2rem; color: var(--accent); display: flex; align-items: center; gap: 0.6rem; font-size: 1.1rem;"><span>⚙️</span> Engineering for Impact</h4>
+          <p style="font-size: 1rem; line-height: 1.85; color: var(--text-secondary);">
+            Science should be accessible. I aim to automate the tedious parts of research so that scientists can focus on discovery. This means building <strong>zero-false-positive engines</strong>, GPU-accelerated calculators, and intuitive visual interfaces that make complex data human-readable.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-title reveal">Skills & Expertise</h2>
+      <p class="section-subtitle reveal">The technical and strategic toolkit I bring to every problem</p>
+      <div class="grid-4">
+        <div class="skill-card reveal">
+          <div class="skill-card-icon">🔬</div>
+          <h4>Research & Science</h4>
+          <ul class="skill-list">
+            <li>Structural Bioinformatics</li>
+            <li>Protein Structure Analysis</li>
+            <li>HPC Pipeline Design</li>
+            <li>Statistical Modeling</li>
+            <li>Computational Biology</li>
+            <li>PDB Data Analysis</li>
+            <li>NMR Analysis</li>
+            <li>Noncovalent Interactions</li>
+          </ul>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-card-icon">⚙️</div>
+          <h4>Engineering & Dev</h4>
+          <ul class="skill-list">
+            <li>Python (3.8+), SQL, Bash</li>
+            <li>C++ (gRPC, Geant4)</li>
+            <li>Streamlit, FastAPI</li>
+            <li>Docker, Kubernetes</li>
+            <li>Git, HPC (ParamBrahma)</li>
+            <li>Numba / CUDA</li>
+            <li>LibCST, AST Parsing</li>
+            <li>Playwright (Web Automation)</li>
+          </ul>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-card-icon">🤖</div>
+          <h4>Data & AI</h4>
+          <ul class="skill-list">
+            <li>LLM Prompt Engineering</li>
+            <li>GEM Framework</li>
+            <li>LLM Evaluation & RLHF</li>
+            <li>ML Pipelines (Supervised)</li>
+            <li>Data Validation & QC</li>
+            <li>Bioinformatics Databases</li>
+            <li>Plotly / Data Viz</li>
+            <li>SQLite / Pandas</li>
+          </ul>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-card-icon">🤝🏻</div>
+          <h4>Leadership & Management</h4>
+          <ul class="skill-list">
+            <li>Budgetary Oversight (₹10L+)</li>
+            <li>Institutional Event Lifecycle</li>
+            <li>Multi-departmental Coordination</li>
+            <li>Stakeholder Management</li>
+            <li>Project Lifecycle (SDLC)</li>
+            <li>User Acceptance Testing (UAT)</li>
+            <li>Technical Documentation</li>
+            <li>Team Mentoring & Leadership</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title reveal">Research</h2>
+      <p class="section-subtitle reveal">Academic research conducted at IISER Pune</p>
+      <div class="grid-2">
+        <div class="card card-featured reveal">
+          <div
+            style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;flex-wrap:wrap;gap:0.5rem">
+            <span class="badge badge-live" style="font-size:0.7rem">● Ongoing · Masters Research</span>
+            <span style="font-size:0.75rem;color:var(--text-muted)">Dec 2025 – Present</span>
+          </div>
+          <h3 style="font-size:1.2rem;margin-bottom:0.75rem">Pnictogen & Tetrel Bonding in Protein Structures</h3>
+          <p style="font-size:0.9rem;line-height:1.75;margin-bottom:1rem">
+            Investigating the role of pnictogen (N, P, As) and tetrel (C, Si, Ge) bonding interactions in protein
+            structure and function. The study derives geometric parameters from CSD crystal structures and validates
+            them against PDB protein data, culminating in web-based analysis tools integrated into MolBridge.
+          </p>
+          <div style="font-size:0.82rem;color:var(--text-muted);font-weight:600;margin-bottom:0.4rem">KEY ASPECTS</div>
+          <ul class="skill-list">
+            <li>CSD-derived geometric parameter benchmarking</li>
+            <li>Large-scale PDB structural validation</li>
+            <li>Web-based analysis via MolBridge integration</li>
+            <li>Statistical analysis of interaction geometry</li>
+          </ul>
+          <div class="tags" style="margin-top:1rem">
+            <span class="tag">IISER Pune — Sai Lab</span>
+            <span class="tag">Prof. Saikrishnan Kayarat</span>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:1.2rem">
+          <div class="card reveal">
+            <div
+              style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.75rem;flex-wrap:wrap;gap:0.5rem">
+              <span class="badge badge-research">Completed</span>
+              <span style="font-size:0.75rem;color:var(--text-muted)">Jan–May 2025</span>
+            </div>
+            <h4>Chalcogen Interactions in Protein Structures</h4>
+            <p style="font-size:0.87rem;margin-top:0.4rem;line-height:1.7">
+              Designed and built a utility application for the analysis and identification of chalcogen (S, Se, Te)
+              interactions in protein structures using geometric criteria from the CSD. Generated the MolBridge
+              chalcogen detection module.
+            </p>
+            <div class="tags" style="margin-top:0.75rem"><span class="tag">Sai Lab</span><span
+                class="tag">CSD</span><span class="tag">PDB</span></div>
+          </div>
+          <div class="card reveal">
+            <div
+              style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.75rem;flex-wrap:wrap;gap:0.5rem">
+              <span class="badge badge-research">Completed</span>
+              <span style="font-size:0.75rem;color:var(--text-muted)">Aug–Dec 2024</span>
+            </div>
+            <h4>Torsion Angle Analysis & Ramachandran Plots</h4>
+            <p style="font-size:0.87rem;margin-top:0.4rem;line-height:1.7">
+              Conformational analysis of torsion angles (φ, ψ) and Ramachandran plot visualization for peptide motifs.
+              Leveraged concurrent programming for large-scale data analysis across thousands of PDB files.
+            </p>
+            <div class="tags" style="margin-top:0.75rem"><span class="tag">Sai Lab</span><span
+                class="tag">PDB</span><span class="tag">HPC</span></div>
+          </div>
+          <div class="card reveal">
+            <div
+              style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.75rem;flex-wrap:wrap;gap:0.5rem">
+              <span class="badge badge-research">Completed</span>
+              <span style="font-size:0.75rem;color:var(--text-muted)">Aug 2023</span>
+            </div>
+            <h4>NMR Analysis of Biomolecules</h4>
+            <p style="font-size:0.87rem;margin-top:0.4rem;line-height:1.7">
+              Hands-on NMR analysis of proteins, protein purification, and product synthesis for NMR characterization at
+              Dr. Jeetendra Chug's lab (JC Lab).
+            </p>
+            <div class="tags" style="margin-top:0.75rem"><span class="tag">JC Lab</span><span
+                class="tag">NMR</span><span class="tag">Biochemistry</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE TIMELINE -->
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-title reveal">Experience</h2>
+      <p class="section-subtitle reveal">Professional and research roles across industry and academia</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem">
+        <!-- Industry -->
+        <div>
+          <h3
+            style="font-size:1rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--accent);margin-bottom:1.5rem;font-family:var(--font-sans);font-weight:600;font-size:0.82rem">
+            Industry & Professional</h3>
+          <div class="timeline reveal">
+            <div class="timeline-item">
+              <div class="timeline-date">May 2025 – Feb 2026 · 10 months</div>
+              <div class="timeline-role">Automation Developer</div>
+              <div class="timeline-org">Velsera · Pune</div>
+              <div class="timeline-desc">Architected an automated Comparator Analysis tool for KB V&V workflows. Led 3+
+                rounds of UAT, authored comprehensive technical manuals, and delivered live demos — achieving 100%
+                adoption.</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">Oct 2025 – Apr 2026 · 7 months</div>
+              <div class="timeline-role">Data Annotator & LLM Evaluator</div>
+              <div class="timeline-org">Outlier · Remote (US)</div>
+              <div class="timeline-desc">AI training projects (Blackbeard, Ather, Springer). Evaluated model outputs for
+                factual accuracy, logical consistency, hallucinations, and reasoning chain quality.</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">May–Aug 2023 · 4 months</div>
+              <div class="timeline-role">Summer Research Intern</div>
+              <div class="timeline-org">CSIR — National Chemical Laboratory · Pune</div>
+              <div class="timeline-desc">Computational and experimental research at a premier national chemistry
+                laboratory.</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">Jan 2023 – Mar 2024</div>
+              <div class="timeline-role">Biology SME</div>
+              <div class="timeline-org">Chegg Inc.</div>
+              <div class="timeline-desc">Subject matter expert for biology content, providing high-quality academic
+                solutions.</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">Dec 2023 – May 2024</div>
+              <div class="timeline-role">Coaching Faculty</div>
+              <div class="timeline-org">IPM Careers · Pune</div>
+              <div class="timeline-desc">Part-time faculty for students preparing for the national-level IPMAT
+                examination.</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">May 2023 – Nov 2024</div>
+              <div class="timeline-role">Private Tutor (Grades 9–10)</div>
+              <div class="timeline-org">OTOO Learning Pvt. Ltd. · Pune</div>
+              <div class="timeline-desc">CBSE and ICSE board tutoring in science subjects.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Academic Research -->
+        <div>
+          <h3
+            style="font-size:0.82rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--accent);margin-bottom:1.5rem;font-family:var(--font-sans);font-weight:600">
+            Academic Research</h3>
+          <div class="timeline reveal">
+            <div class="timeline-item">
+              <div class="timeline-date">Dec 2025 – Present</div>
+              <div class="timeline-role">Masters Student & Researcher</div>
+              <div class="timeline-org">IISER Pune — Sai Lab</div>
+              <div class="timeline-desc">Masters research on pnictogen & tetrel bonding in protein structures. HPC
+                pipeline optimization (60% runtime reduction) and MolBridge development.</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">May–Jul 2024</div>
+              <div class="timeline-role">Summer Research Intern</div>
+              <div class="timeline-org">IISER Pune — Sai Lab</div>
+              <div class="timeline-desc">Initiated structural bioinformatics research. Laid the groundwork for chalcogen
+                interaction analysis.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEADERSHIP & IMPACT -->
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <h2 class="section-title reveal">Strategic Leadership & Institutional Impact</h2>
+      <p class="section-subtitle reveal">Managing scale, budgets, and interdisciplinary teams</p>
+      
+      <div class="grid-2">
+        <div class="card reveal" style="border-left: 4px solid var(--accent);">
+          <div style="display:flex; justify-content:space-between; align-items:start; margin-bottom: 1rem;">
+            <div style="font-size:0.8rem; font-weight:700; color:var(--accent); text-transform:uppercase; letter-spacing:0.1em;">2,000+ Attendees · ₹10L+ Budget</div>
+            <span style="font-size:0.8rem; color:var(--text-muted)">2023 – 2024</span>
+          </div>
+          <h3 style="font-size:1.4rem; margin-bottom: 0.5rem;">General Coordinator, Karavaan</h3>
+          <p style="font-size: 0.92rem; line-height: 1.7; margin-bottom: 1rem;">
+            Led IISER Pune's flagship national-level festival. Managed a <strong>multi-departmental team</strong> of 100+ volunteers, handled external stakeholder relations, and oversaw the entire operational lifecycle from planning to execution.
+          </p>
+          <div class="tags"><span class="tag">Crisis Management</span><span class="tag">Stakeholder Relations</span><span class="tag">Budgeting</span></div>
+        </div>
+
+        <div class="card reveal" style="border-left: 4px solid var(--accent);">
+          <div style="display:flex; justify-content:space-between; align-items:start; margin-bottom: 1rem;">
+            <div style="font-size:0.8rem; font-weight:700; color:var(--accent); text-transform:uppercase; letter-spacing:0.1em;">Startup Strategy · Innovation</div>
+            <span style="font-size:0.8rem; color:var(--text-muted)">2022 – 2023</span>
+          </div>
+          <h3 style="font-size:1.4rem; margin-bottom: 0.5rem;">AIC-SEED StEP Fellow</h3>
+          <p style="font-size: 0.92rem; line-height: 1.7; margin-bottom: 1rem;">
+            Selected for a competitive entrepreneurship fellowship. Developed skills in <strong>strategic planning</strong>, market analysis, and product-market fit within a technology-focused startup incubator environment.
+          </p>
+          <div class="tags"><span class="tag">Entrepreneurship</span><span class="tag">Strategic Planning</span><span class="tag">Innovation</span></div>
+        </div>
+
+        <div class="card reveal">
+          <h3 style="font-size: 1.1rem; margin-bottom: 0.4rem;">Science & Art Club Coordinator</h3>
+          <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom: 0.8rem;">IISER Pune · 2022 – 2024</div>
+          <p style="font-size: 0.88rem; line-height: 1.7;">
+            Directed interdisciplinary initiatives, fostering collaboration between students and faculty. Managed institutional design heads and coordinated campus-wide creative projects.
+          </p>
+        </div>
+
+        <div class="card reveal">
+          <h3 style="font-size: 1.1rem; margin-bottom: 0.4rem;">Management Core Team, E-Cell</h3>
+          <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom: 0.8rem;">IISER Pune · 2022 – 2023</div>
+          <p style="font-size: 0.88rem; line-height: 1.7;">
+            Facilitated outreach programs for business strategy and tech innovation. Played a key role in building the institute's entrepreneurship ecosystem.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECOMMENDATION -->
+  <section id="recommendation" class="section reveal" style="background: var(--bg-alt); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin: 4rem 0;">
+    <div class="container" style="max-width: 900px;">
+      <div style="text-align: center; margin-bottom: 3rem;">
+        <h2 class="section-title">Professional Validation</h2>
+        <p style="color: var(--text-muted); font-family: var(--font-serif); font-style: italic;">A testament to technical rigor and professional conduct</p>
+      </div>
+
+      <blockquote style="font-size: 1.25rem; line-height: 1.8; color: var(--text); position: relative; padding: 0 2rem; margin-bottom: 3rem; text-align: center;">
+        <span style="position: absolute; left: -1rem; top: -1.5rem; font-size: 5rem; color: var(--accent); opacity: 0.15; font-family: var(--font-serif);">"</span>
+        "Shobhit consistently demonstrated independence, perseverance, and a willingness to engage deeply with feedback. His ability to troubleshoot issues, explain technical concepts clearly, and deliver a practical solution within a regulated scientific environment was particularly impressive."
+        <div class="quote-attr" style="margin-top: 1.5rem; font-size: 1rem; font-weight: 600; color: var(--accent);">
+          — Gargi Nanda
+          <div style="font-weight: 400; font-size: 0.88rem; color: var(--text-muted); margin-top: 0.25rem;">Senior Manager Knowledge-base, Velsera · March 2026</div>
+        </div>
+      </blockquote>
+      
+      <div style="display:flex; gap:1.2rem; justify-content: center; flex-wrap:wrap; margin-bottom: 0;">
+        <button class="expand-btn" id="expandLetterBtn">
+          <span>📄</span> <span id="expandBtnText">Read Full Letter of Recommendation</span> <span class="arrow" style="transition: transform 0.3s ease;">▼</span>
+        </button>
+        <a href="assets/recommendation.pdf" download="Recommendation_Shobhit_Vats_Sharma.pdf" class="btn btn-outline" style="padding: 0.85rem 1.75rem;">
+          ⬇ Download PDF
+        </a>
+      </div>
+
+      <div class="letter-box" id="fullLetter">
+          <div style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1.5rem;font-family:var(--font-mono); border-bottom: 1px solid var(--border); padding-bottom: 1rem;">
+            Velsera · Knowledge Base V&V · Pune, India · 11 March 2026
+          </div>
+          <p><strong>Letter of Recommendation for Shobhit Vats Sharma</strong></p>
+          <p>To Whom It May Concern,</p>
+          <p>I am pleased to recommend Mr. Shobhit Vats Sharma, who worked with the Knowledge Base Verification & Validation (KB V&V) team at Velsera for approximately nine months, with his internship concluding on 27 February 2026. In my role as Senior Manager, Knowledge-base, I directly supervised his work and closely evaluated his technical contributions, problem-solving skills, and professional conduct.</p>
+          <p>During his internship, Shobhit contributed to a structured project with two major components: data clean-up of orthogonal curations and the development of an automated Comparator Analysis tool used in KB V&V workflows. After receiving high-level requirements, he independently built a strong understanding of the scientific and validation context and translated those requirements into a functional, executable solution.</p>
+          <p>Shobhit designed and implemented a stand-alone script capable of running locally on any system with the required executable environment. He demonstrated strong analytical skills by converting complex validation logic into an automated comparison framework that assessed gold-set entries against system outputs and generated clear pass/fail results. Throughout development, he actively incorporated feedback from multiple rounds of User Acceptance Testing and refined the tool to handle variations in file formats, reference libraries, and permissions.</p>
+          <p>In addition to development, Shobhit showed excellent scientific communication and documentation skills. He authored a comprehensive user manual and conducted live demonstrations for team members, ensuring that both technical and non-technical users could confidently operate the tool. The script he developed is now actively used by KB V&V team members, reflecting both its reliability and usability.</p>
+          <p>Shobhit consistently demonstrated independence, perseverance, and a willingness to engage deeply with feedback. His ability to troubleshoot issues, explain technical concepts clearly, and deliver a practical solution within a regulated scientific environment was particularly impressive. His contributions were recognized through extensions of his internship, underscoring the value he added to the team.</p>
+          <p>I strongly believe Shobhit possesses the intellectual curiosity, technical aptitude, and discipline required for advanced academic training. I recommend him without reservation for graduate studies or research-oriented roles, and I am confident he will excel in any rigorous academic environment.</p>
+          <p>Please feel free to contact me should you require any additional information.</p>
+          <p style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem;">
+            <strong>Sincerely,</strong><br/>
+            Gargi Nanda<br/>
+            Senior Manager, Knowledge-base · Velsera<br/>
+            <span style="font-size: 0.9rem; color: var(--text-muted);">Gargi.Nanda@velsera.com</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title reveal">Achievements & Certifications</h2>
+      <p class="section-subtitle reveal">Recognition, credentials, and milestones</p>
+      <div class="grid-2">
+        <div class="achievement-card reveal">
+          <div class="achievement-icon">🎓</div>
+          <div>
+            <div class="achievement-title">Supervised Machine Learning</div>
+            <div class="achievement-sub">Stanford University / DeepLearning.AI — Machine Learning Specialisation</div>
+          </div>
+        </div>
+        <div class="achievement-card reveal">
+          <div class="achievement-icon">🏅</div>
+          <div>
+            <div class="achievement-title">AIC-SEED StEP Fellowship</div>
+            <div class="achievement-sub">Atal Incubation Centre — Competitive entrepreneurship fellowship, IISER Pune
+              (2022–2023)</div>
+          </div>
+        </div>
+        <div class="achievement-card reveal">
+          <div class="achievement-icon">🏆</div>
+          <div>
+            <div class="achievement-title">Certificate of Achievement — Debate Competition</div>
+            <div class="achievement-sub">Recognised for excellence in competitive debate and argumentation</div>
+          </div>
+        </div>
+        <div class="achievement-card reveal">
+          <div class="achievement-icon">🎨</div>
+          <div>
+            <div class="achievement-title">Certificate of Appreciation — Harmony Arts</div>
+            <div class="achievement-sub">National Level Drawing and Art Exhibition — recognised for creative
+              contributions</div>
+          </div>
+        </div>
+        <div class="achievement-card reveal">
+          <div class="achievement-icon">✏️</div>
+          <div>
+            <div class="achievement-title">Certificate of Qualification — Intermediate Drawing</div>
+            <div class="achievement-sub">Intermediate Drawing Grade Examination — formal fine arts qualification</div>
+          </div>
+        </div>
+        <div class="achievement-card reveal">
+          <div class="achievement-icon">🎪</div>
+          <div>
+            <div class="achievement-title">General Coordinator — Karavaan 2023–24</div>
+            <div class="achievement-sub">Led IISER Pune's annual festival — 2,000+ attendees, ₹10 Lakh operational
+              budget</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-title reveal">Education</h2>
+      <div style="display:flex;flex-direction:column;gap:1.2rem;max-width:700px">
+        <div class="card reveal">
+          <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.5rem">
+            <span class="badge badge-research">Current</span>
+            <span style="font-size:0.8rem;color:var(--text-muted)">Nov 2021 – Dec 2026</span>
+          </div>
+          <h3 style="font-size:1.1rem;margin-bottom:0.3rem">Integrated BS-MS Dual Degree, Interdisciplinary Science</h3>
+          <div style="color:var(--accent);font-weight:500;font-size:0.95rem;margin-bottom:0.4rem">Indian Institute of
+            Science Education and Research (IISER), Pune</div>
+          <p style="font-size:0.88rem">Computational Biology focus. Research specialisation in structural bioinformatics
+            and noncovalent interactions.</p>
+        </div>
+        <div class="card reveal">
+          <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.5rem">
+            <span class="badge badge-local">Completed</span>
+            <span style="font-size:0.8rem;color:var(--text-muted)">2018–2020</span>
+          </div>
+          <h3 style="font-size:1.1rem;margin-bottom:0.3rem">Grade 12 — Physics, Chemistry, Biology</h3>
+          <div style="color:var(--accent);font-weight:500;font-size:0.95rem">Career Point Gurukul</div>
+        </div>
+        <div class="card reveal">
+          <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.5rem">
+            <span class="badge badge-local">Completed</span>
+            <span style="font-size:0.8rem;color:var(--text-muted)">2008–2018</span>
+          </div>
+          <h3 style="font-size:1.1rem;margin-bottom:0.3rem">Grade 10 — Science, Mathematics</h3>
+          <div style="color:var(--accent);font-weight:500;font-size:0.95rem">Seven Square Academy</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">Shobhit <span>Vats</span></a>
+          <p style="margin-top:1rem;font-size:0.9rem;color:var(--text-muted)">
+            Interdisciplinary Researcher · Data Strategy & Problem Solver
+          </p>
+        </div>
+        <div class="footer-links">
+          <div>
+            <h4>Navigation</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="projects/index.html">Projects</a></li>
+              <li><a href="beyond.html">Beyond</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Connect</h4>
+            <ul>
+              <li><a href="mailto:shobhitvats1122@gmail.com">Email</a></li>
+              <li><a href="https://linkedin.com/in/shobhit-vats-s-204427132" target="_blank">LinkedIn</a></li>
+              <li><a href="https://github.com/shobhitvats" target="_blank">GitHub</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 Shobhit Vats Sharma. Built with precision and aesthetic care.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+<script>
+  const expandBtn = document.getElementById('expandLetterBtn');
+  const letter = document.getElementById('fullLetter');
+  const btnText = document.getElementById('expandBtnText');
+  const arrow = expandBtn ? expandBtn.querySelector('.arrow') : null;
+
+  function toggleLetter(open) {
+    if (!letter || !btnText) return;
+    const isCurrentlyOpen = letter.classList.contains('open');
+    const newState = open !== undefined ? open : !isCurrentlyOpen;
+    
+    letter.classList.toggle('open', newState);
+    btnText.textContent = newState ? 'Collapse Letter' : 'Read Full Letter of Recommendation';
+    if (arrow) arrow.style.transform = newState ? 'rotate(180deg)' : 'rotate(0deg)';
+  }
+
+  if (expandBtn) {
+    expandBtn.addEventListener('click', () => toggleLetter());
+  }
+
+  // Auto-expand if coming from anchor link
+  window.addEventListener('load', () => {
+    if (window.location.hash === '#recommendation' || window.location.hash === '#fullLetter') {
+      setTimeout(() => toggleLetter(true), 500);
+    }
+  });
+</script>
+</body>
+
+</html>

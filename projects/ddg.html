@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ΔΔG Calculator — Shobhit Vats Sharma</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">Shobhit <span>Vats</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li><li><a href="../about.html">About</a></li>
+      <li><a href="index.html" class="active">Projects</a></li><li><a href="../contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="project-hero">
+  <div class="container">
+    <div class="project-hero-meta">
+      <div class="project-breadcrumb"><a href="index.html">Projects</a> / <span>ΔΔG Calculator</span></div>
+      <span class="badge badge-local">Local Research Project</span>
+    </div>
+    <h1 style="font-size:clamp(1.8rem,4vw,3rem);margin-bottom:0.5rem">🧬 ΔΔG Calculator</h1>
+    <p style="font-size:1.05rem;font-family:var(--font-serif);font-style:italic;color:var(--text-secondary);margin-bottom:1.5rem">High-Performance Protein Stability Engine — predicting the energetic impact of amino acid mutations using custom molecular mechanics force fields and GPU acceleration.</p>
+    <div class="stat-row">
+      <div class="stat-pill"><span class="stat-num">100x</span><span class="stat-label">GPU Speedup</span></div>
+      <div class="stat-pill"><span class="stat-num">&lt;20s</span><span class="stat-label">Per Prediction</span></div>
+      <div class="stat-pill"><span class="stat-num">8h→20s</span><span class="stat-label">Compute Time</span></div>
+      <div class="stat-pill"><span class="stat-num">1500</span><span class="stat-label">Req/s Throughput</span></div>
+    </div>
+    <div class="tags" style="margin-top:1rem">
+      <span class="tag">Python 3.11</span><span class="tag">Numba</span><span class="tag">CUDA</span><span class="tag">BioPython</span>
+      <span class="tag">FastAPI</span><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">SciPy L-BFGS-B</span>
+    </div>
+    <div style="margin-top:1.5rem"><a href="index.html" class="btn btn-ghost">← All Projects</a></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="tldr-box reveal">
+    <h4>TL;DR — Quick Summary</h4>
+    <ul>
+      <li>Predicts protein stability changes (ΔΔG) upon amino acid mutation using a custom molecular mechanics force field — not a black-box ML model. Every energy component is physically explainable.</li>
+      <li>Implements Lennard-Jones VDW potentials, Coulomb electrostatics, harmonic bonded terms, LCPO SASA solvation, and Generalized Born implicit solvent from the AMBER ff14SB force field.</li>
+      <li>A 4-step "Correct Workflow" (pre-minimisation → mutation → neighbourhood optimisation → ΔΔG) resolves the crystallographic strain problem that invalidates naive approaches.</li>
+      <li>Performance evolved from O(N²) naive Python (8 hours) to GPU-accelerated O(N log N) kernels (&lt;20 seconds) — a 100x+ improvement validated on p53 (1TUP) and Barnase.</li>
+      <li>Deployed as a FastAPI REST microservice with Kubernetes orchestration and Prometheus/Grafana monitoring — enterprise-grade infrastructure at zero licensing cost.</li>
+    </ul>
+  </div>
+
+  <div class="deep-dive-section reveal">
+    <h2 class="section-title">The Physics Behind the Predictions</h2>
+    <div style="height:1rem"></div>
+    <p style="line-height:1.85;margin-bottom:1.25rem">Unlike black-box ML models that predict stability scores without explanation, this engine implements <strong>Molecular Mechanics (MM)</strong> — where protein energy is calculated directly from atomic coordinates using well-established physical potentials. The mutation stability change is defined as:</p>
+    <div class="callout" style="font-family:var(--font-mono);font-size:1rem;text-align:center;padding:1.5rem">ΔΔG = E<sub>mutant</sub> − E<sub>wild-type</sub></div>
+    <p style="line-height:1.85;margin-top:1rem;margin-bottom:1rem">A positive ΔΔG means the mutation destabilises the protein (wild-type is more stable). A negative ΔΔG means stabilisation.</p>
+
+    <div class="grid-2" style="gap:1rem;margin-top:1.25rem">
+      <div class="card"><h4>Van der Waals (Lennard-Jones 12-6)</h4><p style="font-size:0.87rem;margin-top:0.4rem">Models atomic repulsion (Pauli exclusion) and attraction (London dispersion). The 12-power term captures the "hard wall" of overlapping electron clouds; the 6-power term captures the gentle attractive well at optimal distances. Critical for detecting steric clashes from mutations.</p></div>
+      <div class="card"><h4>Coulomb Electrostatics</h4><p style="font-size:0.87rem;margin-top:0.4rem">Charge-charge interactions with a distance-dependent dielectric ε(r) = r to simulate implicit water screening without the cost of explicit molecules. Captures salt bridge formation/disruption by mutations.</p></div>
+      <div class="card"><h4>Bonded Terms (Harmonic)</h4><p style="font-size:0.87rem;margin-top:0.4rem">Bond stretching, angle bending, and torsional/dihedral potentials prevent the protein from fragmenting during energy minimisation. Essential for structurally stable simulations. Parameters from AMBER ff14SB.</p></div>
+      <div class="card"><h4>LCPO Solvation (SASA)</h4><p style="font-size:0.87rem;margin-top:0.4rem">Linear Combination of Pairwise Overlaps calculates the Solvent Accessible Surface Area with fully analytical gradients — enabling derivative-based optimisation. The most expensive term; a SASA cache refreshes it every N iterations for a 5x speedup with negligible accuracy loss.</p></div>
+    </div>
+  </div>
+
+  <div class="deep-dive-section reveal">
+    <h2 class="section-title">The "Correct Workflow" — Solving Crystallographic Strain</h2>
+    <div style="height:1rem"></div>
+    <div class="callout">Key insight: Raw PDB crystal structures contain artificial atomic clashes ("crystallographic strain") exceeding 100,000,000 kcal/mol. A naive mutation on such a structure measures strain relief, not mutation effect. This is an industry-wide trap.</div>
+    <p style="margin-top:1rem;margin-bottom:1rem;line-height:1.8">The engine implements a rigorous 4-step protocol to avoid this:</p>
+    <div style="display:flex;flex-direction:column;gap:0.75rem;margin-bottom:1.5rem">
+      <div style="display:flex;gap:1rem;align-items:flex-start"><span style="background:var(--accent);color:white;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;font-size:0.85rem">1</span><div><strong>Load Raw PDB</strong><p style="font-size:0.88rem;color:var(--text-secondary)">Import the crystal structure with all its inherent strain.</p></div></div>
+      <div style="display:flex;gap:1rem;align-items:flex-start"><span style="background:var(--accent);color:white;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;font-size:0.85rem">2</span><div><strong>Pre-Minimise (Whole Protein)</strong><p style="font-size:0.88rem;color:var(--text-secondary)">Relax the entire wild-type structure to a local energy minimum. For p53 (1TUP), this reduces energy from 105,698,651 kcal/mol → −19,666 kcal/mol. This clean, relaxed state is saved as the reference.</p></div></div>
+      <div style="display:flex;gap:1rem;align-items:flex-start"><span style="background:var(--accent);color:white;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;font-size:0.85rem">3</span><div><strong>Create Mutant & Neighbourhood-Minimise</strong><p style="font-size:0.88rem;color:var(--text-secondary)">Perform in-silico mutagenesis on the relaxed structure using Dunbrack-dependent rotamer libraries, then minimise only atoms within a 10 Å cutoff of the mutation site using L-BFGS-B with full analytical gradients.</p></div></div>
+      <div style="display:flex;gap:1rem;align-items:flex-start"><span style="background:var(--accent);color:white;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;font-size:0.85rem">4</span><div><strong>Calculate ΔΔG</strong><p style="font-size:0.88rem;color:var(--text-secondary)">ΔΔG = E(mutant minimised) − E(wild-type relaxed). Each energy component (VDW, Coulomb, SASA) is reported separately for physical interpretability.</p></div></div>
+    </div>
+
+    <table class="cs-table">
+      <thead><tr><th>Validation Case</th><th>Wild-Type Energy</th><th>Mutant Energy</th><th>ΔΔG</th><th>Result</th></tr></thead>
+      <tbody>
+        <tr><td>p53 1TUP — K101A</td><td>−19,666.65 kcal/mol</td><td>−19,653.63 kcal/mol</td><td><strong>+13.02</strong></td><td>Destabilising ✓</td></tr>
+        <tr><td>Barnase — HIS102→SER</td><td>+29,669.83 kcal/mol</td><td>+29,577.75 kcal/mol</td><td><strong>−92.08</strong></td><td>Stabilising ✓</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:0.85rem;color:var(--text-muted);margin-top:0.5rem">Both results correlate with FoldX and experimental literature benchmarks.</p>
+  </div>
+
+  <div class="deep-dive-section reveal">
+    <h2 class="section-title">Performance Optimisation — Three Phases</h2>
+    <div style="height:1rem"></div>
+    <table class="cs-table">
+      <thead><tr><th>Phase</th><th>Technique</th><th>Impact</th></tr></thead>
+      <tbody>
+        <tr><td>Phase 1 — Algorithmic</td><td>KD-Tree spatial indexing — atoms outside 12 Å interaction sphere pruned in O(log N)</td><td>Eliminates billions of irrelevant pairwise calculations</td></tr>
+        <tr><td>Phase 2 — Acceleration</td><td>Numba JIT compilation with CPU prange parallelism; CUDA kernel port for GPU offloading</td><td>100x speedup for massive proteins on GPU</td></tr>
+        <tr><td>Phase 3 — Hardware</td><td>State-of-Array (SoA) memory layout — coordinates stored as contiguous float64 NumPy arrays</td><td>Full CPU cache line utilisation; eliminates object overhead</td></tr>
+        <tr><td>Bonus — SASA Cache</td><td>Recalculates surface area every N=5 minimisation iterations instead of every step</td><td>~5x speedup in minimisation loop with negligible accuracy loss</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="deep-dive-section reveal">
+    <h2 class="section-title">Production Infrastructure (Phase 4)</h2>
+    <div style="height:1rem"></div>
+    <div class="grid-2" style="gap:1rem">
+      <div class="card"><h4>FastAPI REST Microservice</h4><p style="font-size:0.88rem;margin-top:0.4rem">Three endpoints: POST /calculate (submit job), GET /status/{job_id} (real-time progress), GET /result/{job_id} (energy breakdown + stability verdict). JSON request/response. Single-mutation prediction in &lt;15 seconds.</p></div>
+      <div class="card"><h4>Docker + Kubernetes</h4><p style="font-size:0.88rem;margin-top:0.4rem">Fully containerised with all biophysical dependencies. Kubernetes manifests include HorizontalPodAutoscaling for burst-throughput screening of thousands of mutations per hour.</p></div>
+      <div class="card"><h4>Prometheus + Grafana</h4><p style="font-size:0.88rem;margin-top:0.4rem">Live monitoring of calculation latency, error rates, and GPU memory utilisation. Production-grade observability at zero licensing cost.</p></div>
+      <div class="card"><h4>Benchmark Suite</h4><p style="font-size:0.88rem;margin-top:0.4rem">Automated regression tests comparing runtimes against stored baselines for small (Barnase), medium (1TUP), and large (HSA) proteins. Energy gradient verified against numerical derivatives to tolerance 10⁻⁶.</p></div>
+    </div>
+  </div>
+
+  <div style="margin:3rem 0;text-align:center">
+    <a href="index.html" class="btn btn-ghost">← All Projects</a>
+  </div>
+</div>
+
+<footer><p>© 2026 Shobhit Vats Sharma · <a href="mailto:shobhitvats1122@gmail.com">shobhitvats1122@gmail.com</a></p></footer>
+<script src="../js/main.js"></script>
+</body>
+</html>

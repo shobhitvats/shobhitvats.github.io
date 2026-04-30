@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Computational Astrology & Mathematical Modeling — Shobhit Vats Sharma</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">Shobhit <span>Vats</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="index.html" class="active">Projects</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div class="project-hero">
+    <div class="container">
+      <div class="project-hero-meta">
+        <div class="project-breadcrumb"><a href="index.html">Projects</a> / <span>Computational Astrology Engine</span>
+        </div>
+        <span class="badge badge-local">Complex Systems Engineering</span>
+      </div>
+      <h1 style="font-size:clamp(1.8rem,4vw,3rem);margin-bottom:0.5rem">📐 Computational Astrology & Mathematical
+        Modeling Engine</h1>
+      <p
+        style="font-size:1.05rem;font-family:var(--font-serif);font-style:italic;color:var(--text-secondary);margin-bottom:1.5rem">
+        A professional-grade computational suite for high-precision astronomical mechanics — implementing recursive
+        multi-level timing algorithms, harmonic divisional systems, and interactive 3D celestial modeling.</p>
+      <div class="stat-row">
+        <div class="stat-pill"><span class="stat-num">50+</span><span class="stat-label">Python Modules</span></div>
+        <div class="stat-pill"><span class="stat-num">16</span><span class="stat-label">Harmonic Systems</span></div>
+        <div class="stat-pill"><span class="stat-num">5-Level</span><span class="stat-label">Recursive Logic</span>
+        </div>
+        <div class="stat-pill"><span class="stat-num">15+</span><span class="stat-label">Analytical Subsystems</span>
+        </div>
+      </div>
+      <div class="tags" style="margin-top:1rem">
+        <span class="tag">Python</span><span class="tag">pyswisseph (C-Bridge)</span><span class="tag">Streamlit</span>
+        <span class="tag">Plotly 3D</span><span class="tag">Recursive Algorithms</span><span class="tag">SVG
+          Rendering</span><span class="tag">Geometric Modeling</span>
+      </div>
+      <div style="margin-top:1.5rem"><a href="index.html" class="btn btn-ghost">← All Projects</a></div>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="tldr-box reveal">
+      <h4>TL;DR — Engineering Summary</h4>
+      <ul>
+        <li>A personal exploration in <strong>quantifying complex rule-based knowledge systems</strong> — treating
+          classical astrological frameworks as a series of deterministic, mathematically verifiable algorithms rather
+          than abstract interpretations.</li>
+        <li>Built on <strong>pyswisseph</strong>, a C-based Swiss Ephemeris wrapper, achieving sub-arcsecond
+          astronomical precision. Computes 16 harmonic divisional systems using modular arithmetic and geometric
+          projections.</li>
+        <li>Implemented a <strong>Recursive Timing Engine</strong> that generates a 5-level planetary period tree
+          (120-year span) using proration formulas based on exact lunar coordinates at birth.</li>
+        <li>Architected a multi-system rule engine supporting 15+ distinct analytical frameworks (Parashari, Jaimini,
+          Nadi, KP), demonstrating high-level <strong>abstraction and modular software design</strong>.</li>
+        <li>Proves that any domain-specific system, regardless of its origin, can be formalised into a maintainable,
+          production-ready software architecture through rigorous engineering.</li>
+      </ul>
+    </div>
+
+    <div class="deep-dive-section reveal">
+      <h2 class="section-title">The Engineering Challenge: Algorithmic Rigor</h2>
+      <div style="height:1rem"></div>
+      <p style="line-height:1.85;margin-bottom:1rem">The goal of this project was to take a deeply interconnected,
+        rule-heavy traditional system and translate it into a modern software architecture. This involved solving
+        several core engineering problems common in complex domain modeling:</p>
+      <div class="grid-2" style="gap:1rem">
+        <div class="card">
+          <h4>High-Precision Data Acquisition</h4>
+          <p style="font-size:0.87rem;margin-top:0.4rem">Planetary coordinates require arcminute accuracy for
+            micro-divisional calculations. Using the Swiss Ephemeris (C-Bridge) ensures astronomical fidelity, while
+            Ayanamsa correction algorithms transform Tropical coordinates into Sidereal reference frames.</p>
+        </div>
+        <div class="card">
+          <h4>Recursive Tree Structures</h4>
+          <p style="font-size:0.87rem;margin-top:0.4rem">The timing engine requires recursive subdivision of a 120-year
+            timeline into 5 nested levels. The starting point is determined by a sub-degree proration formula, requiring
+            a clean recursive implementation to maintain precision across levels.</p>
+        </div>
+        <div class="card">
+          <h4>Modular Rule Engines</h4>
+          <p style="font-size:0.87rem;margin-top:0.4rem">With 15+ distinct analytical systems running on the same data,
+            the architecture prioritises <strong>separation of concerns</strong>. Each system (Jaimini, KP, Shadbala) is
+            isolated as a module, consuming standardized astronomical objects and returning structured findings.</p>
+        </div>
+        <div class="card">
+          <h4>Dynamic Geometric Visualization</h4>
+          <p style="font-size:0.87rem;margin-top:0.4rem">The UI renders SVG-based coordinate systems, 3D geocentric
+            solar system simulations, and polar radar diagrams. These visualizations allow for immediate validation of
+            the underlying mathematical models.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="deep-dive-section reveal">
+      <h2 class="section-title">Core Computational Subsystems</h2>
+      <div style="height:1rem"></div>
+      <div style="display:flex;flex-direction:column;gap:1rem">
+        <div class="card">
+          <h4>🪐 Precision Astronomy Engine (<code class="mono">astro_calc.py</code>)</h4>
+          <p style="font-size:0.88rem;margin-top:0.4rem;line-height:1.75">Calculates planetary longitudes and speeds.
+            Implements 16 harmonic divisional systems using the multiplier formula: <code
+              class="mono">Longitude_Varga = (Natal_Longitude × Varga_Multiplier) mod 360</code>. Handles combustion
+            detection and planetary dignity logic via deterministic rule sets.</p>
+        </div>
+        <div class="card">
+          <h4>⏳ Recursive Timing Algorithms (<code class="mono">dasha_calc.py</code>)</h4>
+          <p style="font-size:0.88rem;margin-top:0.4rem;line-height:1.75">Generates nested planetary periods using a
+            recursive tree builder. The fractional start of the tree is prorated based on the Moon's exact position
+            within a 13.33° segment, cascading through five layers of temporal resolution.</p>
+        </div>
+        <div class="card">
+          <h4>💪 Quantitative Strength Modeling (<code class="mono">shadbala_deep.py</code>)</h4>
+          <p style="font-size:0.88rem;margin-top:0.4rem;line-height:1.75">A six-fold quantitative model measuring
+            planetary influence in standardized units (Rupas). Includes positional, directional, motional, temporal, and
+            natural luminosity factors, visualized via integrated radar charts for rapid profile analysis.</p>
+        </div>
+        <div class="card">
+          <h4>📐 Geometric Analysis & Stellar Systems (<code class="mono">kp_system.py</code>)</h4>
+          <p style="font-size:0.88rem;margin-top:0.4rem;line-height:1.75">Implements unequal house systems (Placidus)
+            and sub-division logic. Each 13.33° segment is unequally divided based on Dasha year proportions: <code
+              class="mono">Sub_Arc = (Planet_Years / 120) × 13.33°</code>. This system focuses on high-resolution event
+            timing.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="deep-dive-section reveal">
+      <h2 class="section-title">Architectural Significance</h2>
+      <div style="height:1rem"></div>
+      <div class="callout">This project is a demonstration of <strong>domain-agnostic architectural thinking</strong>.
+        It shows the ability to formalize a massive, ambiguous rule set into a clean, modular, and mathematically
+        rigorous software product.</div>
+      <p style="line-height:1.85;margin-top:1rem;margin-bottom:1rem">The patterns developed here — modular rule engines,
+        recursive timeline subdivision, and high-precision numerical bridges — are directly transferable to any complex
+        system modeling task, from financial risk engines to bioinformatics validation pipelines.</p>
+    </div>
+
+    <div style="margin:3rem 0;text-align:center">
+      <a href="index.html" class="btn btn-ghost">← All Projects</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 Shobhit Vats Sharma · <a href="mailto:shobhitvats1122@gmail.com">shobhitvats1122@gmail.com</a></p>
+  </footer>
+  <script src="../js/main.js"></script>
+</body>
+
+</html>
