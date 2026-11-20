@@ -735,6 +735,20 @@ describe('Tier 1: Feature Presence & Content Accuracy', () => {
       assert.equal(/NV_010|Oncovir|gold_set_tps_comparison_v2|\/home\/vats/i.test(llms), false, 'llms.txt must not leak private paths or NDA strings');
       assert.equal(fs.readFileSync(indexNowPath, 'utf8').trim(), '8f4e2a9c1d7b6035e2a4c8d1f9b0736e');
     });
+
+    it('F15.5: Editorial SV monogram favicon suite exists and cache-busted icon links appear across all pages', () => {
+      for (const f of ['favicon.ico', 'assets/favicon.svg', 'assets/favicon-48.png', 'assets/favicon-32.png', 'assets/apple-touch-icon.png']) {
+        const p = path.join(ROOT_DIR, f);
+        assert.ok(fs.existsSync(p) && fs.statSync(p).size > 500, `${f} must exist with valid size`);
+      }
+      const svg = fs.readFileSync(path.join(ROOT_DIR, 'assets/favicon.svg'), 'utf8');
+      assert.ok(/#9A4D1C|#B05921/i.test(svg) && /#FAF6F0/i.test(svg), 'favicon.svg must use editorial SV palette');
+      for (const page of [...ALL_PAGES, '404.html']) {
+        const html = readPage(page);
+        assert.ok(/favicon\.svg\?v=2/i.test(html), `${page} must reference favicon.svg?v=2`);
+        assert.ok(/favicon-48\.png\?v=2/i.test(html), `${page} must reference favicon-48.png?v=2`);
+      }
+    });
   });
 
 });
