@@ -10,6 +10,7 @@ on:
       - '**/*.css'
       - '**/*.js'
       - 'export-portfolio-to-pdf.mjs'
+      - '.github/workflows/generate-pdf.yml'
   workflow_dispatch:
 
 permissions:
@@ -17,7 +18,7 @@ permissions:
 
 jobs:
   build-pdf:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
