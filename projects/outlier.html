@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K1322K1J2D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-K1322K1J2D');
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STEM LLM Evaluation, RLHF &amp; Reasoning Audits — Shobhit Vats Sharma</title>
+  <meta name="description"
+    content="Case study of Data Annotation, STEM LLM Evaluation, RLHF preference ranking, hallucination auditing, and GEM adversarial prompting at Outlier across Projects Blackbeard, Ather, and Springer." />
+  <link rel="canonical" href="https://shobhitvats.github.io/projects/outlier.html" />
+  <meta name="author" content="Shobhit Vats Sharma" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="theme-color" content="#9A4D1C" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_IN" />
+  <meta property="og:site_name" content="Shobhit Vats Sharma" />
+  <meta property="og:title" content="STEM LLM Evaluation, RLHF &amp; Reasoning Audits — Shobhit Vats Sharma" />
+  <meta property="og:description" content="Case study of Data Annotation, STEM LLM Evaluation, RLHF preference ranking, hallucination auditing, and GEM adversarial prompting at Outlier across Projects Blackbeard, Ather, and Springer." />
+  <meta property="og:url" content="https://shobhitvats.github.io/projects/outlier.html" />
+  <meta property="og:image" content="https://shobhitvats.github.io/assets/og-banner.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Shobhit Vats Sharma — Researcher &amp; Systems Builder" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="STEM LLM Evaluation, RLHF &amp; Reasoning Audits — Shobhit Vats Sharma" />
+  <meta name="twitter:description" content="Case study of Data Annotation, STEM LLM Evaluation, RLHF preference ranking, hallucination auditing, and GEM adversarial prompting at Outlier across Projects Blackbeard, Ather, and Springer." />
+  <meta name="twitter:image" content="https://shobhitvats.github.io/assets/og-banner.png" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://shobhitvats.github.io/"},{"@type":"ListItem","position":2,"name":"Projects","item":"https://shobhitvats.github.io/projects/"},{"@type":"ListItem","position":3,"name":"Outlier LLM Evaluation","item":"https://shobhitvats.github.io/projects/outlier.html"}]},{"@type":"TechArticle","url":"https://shobhitvats.github.io/projects/outlier.html","headline":"STEM LLM Evaluation, RLHF & Reasoning Audits — Shobhit Vats Sharma","description":"Case study of Data Annotation, STEM LLM Evaluation, RLHF preference ranking, hallucination auditing, and GEM adversarial prompting at Outlier across Projects Blackbeard, Ather, and Springer.","author":{"@id":"https://shobhitvats.github.io/#person","name":"Shobhit Vats Sharma","url":"https://shobhitvats.github.io/"}}]}</script>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <script>const t=localStorage.getItem('svs-theme');if(t)document.documentElement.setAttribute('data-theme',t);</script>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">Shobhit<span>Vats</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="index.html" class="active" aria-current="page">Projects</a></li>
+        <li><a href="../beyond.html">Beyond</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-utilities">
+        <button type="button" class="icon-btn" data-cmd-open aria-label="Open quick search">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="11" cy="11" r="7" />
+            <path d="m21 21-4.3-4.3" />
+          </svg>
+          <span class="kbd-hint">Ctrl K</span>
+        </button>
+        <button type="button" class="icon-btn" data-theme-toggle aria-label="Switch to dark theme" aria-pressed="false">
+          <span data-theme-icon aria-hidden="true">☾</span>
+        </button>
+        <a href="../assets/resume.pdf" class="nav-resume-pill" download="Shobhit_Vats_Sharma_CV.pdf">Resume PDF</a>
+        <button type="button" class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <div class="project-hero">
+      <div class="container">
+        <div class="project-hero-meta">
+          <div class="project-breadcrumb"><a href="index.html">Projects</a> / <span>STEM LLM Evaluation &amp; RLHF</span></div>
+          <span class="badge badge-live">Outlier · Enterprise AI Training</span>
+          <span class="badge badge-research">Oct 2025 – Apr 2026 · Remote (US)</span>
+        </div>
+        <h1 style="margin-bottom:0.55rem">STEM LLM Evaluation, RLHF &amp; Reasoning Audits</h1>
+        <p class="prose-cap" style="font-size:1.1rem;font-family:var(--font-serif);font-style:italic;color:var(--text-secondary);margin-bottom:1.5rem">
+          Auditing frontier large language models across scientific reasoning, multi-step logic verification,
+          hallucination detection, and RLHF alignment rubrics across three enterprise AI training pipelines.
+        </p>
+
+        <div class="stat-row">
+          <div class="stat-pill"><span class="stat-num">3</span><span class="stat-label">Enterprise Pipelines</span></div>
+          <div class="stat-pill"><span class="stat-num">7 mo</span><span class="stat-label">Evaluation Tenure</span></div>
+          <div class="stat-pill"><span class="stat-num">STEM</span><span class="stat-label">Bio, Chem &amp; Code QA</span></div>
+          <div class="stat-pill"><span class="stat-num">GEM</span><span class="stat-label">Prompting Framework</span></div>
+        </div>
+
+        <div class="tags" style="margin-top:1rem">
+          <span class="tag">LLM Evaluation</span>
+          <span class="tag">RLHF</span>
+          <span class="tag">Hallucination Auditing</span>
+          <span class="tag">Chain-of-Thought QA</span>
+          <span class="tag">GEM Prompting</span>
+          <span class="tag">Scientific Fact-Checking</span>
+          <span class="tag">Python Verification</span>
+          <span class="tag">Preference Ranking</span>
+        </div>
+
+        <div style="margin-top:1.5rem;display:flex;gap:0.85rem;flex-wrap:wrap">
+          <a href="../about.html#experience" class="btn btn-primary">View Experience Timeline</a>
+          <a href="index.html" class="btn btn-ghost">← All Projects</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <section class="tldr-box reveal" aria-labelledby="tldr-heading">
+        <h2 id="tldr-heading" class="tldr-heading">Overview — Outlier (Oct 2025 – Apr 2026)</h2>
+        <ul>
+          <li>Served for seven months as <strong>Data Annotator &amp; LLM Evaluator</strong> at <strong>Outlier</strong> (Remote, US), contributing across flagship enterprise AI training initiatives (<strong>Projects Blackbeard, Ather, and Springer</strong>).</li>
+          <li>Audited multi-turn scientific and quantitative LLM completions for <strong>factual accuracy</strong>, <strong>step-by-step logical consistency</strong>, and subtle domain hallucinations across biology, chemistry, physics, and programming tasks.</li>
+          <li>Engineered adversarial edge-case prompts structured under the <strong>GEM (Goal, Execution, Measurement)</strong> framework to stress-test multi-constraint instruction following and failure boundaries.</li>
+          <li>Produced evidence-backed <strong>RLHF preference rankings</strong> and token/step-level rationales that calibrated model outputs toward deterministic, verifiable scientific reasoning.</li>
+        </ul>
+      </section>
+
+      <section class="deep-dive-section reveal" aria-labelledby="context-heading">
+        <h2 id="context-heading" class="section-title">Problem &amp; Scientific Evaluation Context</h2>
+        <div style="height:1rem"></div>
+        <p style="line-height:1.85;margin-bottom:1rem">
+          Modern large language models routinely produce grammatically fluent scientific explanations that conceal fatal
+          flaws underneath: fabricated citations, silently dropped edge conditions, unit mismatches, ungrounded biochemical
+          mechanisms, or invalid intermediate steps that happen to guess a plausible-sounding summary.
+        </p>
+        <p style="line-height:1.85">
+          Surface-level grading misses these failure modes. Effective RLHF supervision in STEM requires tracing every
+          reasoning transition against primary domain references and executable checks — isolating the exact premise or
+          computational step where a candidate model diverges from ground truth.
+        </p>
+      </section>
+
+      <section class="deep-dive-section reveal" aria-labelledby="pillars-heading">
+        <h2 id="pillars-heading" class="section-title">Core Areas of Contribution</h2>
+        <p class="section-subtitle">Six evaluation and alignment workflows applied across frontier model training pipelines</p>
+        <div class="grid-2" style="gap:1.25rem">
+          <div class="card">
+            <h3 style="margin-bottom:0.5rem">Chain-of-Thought &amp; Logic Auditing</h3>
+            <p style="font-size:0.9rem;line-height:1.75">
+              Decomposed multi-turn reasoning chains step by step to catch non-sequiturs, circular derivations, hidden
+              assumptions, and contradictory conclusions across complex analytical prompts.
+            </p>
+          </div>
+          <div class="card">
+            <h3 style="margin-bottom:0.5rem">Scientific Factuality &amp; Hallucination Detection</h3>
+            <p style="font-size:0.9rem;line-height:1.75">
+              Verified biochemical, molecular biology, quantitative, and literature claims against authoritative
+              references, flagging fabricated entities and overconfident extrapolations under strict error taxonomies.
+            </p>
+          </div>
+          <div class="card">
+            <h3 style="margin-bottom:0.5rem">Multi-Pipeline Calibration (Blackbeard, Ather, Springer)</h3>
+            <p style="font-size:0.9rem;line-height:1.75">
+              Operated across three specialized training tracks — rapidly adapting to shifting rubric specifications,
+              fine-grained scoring dimensions, and calibration benchmarks without compromising audit precision.
+            </p>
+          </div>
+          <div class="card">
+            <h3 style="margin-bottom:0.5rem">RLHF Preference Ranking &amp; Grounded Critiques</h3>
+            <p style="font-size:0.9rem;line-height:1.75">
+              Authored structured pairwise comparisons and actionable feedback explaining why winning completions
+              outperformed alternatives on truthfulness, completeness, constraint compliance, and scientific tone.
+            </p>
+          </div>
+          <div class="card">
+            <h3 style="margin-bottom:0.5rem">Adversarial Prompting (GEM Framework)</h3>
+            <p style="font-size:0.9rem;line-height:1.75">
+              Designed multi-constraint prompts built around Goal, Execution, and Measurement criteria to probe model
+              context retention, negative-constraint adherence, and boundary failure behavior.
+            </p>
+          </div>
+          <div class="card">
+            <h3 style="margin-bottom:0.5rem">Executable Code &amp; Quantitative Checks</h3>
+            <p style="font-size:0.9rem;line-height:1.75">
+              Evaluated algorithmic and data-analysis completions by auditing edge-case behavior, time/memory assumptions,
+              and numerical consistency rather than accepting unverified pseudocode.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="deep-dive-section reveal" aria-labelledby="synergy-heading">
+        <h2 id="synergy-heading" class="section-title">How This Connects Across My Work</h2>
+        <p class="section-subtitle">Verification discipline linking AI alignment, clinical genomics QA, and static analysis</p>
+        <div class="grid-3">
+          <div class="card">
+            <h3 style="margin-bottom:0.5rem">Outlier (STEM AI Evals)</h3>
+            <p style="font-size:0.88rem;line-height:1.7">
+              Rubric-grounded auditing of frontier LLM reasoning chains, hallucination taxonomies, and RLHF preference
+              critiques.
+            </p>
+          </div>
+          <div class="card">
+            <h3 style="margin-bottom:0.5rem"><a href="velsera.html" style="color:inherit">Velsera (KB V&amp;V)</a></h3>
+            <p style="font-size:0.88rem;line-height:1.7">
+              Parallel real-world experience translating strict scientific validation rules into deterministic,
+              explainable pass/fail software checks.
+            </p>
+          </div>
+          <div class="card">
+            <h3 style="margin-bottom:0.5rem"><a href="optiscan.html" style="color:inherit">OptiScan &amp; MolBridge</a></h3>
+            <p style="font-size:0.88rem;line-height:1.7">
+              Applying zero-false-positive AST filtering (<code class="mono">OptiScan</code>) and provenance-hashed
+              outputs (<code class="mono">MolBridge</code>) so AI agents and scientists never rely on unverified claims.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="nav-logo">Shobhit<span>Vats</span></a>
+          <p style="margin-top:0.75rem;font-size:0.9rem">
+            Interdisciplinary Researcher &amp; Systems Builder · Science, Computation &amp; Operations
+          </p>
+        </div>
+        <div class="footer-links">
+          <div>
+            <h2>Navigation</h2>
+            <ul>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../about.html">About &amp; Experience</a></li>
+              <li><a href="index.html">Projects</a></li>
+              <li><a href="../beyond.html">Beyond the Lab</a></li>
+              <li><a href="../contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Connect &amp; CV</h2>
+            <ul>
+              <li><a href="mailto:shobhitvats1122@gmail.com">Email</a></li>
+              <li><a href="https://linkedin.com/in/shobhit-vats-s-204427132" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+              <li><a href="https://github.com/shobhitvats" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+              <li><a href="../assets/resume.pdf" download="Shobhit_Vats_Sharma_CV.pdf">Download Resume (PDF)</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 Shobhit Vats Sharma. Built with semantic HTML, WCAG AA contrast &amp; precision.
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/features/search.js"></script>
+</body>
+
+</html>

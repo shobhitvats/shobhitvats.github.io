@@ -6,343 +6,390 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-K1322K1J2D"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);} 
+  function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-K1322K1J2D');
 </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects — Shobhit Vats Sharma</title>
   <meta name="description"
-    content="All projects by Shobhit Vats Sharma — MolBridge, ΔΔG Calculator, Aegis, HEPBlenderFusion, OptiScan, Project Clarity, and Vedic Astrology Platform." />
+    content="All projects and case studies by Shobhit Vats Sharma — MolBridge, Velsera KB V&amp;V Comparator Automation, Nucleovir Scientific Operations Infrastructure, Outlier STEM LLM Evaluation, IISER Pune Sai Lab Research, ΔΔG Calculator, Aegis, HEPBlenderFusion, OptiScan, Project Clarity, and Computational Astrology." />
+  <link rel="canonical" href="https://shobhitvats.github.io/projects/" />
+  <meta name="author" content="Shobhit Vats Sharma" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="theme-color" content="#9A4D1C" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_IN" />
+  <meta property="og:site_name" content="Shobhit Vats Sharma" />
+  <meta property="og:title" content="Projects — Shobhit Vats Sharma" />
+  <meta property="og:description" content="All projects and case studies by Shobhit Vats Sharma — MolBridge, Velsera KB V&amp;V Comparator Automation, Nucleovir Scientific Operations Infrastructure, Outlier STEM LLM Evaluation, IISER Pune Sai Lab Research, ΔΔG Calculator, Aegis, HEPBlenderFusion, OptiScan, Project Clarity, and Computational Astrology." />
+  <meta property="og:url" content="https://shobhitvats.github.io/projects/" />
+  <meta property="og:image" content="https://shobhitvats.github.io/assets/og-banner.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Shobhit Vats Sharma — Researcher &amp; Systems Builder" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Projects — Shobhit Vats Sharma" />
+  <meta name="twitter:description" content="All projects and case studies by Shobhit Vats Sharma — MolBridge, Velsera KB V&amp;V Comparator Automation, Nucleovir Scientific Operations Infrastructure, Outlier STEM LLM Evaluation, IISER Pune Sai Lab Research, ΔΔG Calculator, Aegis, HEPBlenderFusion, OptiScan, Project Clarity, and Computational Astrology." />
+  <meta name="twitter:image" content="https://shobhitvats.github.io/assets/og-banner.png" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://shobhitvats.github.io/"},{"@type":"ListItem","position":2,"name":"Projects","item":"https://shobhitvats.github.io/projects/"}]},{"@type":"CollectionPage","url":"https://shobhitvats.github.io/projects/","name":"Projects — Shobhit Vats Sharma","description":"All projects and case studies by Shobhit Vats Sharma — MolBridge, Velsera KB V&V Comparator Automation, Nucleovir Scientific Operations Infrastructure, Outlier STEM LLM Evaluation, IISER Pune Sai Lab Research, ΔΔG Calculator, Aegis, HEPBlenderFusion, OptiScan, Project Clarity, and Computational Astrology.","author":{"@id":"https://shobhitvats.github.io/#person","name":"Shobhit Vats Sharma","url":"https://shobhitvats.github.io/"}}]}</script>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <script>const t=localStorage.getItem('svs-theme');if(t)document.documentElement.setAttribute('data-theme',t);</script>
   <link rel="stylesheet" href="../css/style.css" />
-  <style>
-    .proj-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      padding: 1.8rem;
-      display: flex;
-      flex-direction: column;
-      transition: var(--transition);
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .proj-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-md);
-      border-color: var(--sand);
-      color: inherit;
-    }
-
-    .proj-card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 0.75rem;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-
-    .proj-card-body {
-      flex: 1;
-    }
-
-    .proj-card h3 {
-      font-size: 1.25rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .proj-card p {
-      font-size: 0.9rem;
-      line-height: 1.7;
-    }
-
-    .proj-card-footer {
-      margin-top: 1.2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-
-    .proj-arrow {
-      font-size: 0.88rem;
-      font-weight: 600;
-      color: var(--accent);
-    }
-  </style>
 </head>
 
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <nav class="navbar">
+  <nav class="navbar" aria-label="Main navigation">
     <div class="nav-inner">
-      <a href="../index.html" class="nav-logo">Shobhit <span>Vats</span></a>
+      <a href="../index.html" class="nav-logo">Shobhit<span>Vats</span></a>
       <ul class="nav-links" id="navLinks">
         <li><a href="../index.html">Home</a></li>
         <li><a href="../about.html">About</a></li>
-        <li><a href="index.html" class="active">Projects</a></li>
+        <li><a href="index.html" class="active" aria-current="page">Projects</a></li>
         <li><a href="../beyond.html">Beyond</a></li>
         <li><a href="../contact.html">Contact</a></li>
       </ul>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="nav-utilities">
+        <button type="button" class="icon-btn" data-cmd-open aria-label="Open quick search (Cmd+K)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="11" cy="11" r="7" />
+            <path d="m21 21-4.3-4.3" />
+          </svg>
+          <span class="kbd-hint">Ctrl K</span>
+        </button>
+        <button type="button" class="icon-btn" data-theme-toggle aria-label="Switch to dark theme" aria-pressed="false">
+          <span data-theme-icon aria-hidden="true">☾</span>
+        </button>
+        <a href="../assets/resume.pdf" class="nav-resume-pill" download="Shobhit_Vats_Sharma_CV.pdf">Resume PDF</a>
+        <button type="button" class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </nav>
 
-  <section
-    style="padding:calc(var(--nav-height) + 3rem) 0 3rem;background:linear-gradient(135deg,var(--bg) 0%,var(--bg-alt) 100%);border-bottom:1px solid var(--border)">
-    <div class="container">
-      <p
-        style="font-size:0.78rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.5rem">
-        Portfolio</p>
-      <h1 style="margin-bottom:0.75rem">Projects</h1>
-      <p style="max-width:580px;font-size:1rem">A collection of research tools, engineering platforms, and personal
-        explorations — each built to solve a real, well-defined problem.</p>
-    </div>
-  </section>
+  <main id="main-content">
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">Portfolio</p>
+        <h1 style="margin-bottom:0.75rem">Projects &amp; Operational Case Studies</h1>
+        <p class="prose-cap" style="font-size:1rem">
+          Computational structural biology software, biotech R&amp;D operations architecture, static analysis tooling,
+          and interdisciplinary engineering platforms.
+        </p>
+        <div style="margin-top:1.25rem;display:flex;gap:0.75rem;flex-wrap:wrap">
+          <a href="https://github.com/shobhitvats" target="_blank" rel="noopener noreferrer" class="btn btn-outline">GitHub Profile (@shobhitvats) ↗</a>
+          <a href="https://github.com/shobhitvats/shobhitvats.github.io" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Portfolio Source ↗</a>
+        </div>
+      </div>
+    </section>
 
-  <section class="section">
-    <div class="container">
-
-      <!-- MolBridge FEATURED -->
-      <div style="margin-bottom:2.5rem">
-        <p
-          style="font-size:0.78rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem">
-          🌿 Flagship — Live Application</p>
-        <a href="molbridge.html" class="proj-card card-featured reveal"
-          style="display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center;text-decoration:none;color:inherit">
+    <section class="section">
+      <div class="container">
+        <!-- Flagship MolBridge -->
+        <p class="eyebrow" style="margin-bottom:0.85rem">Flagship — Live Application</p>
+        <article class="proj-featured-card reveal" style="margin-bottom:3rem">
           <div>
             <div class="proj-card-header">
-              <h3 style="font-size:1.7rem">MolBridge: NonCovalent Atlas</h3>
+              <h2 style="font-size:1.75rem">MolBridge: NonCovalent Atlas</h2>
               <span class="badge badge-live">Live · molbridge.streamlit.app</span>
             </div>
-            <p>A production-ready, full-stack platform for detecting and visualizing 15+ noncovalent interaction
-              families (hydrogen bonds, chalcogen, pnictogen, tetrel, π–π, cation–π, salt bridges, metal coordination,
-              and more) in protein structures. Features a Streamlit web UI, REST API, interactive 3D visualisation,
-              Ramachandran plots, and high-performance computing with optional Numba/Rust kernels. Born directly from
-              IISER Pune Masters research.</p>
-            <div class="tags"><span class="tag">Python</span><span class="tag">Streamlit</span><span
-                class="tag">FastAPI</span><span class="tag">BioPython</span><span class="tag">Docker</span><span
-                class="tag">Numba</span><span class="tag">SciPy</span><span class="tag">Plotly</span></div>
-            <div style="margin-top:1.2rem;display:flex;gap:1.5rem;flex-wrap:wrap">
-              <div class="stat-pill"><span class="stat-num">15+</span><span class="stat-label">Interaction
-                  Families</span></div>
-              <div class="stat-pill"><span class="stat-num">60%</span><span class="stat-label">Runtime Reduction</span>
-              </div>
-              <div class="stat-pill"><span class="stat-num">40%</span><span class="stat-label">Faster Exploration</span>
-              </div>
+            <p style="margin-bottom:1rem">
+              A production-ready platform for detecting and visualising 15+ noncovalent interaction families (hydrogen,
+              chalcogen, pnictogen, tetrel, π–π, cation–π, salt bridges, metal coordination) in protein structures.
+              Features a Streamlit web UI, FastAPI REST API, 3D viewer, provenance hashing, and Numba/Rust kernels.
+            </p>
+            <div class="tags">
+              <span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">FastAPI</span>
+              <span class="tag">BioPython</span><span class="tag">Docker</span><span class="tag">Numba</span>
+              <span class="tag">SciPy</span><span class="tag">Plotly</span>
+            </div>
+            <div style="margin-top:1.25rem;display:flex;gap:0.85rem;flex-wrap:wrap">
+              <a href="molbridge.html" class="btn btn-primary">Full Details →</a>
+              <a href="https://molbridge.streamlit.app" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Launch Live App</a>
+              <a href="https://github.com/shobhitvats/MolBridge-NonCovalent-Atlas" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">GitHub Repo ↗</a>
             </div>
           </div>
-          <div style="text-align:center;flex-shrink:0">
-            <div style="font-size:4rem;margin-bottom:0.5rem">🌿</div>
-            <span style="color:var(--accent);font-weight:600;font-size:0.9rem">Full Details →</span>
+          <div style="display:flex;flex-direction:column;gap:0.85rem">
+            <div class="stat-pill"><span class="stat-num">15+</span><span class="stat-label">Interaction Families</span></div>
+            <div class="stat-pill"><span class="stat-num">60%</span><span class="stat-label">Runtime Reduction</span></div>
+            <div class="stat-pill"><span class="stat-num">40%</span><span class="stat-label">Faster Exploration</span></div>
           </div>
-        </a>
+        </article>
+
+        <!-- Category 1: Experience & Research Case Studies -->
+        <h2 class="section-title reveal" style="margin-bottom:1.5rem">Experience &amp; Research Case Studies — Biotech, Genomics, AI &amp; Structural Biology</h2>
+        <div class="grid-2" style="margin-bottom:3rem">
+          <article class="proj-card reveal">
+            <div class="proj-card-header">
+              <span class="badge badge-live">Velsera · Case Study</span>
+              <span class="badge badge-research">100% Team Adoption</span>
+            </div>
+            <div class="proj-card-body">
+              <h3><a href="velsera.html" class="card-title-link">KB V&amp;V &amp; Comparator Analysis Automation</a></h3>
+              <p>Standalone Python validation and multi-stage clinical genomics comparator application automating Gold Set quality control, biological matching, UAT workflows, and user documentation.</p>
+              <div class="tags">
+                <span class="tag">Python</span><span class="tag">Clinical Genomics</span><span class="tag">KB V&amp;V</span>
+                <span class="tag">Parallel Processing</span><span class="tag">UAT</span>
+              </div>
+            </div>
+            <div class="proj-card-footer">
+              <div style="display:flex;gap:0.65rem">
+                <div class="stat-pill"><span class="stat-num">100%</span><span class="stat-label">Team Adoption</span></div>
+                <div class="stat-pill"><span class="stat-num">3+</span><span class="stat-label">UAT Rounds</span></div>
+              </div>
+              <span class="proj-arrow">Read Case Study →</span>
+            </div>
+          </article>
+
+          <article class="proj-card reveal">
+            <div class="proj-card-header">
+              <span class="badge badge-live">Nucleovir Therapeutics · Case Study</span>
+              <span class="badge badge-research">Founder's Office</span>
+            </div>
+            <div class="proj-card-body">
+              <h3><a href="sciops.html" class="card-title-link">Scientific Operations &amp; Research Infrastructure</a></h3>
+              <p>Founder's Office operational systems at Nucleovir Therapeutics — project management tracking, digital record organisation, internal NAS/Samba storage setup, access permissions, and cross-functional coordination.</p>
+              <div class="tags">
+                <span class="tag">Sci-Ops</span><span class="tag">Project Management</span><span class="tag">NAS / Samba</span>
+                <span class="tag">Access Control</span><span class="tag">Documentation</span>
+              </div>
+            </div>
+            <div class="proj-card-footer">
+              <div style="display:flex;gap:0.65rem">
+                <div class="stat-pill"><span class="stat-num">6</span><span class="stat-label">Core Pillars</span></div>
+                <div class="stat-pill"><span class="stat-num">3</span><span class="stat-label">R&amp;D Streams</span></div>
+              </div>
+              <span class="proj-arrow">Read Case Study →</span>
+            </div>
+          </article>
+
+          <article class="proj-card reveal">
+            <div class="proj-card-header">
+              <span class="badge badge-live">Outlier · Case Study</span>
+              <span class="badge badge-research">Enterprise AI Training</span>
+            </div>
+            <div class="proj-card-body">
+              <h3><a href="outlier.html" class="card-title-link">STEM LLM Evaluation, RLHF &amp; Reasoning Audits</a></h3>
+              <p>Seven-month LLM evaluation engagement across Projects Blackbeard, Ather, and Springer — auditing chain-of-thought reasoning, scientific hallucinations, RLHF preferences, and GEM prompts.</p>
+              <div class="tags">
+                <span class="tag">LLM Evaluation</span><span class="tag">RLHF</span><span class="tag">Hallucination QA</span>
+                <span class="tag">GEM Framework</span><span class="tag">STEM Reasoning</span>
+              </div>
+            </div>
+            <div class="proj-card-footer">
+              <div style="display:flex;gap:0.65rem">
+                <div class="stat-pill"><span class="stat-num">3</span><span class="stat-label">Pipelines</span></div>
+                <div class="stat-pill"><span class="stat-num">7 mo</span><span class="stat-label">Tenure</span></div>
+              </div>
+              <span class="proj-arrow">Read Case Study →</span>
+            </div>
+          </article>
+
+          <article class="proj-card reveal">
+            <div class="proj-card-header">
+              <span class="badge badge-live">IISER Pune · Sai Lab</span>
+              <span class="badge badge-research">BS-MS Thesis</span>
+            </div>
+            <div class="proj-card-body">
+              <h3><a href="sai-lab.html" class="card-title-link">Computational Structural Biology &amp; NCI Research</a></h3>
+              <p>Master's thesis research under Prof. Saikrishnan Kayarat spanning &gt;1.2M CSD entries, experimental PDB loops, polymer null models, ClinVar variants, and 214M AlphaFold v4 models on ParamBrahma HPC.</p>
+              <div class="tags">
+                <span class="tag">Structural Biology</span><span class="tag">CSD &amp; PDB</span><span class="tag">AlphaFold v4</span>
+                <span class="tag">ParamBrahma HPC</span><span class="tag">NMR</span>
+              </div>
+            </div>
+            <div class="proj-card-footer">
+              <div style="display:flex;gap:0.65rem">
+                <div class="stat-pill"><span class="stat-num">&gt;1.2M</span><span class="stat-label">CSD Filtered</span></div>
+                <div class="stat-pill"><span class="stat-num">214M</span><span class="stat-label">AFDB v4 Screened</span></div>
+              </div>
+              <span class="proj-arrow">Read Case Study →</span>
+            </div>
+          </article>
+        </div>
+
+        <!-- Category 2: Computational Biology, AI & Systems Engineering -->
+        <h2 class="section-title reveal" style="margin-bottom:1.5rem">Computational Biology, AI &amp; Systems Engineering</h2>
+        <div class="grid-2">
+          <article class="proj-card reveal">
+            <div class="proj-card-header">
+              <span class="badge badge-research">Computational Biophysics</span>
+              <span class="badge badge-local">Local Research</span>
+            </div>
+            <div class="proj-card-body">
+              <h3><a href="ddg.html" class="card-title-link">ΔΔG Calculator</a></h3>
+              <p>GPU-accelerated protein stability prediction engine implementing AMBER ff14SB potentials, LCPO solvation, and a 4-stage crystallographic strain relaxation workflow validated on p53 (1TUP).</p>
+              <div class="tags">
+                <span class="tag">Python</span><span class="tag">Numba</span><span class="tag">CUDA</span>
+                <span class="tag">FastAPI</span><span class="tag">Kubernetes</span>
+              </div>
+            </div>
+            <div class="proj-card-footer">
+              <div style="display:flex;gap:0.65rem">
+                <div class="stat-pill"><span class="stat-num">100x</span><span class="stat-label">GPU Speedup</span></div>
+                <div class="stat-pill"><span class="stat-num">&lt;20s</span><span class="stat-label">Per Prediction</span></div>
+              </div>
+              <span class="proj-arrow">Details →</span>
+            </div>
+          </article>
+
+          <article class="proj-card reveal">
+            <div class="proj-card-header">
+              <span class="badge badge-live">Zero False-Positives</span>
+              <span class="badge badge-local">Static Analysis</span>
+            </div>
+            <div class="proj-card-body">
+              <h3><a href="optiscan.html" class="card-title-link">OptiScan Engine</a></h3>
+              <p>Zero-false-positive Python performance analysis engine using LibCST three-layer filtering and AI-native JSON findings designed for autonomous LLM refactoring agents.</p>
+              <div class="tags">
+                <span class="tag">Python</span><span class="tag">LibCST</span><span class="tag">Typer</span>
+                <span class="tag">Streamlit</span><span class="tag">Docker</span>
+              </div>
+            </div>
+            <div class="proj-card-footer">
+              <div style="display:flex;gap:0.65rem">
+                <div class="stat-pill"><span class="stat-num">0%</span><span class="stat-label">False Positives</span></div>
+                <div class="stat-pill"><span class="stat-num">120</span><span class="stat-label">Files/sec</span></div>
+              </div>
+              <span class="proj-arrow">Details →</span>
+            </div>
+          </article>
+
+          <article class="proj-card reveal">
+            <div class="proj-card-header">
+              <span class="badge badge-engineering">Code Knowledge Graphs</span>
+            </div>
+            <div class="proj-card-body">
+              <h3><a href="clarity.html" class="card-title-link">Project Clarity</a></h3>
+              <p>Transforms complex Python repositories into interactive force-directed dependency graphs across function, file, and directory levels with 100% zero-loss code reconstruction.</p>
+              <div class="tags">
+                <span class="tag">Python</span><span class="tag">AST</span><span class="tag">Pyvis</span>
+                <span class="tag">Streamlit</span><span class="tag">Docker</span>
+              </div>
+            </div>
+            <div class="proj-card-footer">
+              <div style="display:flex;gap:0.65rem">
+                <div class="stat-pill"><span class="stat-num">100%</span><span class="stat-label">Reconstruction</span></div>
+                <div class="stat-pill"><span class="stat-num">V5</span><span class="stat-label">Version</span></div>
+              </div>
+              <span class="proj-arrow">Details →</span>
+            </div>
+          </article>
+
+          <article class="proj-card reveal">
+            <div class="proj-card-header">
+              <span class="badge badge-research">$0 API Cost · DaaS</span>
+            </div>
+            <div class="proj-card-body">
+              <h3><a href="aegis.html" class="card-title-link">Aegis Intelligence Platform</a></h3>
+              <p>Full-stack Data-as-a-Service (DaaS) intelligence engine uniting stealth Playwright GraphQL interception, SQLite persistence, Streamlit analytics, and a Chrome MV3 extension.</p>
+              <div class="tags">
+                <span class="tag">Python</span><span class="tag">Playwright</span><span class="tag">Chrome MV3</span>
+                <span class="tag">SQLite</span><span class="tag">Streamlit</span>
+              </div>
+            </div>
+            <div class="proj-card-footer">
+              <div style="display:flex;gap:0.65rem">
+                <div class="stat-pill"><span class="stat-num">15</span><span class="stat-label">DaaS Products</span></div>
+                <div class="stat-pill"><span class="stat-num">20</span><span class="stat-label">Blockers Solved</span></div>
+              </div>
+              <span class="proj-arrow">Details →</span>
+            </div>
+          </article>
+
+          <article class="proj-card reveal">
+            <div class="proj-card-header">
+              <span class="badge badge-engineering">High-Energy Physics ↔ 3D</span>
+            </div>
+            <div class="proj-card-body">
+              <h3><a href="hep.html" class="card-title-link">HEPBlenderFusion</a></h3>
+              <p>Real-time bidirectional gRPC &amp; Protocol Buffers bridge between C++ Geant4 particle physics simulations and Blender's BMesh rendering engine (&lt;100ms latency).</p>
+              <div class="tags">
+                <span class="tag">C++17</span><span class="tag">Python</span><span class="tag">gRPC</span>
+                <span class="tag">Protobuf</span><span class="tag">Geant4</span>
+              </div>
+            </div>
+            <div class="proj-card-footer">
+              <div style="display:flex;gap:0.65rem">
+                <div class="stat-pill"><span class="stat-num">&lt;100ms</span><span class="stat-label">Latency</span></div>
+                <div class="stat-pill"><span class="stat-num">10–50x</span><span class="stat-label">Perf Gain</span></div>
+              </div>
+              <span class="proj-arrow">Details →</span>
+            </div>
+          </article>
+
+          <article class="proj-card reveal">
+            <div class="proj-card-header">
+              <span class="badge badge-local">Complex Systems Modeling</span>
+            </div>
+            <div class="proj-card-body">
+              <h3><a href="computational-astrology.html" class="card-title-link">Computational Astrology Engine</a></h3>
+              <p>50+ module Python mathematical modeling suite built on Swiss Ephemeris (C-Bridge), computing 16 harmonic divisional systems and 5-level recursive timing trees.</p>
+              <div class="tags">
+                <span class="tag">Python</span><span class="tag">C-Bridge</span><span class="tag">Modeling</span>
+                <span class="tag">Recursive Logic</span>
+              </div>
+            </div>
+            <div class="proj-card-footer">
+              <div style="display:flex;gap:0.65rem">
+                <div class="stat-pill"><span class="stat-num">50+</span><span class="stat-label">Modules</span></div>
+                <div class="stat-pill"><span class="stat-num">5-Level</span><span class="stat-label">Tree</span></div>
+              </div>
+              <span class="proj-arrow">Details →</span>
+            </div>
+          </article>
+        </div>
       </div>
-
-      <!-- OTHER PROJECTS -->
-      <p
-        style="font-size:0.78rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:1.2rem">
-        Research & Personal Projects</p>
-      <div class="grid-2">
-
-        <a href="ddg.html" class="proj-card reveal">
-          <div class="proj-card-header">
-            <div style="font-size:1.8rem">🧬</div>
-            <span class="badge badge-local">Local Research Project</span>
-          </div>
-          <div class="proj-card-body">
-            <h3>ΔΔG Calculator</h3>
-            <p>A GPU-accelerated protein stability prediction engine implementing a custom molecular mechanics force
-              field. Predicts the energetic impact of amino acid mutations using AMBER ff14SB parameters, LCPO
-              solvation, and Numba/CUDA acceleration. Validated against FoldX and experimental benchmarks on p53 (1TUP).
-              Includes a FastAPI REST microservice and Kubernetes deployment manifests.</p>
-            <div class="tags"><span class="tag">Python</span><span class="tag">Numba</span><span
-                class="tag">CUDA</span><span class="tag">FastAPI</span><span class="tag">Docker</span><span
-                class="tag">Kubernetes</span><span class="tag">BioPython</span></div>
-          </div>
-          <div class="proj-card-footer">
-            <div style="display:flex;gap:0.75rem">
-              <div class="stat-pill"><span class="stat-num">100x</span><span class="stat-label">GPU Speedup</span></div>
-              <div class="stat-pill"><span class="stat-num">&lt;20s</span><span class="stat-label">Per Prediction</span>
-              </div>
-            </div>
-            <span class="proj-arrow">Details →</span>
-          </div>
-        </a>
-
-        <a href="aegis.html" class="proj-card reveal">
-          <div class="proj-card-header">
-            <div style="font-size:1.8rem">🔱</div>
-            <span class="badge badge-local">Local Research Project</span>
-          </div>
-          <div class="proj-card-body">
-            <h3>Aegis Intelligence Platform</h3>
-            <p>A full-stack Instagram Data-as-a-Service (DaaS) intelligence engine built from scratch. Combines a
-              stealth Playwright-based scraper, SQLite database, multi-page Streamlit analytics dashboard, and a custom
-              Chrome Extension (MV3) to extract and monetise Instagram data — solving 20 major engineering blockers
-              across Meta's security architecture, React 18 internals, and Chromium browser limits.</p>
-            <div class="tags"><span class="tag">Python</span><span class="tag">Playwright</span><span
-                class="tag">Streamlit</span><span class="tag">SQLite</span><span class="tag">Chrome MV3</span><span
-                class="tag">JavaScript</span></div>
-          </div>
-          <div class="proj-card-footer">
-            <div style="display:flex;gap:0.75rem">
-              <div class="stat-pill"><span class="stat-num">15</span><span class="stat-label">DaaS Products</span></div>
-              <div class="stat-pill"><span class="stat-num">20</span><span class="stat-label">Blockers Solved</span>
-              </div>
-            </div>
-            <span class="proj-arrow">Details →</span>
-          </div>
-        </a>
-
-        <a href="hep.html" class="proj-card reveal">
-          <div class="proj-card-header">
-            <div style="font-size:1.8rem">⚛️</div>
-            <span class="badge badge-local">Local Research Project</span>
-          </div>
-          <div class="proj-card-body">
-            <h3>HEPBlenderFusion</h3>
-            <p>A high-performance bridge between the Geant4 high-energy physics simulation toolkit and Blender's 3D
-              rendering engine, communicating via gRPC and Protocol Buffers. Enables real-time, interactive particle
-              physics visualisation with <100ms latency, a single-mesh BMesh architecture for 10-50x viewport
-                performance, and an interactive run control state machine.</p>
-                <div class="tags"><span class="tag">C++17</span><span class="tag">Python</span><span
-                    class="tag">gRPC</span><span class="tag">Protobuf</span><span class="tag">Geant4</span><span
-                    class="tag">Blender API</span></div>
-          </div>
-          <div class="proj-card-footer">
-            <div style="display:flex;gap:0.75rem">
-              <div class="stat-pill"><span class="stat-num">&lt;100ms</span><span class="stat-label">Latency</span>
-              </div>
-              <div class="stat-pill"><span class="stat-num">10-50x</span><span class="stat-label">Perf Gain</span></div>
-            </div>
-            <span class="proj-arrow">Details →</span>
-          </div>
-        </a>
-
-        <a href="optiscan.html" class="proj-card reveal">
-          <div class="proj-card-header">
-            <div style="font-size:1.8rem">🔍</div>
-            <span class="badge badge-local">Local Research Project</span>
-          </div>
-          <div class="proj-card-body">
-            <h3>OptiScan</h3>
-            <p>A research-grade, zero-false-positive static analysis engine for Python. Unlike standard linters,
-              OptiScan targets "silent performance killers" — code patterns that are syntactically valid but
-              computationally catastrophic. Built on LibCST with AI-native JSON reporting designed for direct
-              consumption by autonomous LLM-based refactoring agents.</p>
-            <div class="tags"><span class="tag">Python</span><span class="tag">LibCST</span><span
-                class="tag">Typer</span><span class="tag">Streamlit</span><span class="tag">Docker</span><span
-                class="tag">Pydantic</span></div>
-          </div>
-          <div class="proj-card-footer">
-            <div style="display:flex;gap:0.75rem">
-              <div class="stat-pill"><span class="stat-num">0%</span><span class="stat-label">False Positives</span>
-              </div>
-              <div class="stat-pill"><span class="stat-num">120</span><span class="stat-label">Files/sec</span></div>
-            </div>
-            <span class="proj-arrow">Details →</span>
-          </div>
-        </a>
-
-        <a href="clarity.html" class="proj-card reveal">
-          <div class="proj-card-header">
-            <div style="font-size:1.8rem">🕸️</div>
-            <span class="badge badge-local">Local Research Project</span>
-          </div>
-          <div class="proj-card-body">
-            <h3>Project Clarity</h3>
-            <p>An AI-ready code intelligence and visualisation platform that transforms complex Python repositories into
-              interactive, human-readable knowledge graphs. Uses a custom AST processing engine for semantic
-              decomposition and a physics-based force-directed graph frontend (vis.js) to reveal hidden dependencies,
-              cyclomatic complexity hotspots, and architectural bottlenecks.</p>
-            <div class="tags"><span class="tag">Python</span><span class="tag">AST</span><span
-                class="tag">Pyvis</span><span class="tag">Streamlit</span><span class="tag">Docker</span><span
-                class="tag">GitPython</span></div>
-          </div>
-          <div class="proj-card-footer">
-            <div style="display:flex;gap:0.75rem">
-              <div class="stat-pill"><span class="stat-num">100%</span><span class="stat-label">Reconstruction</span>
-              </div>
-              <div class="stat-pill"><span class="stat-num">V5</span><span class="stat-label">Current Version</span>
-              </div>
-            </div>
-            <span class="proj-arrow">Details →</span>
-          </div>
-        </a>
-
-        <a href="computational-astrology.html" class="proj-card reveal">
-          <div class="proj-card-header">
-            <div style="font-size:1.8rem">📐</div>
-            <span class="badge badge-local">Complex Systems Engineering</span>
-          </div>
-          <div class="proj-card-body">
-            <h3>Computational Astrology Engine</h3>
-            <p>A professional-grade computational suite for high-precision astronomical mechanics. Implements 50+
-              specialized Python modules covering recursive multi-level timing algorithms, harmonic divisional systems,
-              and interactive 3D celestial modeling. A demonstration of quantifying complex rule-based knowledge systems
-              through rigorous software architecture.</p>
-            <div class="tags"><span class="tag">Python</span><span class="tag">C-Bridge</span><span
-                class="tag">Modeling</span><span class="tag">Recursive Logic</span><span class="tag">SVG
-                Rendering</span></div>
-          </div>
-          <div class="proj-card-footer">
-            <div style="display:flex;gap:0.75rem">
-              <div class="stat-pill"><span class="stat-num">50+</span><span class="stat-label">Modules</span></div>
-              <div class="stat-pill"><span class="stat-num">5-level</span><span class="stat-label">Recursive Tree</span>
-              </div>
-            </div>
-            <span class="proj-arrow">Details →</span>
-          </div>
-        </a>
-
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="../index.html" class="nav-logo">Shobhit <span>Vats</span></a>
-          <p style="margin-top:1rem;font-size:0.9rem;color:var(--text-muted)">
-            Interdisciplinary Researcher · Data Strategy & Problem Solver
+          <a href="../index.html" class="nav-logo">Shobhit<span>Vats</span></a>
+          <p style="margin-top:0.75rem;font-size:0.9rem">
+            Interdisciplinary Researcher &amp; Systems Builder · Science, Computation &amp; Operations
           </p>
         </div>
         <div class="footer-links">
           <div>
-            <h4>Navigation</h4>
+            <h2>Navigation</h2>
             <ul>
               <li><a href="../index.html">Home</a></li>
-              <li><a href="../about.html">About</a></li>
+              <li><a href="../about.html">About &amp; Experience</a></li>
               <li><a href="index.html">Projects</a></li>
-              <li><a href="../beyond.html">Beyond</a></li>
+              <li><a href="../beyond.html">Beyond the Lab</a></li>
+              <li><a href="../contact.html">Contact</a></li>
             </ul>
           </div>
           <div>
-            <h4>Connect</h4>
+            <h2>Connect &amp; CV</h2>
             <ul>
               <li><a href="mailto:shobhitvats1122@gmail.com">Email</a></li>
-              <li><a href="https://linkedin.com/in/shobhit-vats-s-204427132" target="_blank">LinkedIn</a></li>
-              <li><a href="https://github.com/shobhitvats" target="_blank">GitHub</a></li>
+              <li><a href="https://linkedin.com/in/shobhit-vats-s-204427132" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+              <li><a href="https://github.com/shobhitvats" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+              <li><a href="../assets/resume.pdf" download="Shobhit_Vats_Sharma_CV.pdf">Download Resume (PDF)</a></li>
             </ul>
           </div>
         </div>
       </div>
       <div class="footer-bottom">
-        &copy; 2026 Shobhit Vats Sharma. Built with precision and aesthetic care.
+        &copy; 2026 Shobhit Vats Sharma. Built with semantic HTML, WCAG AA contrast &amp; precision.
       </div>
     </div>
   </footer>
 
   <script src="../js/main.js"></script>
+  <script src="../js/features/search.js"></script>
 </body>
 
 </html>

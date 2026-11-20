@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K1322K1J2D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-K1322K1J2D');
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scientific Operations &amp; Research Infrastructure — Shobhit Vats Sharma</title>
+  <meta name="description"
+    content="Case study of Scientific Operations, internal R&amp;D project management, digital data organisation, NAS/Samba storage configuration, and cross-functional coordination at Nucleovir Therapeutics." />
+  <link rel="canonical" href="https://shobhitvats.github.io/projects/sciops.html" />
+  <meta name="author" content="Shobhit Vats Sharma" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="theme-color" content="#9A4D1C" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_IN" />
+  <meta property="og:site_name" content="Shobhit Vats Sharma" />
+  <meta property="og:title" content="Scientific Operations &amp; Research Infrastructure — Shobhit Vats Sharma" />
+  <meta property="og:description" content="Case study of Scientific Operations, internal R&amp;D project management, digital data organisation, NAS/Samba storage configuration, and cross-functional coordination at Nucleovir Therapeutics." />
+  <meta property="og:url" content="https://shobhitvats.github.io/projects/sciops.html" />
+  <meta property="og:image" content="https://shobhitvats.github.io/assets/og-banner.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Shobhit Vats Sharma — Researcher &amp; Systems Builder" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Scientific Operations &amp; Research Infrastructure — Shobhit Vats Sharma" />
+  <meta name="twitter:description" content="Case study of Scientific Operations, internal R&amp;D project management, digital data organisation, NAS/Samba storage configuration, and cross-functional coordination at Nucleovir Therapeutics." />
+  <meta name="twitter:image" content="https://shobhitvats.github.io/assets/og-banner.png" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://shobhitvats.github.io/"},{"@type":"ListItem","position":2,"name":"Projects","item":"https://shobhitvats.github.io/projects/"},{"@type":"ListItem","position":3,"name":"Nucleovir Sci-Ops","item":"https://shobhitvats.github.io/projects/sciops.html"}]},{"@type":"TechArticle","url":"https://shobhitvats.github.io/projects/sciops.html","headline":"Scientific Operations & Research Infrastructure — Shobhit Vats Sharma","description":"Case study of Scientific Operations, internal R&D project management, digital data organisation, NAS/Samba storage configuration, and cross-functional coordination at Nucleovir Therapeutics.","author":{"@id":"https://shobhitvats.github.io/#person","name":"Shobhit Vats Sharma","url":"https://shobhitvats.github.io/"}}]}</script>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <script>const t=localStorage.getItem('svs-theme');if(t)document.documentElement.setAttribute('data-theme',t);</script>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">Shobhit<span>Vats</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="index.html" class="active" aria-current="page">Projects</a></li>
+        <li><a href="../beyond.html">Beyond</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-utilities">
+        <button type="button" class="icon-btn" data-cmd-open aria-label="Open quick search">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="11" cy="11" r="7" />
+            <path d="m21 21-4.3-4.3" />
+          </svg>
+          <span class="kbd-hint">Ctrl K</span>
+        </button>
+        <button type="button" class="icon-btn" data-theme-toggle aria-label="Switch to dark theme" aria-pressed="false">
+          <span data-theme-icon aria-hidden="true">☾</span>
+        </button>
+        <a href="../assets/resume.pdf" class="nav-resume-pill" download="Shobhit_Vats_Sharma_CV.pdf">Resume PDF</a>
+        <button type="button" class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <div class="project-hero">
+      <div class="container">
+        <div class="project-hero-meta">
+          <div class="project-breadcrumb"><a href="index.html">Projects</a> / <span>Scientific Operations &amp; Infrastructure</span></div>
+          <span class="badge badge-live">Nucleovir Therapeutics · AIC–IISER Pune</span>
+          <span class="badge badge-research">Founder's Office</span>
+        </div>
+        <h1 style="margin-bottom:0.55rem">Scientific Operations &amp; Research Infrastructure</h1>
+        <p class="prose-cap" style="font-size:1.1rem;font-family:var(--font-serif);font-style:italic;color:var(--text-secondary);margin-bottom:1.5rem">
+          Structuring project execution, digital data organisation, shared storage infrastructure, and cross-functional
+          coordination across wet-lab, bioinformatics, and AI workstreams.
+        </p>
+
+        <div class="tags" style="margin-top:1rem">
+          <span class="tag">Scientific Operations</span>
+          <span class="tag">Project Management</span>
+          <span class="tag">Data Organisation</span>
+          <span class="tag">NAS &amp; Samba</span>
+          <span class="tag">Access Control</span>
+          <span class="tag">Technical Documentation</span>
+          <span class="tag">Cross-Team Coordination</span>
+        </div>
+
+        <div style="margin-top:1.5rem;display:flex;gap:0.85rem;flex-wrap:wrap">
+          <a href="../about.html#recommendation" class="btn btn-primary">View Experience Summary</a>
+          <a href="index.html" class="btn btn-ghost">← All Projects</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <section class="tldr-box reveal" aria-labelledby="tldr-heading">
+        <h2 id="tldr-heading" class="tldr-heading">Overview — Nucleovir Therapeutics</h2>
+        <ul>
+          <li>Worked in the Founder's Office as <strong>Scientific Operations Intern</strong> at <strong>Nucleovir Therapeutics India Pvt. Ltd.</strong> (AIC–IISER Pune), reporting directly to the <strong>Co-Founder &amp; CSO</strong> and the <strong>Co-Founder &amp; CEO</strong>.</li>
+          <li>Built and maintained internal project-management workflows supporting task allocation, milestone tracking, and cross-team deliverable visibility.</li>
+          <li>Structured shared digital records, organisation standards, and internal documentation templates across research and operational tracks.</li>
+          <li>Assisted with configuring the internal NAS storage server, Samba network file sharing, and role-appropriate access permissions.</li>
+        </ul>
+      </section>
+
+      <section class="deep-dive-section reveal" aria-labelledby="context-heading">
+        <h2 id="context-heading" class="section-title">Context &amp; Operational Scope</h2>
+        <div style="height:1rem"></div>
+        <p style="line-height:1.85;margin-bottom:1rem">
+          Early-stage biotechnology R&amp;D brings wet-lab experimentation, computational biology, and AI development
+          together under tight timelines. Without consistent operational structure, parallel workstreams can quickly
+          develop fragmented task tracking, inconsistent file records, and communication gaps between teams.
+        </p>
+        <p style="line-height:1.85">
+          Working from the Founder's Office at Nucleovir Therapeutics, my focus was establishing dependable internal
+          systems so scientists and technical contributors could spend less time hunting for updates or files and more
+          time on core research execution.
+        </p>
+      </section>
+
+      <section class="deep-dive-section reveal" aria-labelledby="pillars-heading">
+        <h2 id="pillars-heading" class="section-title">Core Areas of Contribution</h2>
+        <p class="section-subtitle">Six foundational pillars bridging day-to-day R&amp;D execution and internal infrastructure</p>
+        <div class="grid-2" style="gap:1.25rem">
+          <div class="card">
+            <h3 style="margin-bottom:0.5rem">Project Management Support</h3>
+            <p style="font-size:0.9rem;line-height:1.75">
+              Contributed to an internal project management system supporting structured task allocation, progress
+              visibility, and milestone monitoring across active R&amp;D tracks.
+            </p>
+          </div>
+          <div class="card">
+            <h3 style="margin-bottom:0.5rem">Scientific Project Coordination</h3>
+            <p style="font-size:0.9rem;line-height:1.75">
+              Tracked research tasks, timelines, dependencies, and deliverables with systematic follow-ups so parallel
+              scientific and engineering streams stayed aligned.
+            </p>
+          </div>
+          <div class="card">
+            <h3 style="margin-bottom:0.5rem">Digital Data Organisation</h3>
+            <p style="font-size:0.9rem;line-height:1.75">
+              Reviewed existing digital records and established clear organisation standards so shared experimental,
+              computational, and administrative materials remained clean and easy to retrieve.
+            </p>
+          </div>
+          <div class="card">
+            <h3 style="margin-bottom:0.5rem">Internal Storage &amp; Access Infrastructure</h3>
+            <p style="font-size:0.9rem;line-height:1.75">
+              Assisted with configuring the organisation's internal storage server (NAS), Samba network file sharing, and
+              role-based access permissions across internal user groups.
+            </p>
+          </div>
+          <div class="card">
+            <h3 style="margin-bottom:0.5rem">Documentation &amp; Workflow Support</h3>
+            <p style="font-size:0.9rem;line-height:1.75">
+              Prepared structured technical documentation, project trackers, work plans, and reusable workflow templates
+              to support consistent onboarding and repeatable internal processes.
+            </p>
+          </div>
+          <div class="card">
+            <h3 style="margin-bottom:0.5rem">Cross-Functional Team Coordination</h3>
+            <p style="font-size:0.9rem;line-height:1.75">
+              Supported day-to-day alignment and smooth information flow across scientific, technical, and administrative
+              functions alongside leadership feedback loops.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="deep-dive-section reveal" aria-labelledby="triad-heading">
+        <h2 id="triad-heading" class="section-title">How This Connects Across My Work</h2>
+        <p class="section-subtitle">Combining operational clarity, software verification, and scientific depth</p>
+        <div class="grid-3">
+          <div class="card">
+            <h3 style="margin-bottom:0.5rem">Nucleovir Therapeutics</h3>
+            <p style="font-size:0.88rem;line-height:1.7">
+              Founder's Office R&amp;D operations, structured project tracking, digital record governance, and NAS/Samba
+              infrastructure.
+            </p>
+          </div>
+          <div class="card">
+            <h3 style="margin-bottom:0.5rem">Velsera (KB V&amp;V)</h3>
+            <p style="font-size:0.88rem;line-height:1.7">
+              Automated Comparator Analysis tooling, User Acceptance Testing workflows, and user documentation in a
+              regulated clinical genomics setting.
+            </p>
+          </div>
+          <div class="card">
+            <h3 style="margin-bottom:0.5rem">IISER Pune &amp; MolBridge</h3>
+            <p style="font-size:0.88rem;line-height:1.7">
+              Reproducible structural bioinformatics software and high-throughput HPC workflows grounded in verifiable
+              scientific baselines.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="nav-logo">Shobhit<span>Vats</span></a>
+          <p style="margin-top:0.75rem;font-size:0.9rem">
+            Interdisciplinary Researcher &amp; Systems Builder · Science, Computation &amp; Operations
+          </p>
+        </div>
+        <div class="footer-links">
+          <div>
+            <h2>Navigation</h2>
+            <ul>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../about.html">About &amp; Experience</a></li>
+              <li><a href="index.html">Projects</a></li>
+              <li><a href="../beyond.html">Beyond the Lab</a></li>
+              <li><a href="../contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Connect &amp; CV</h2>
+            <ul>
+              <li><a href="mailto:shobhitvats1122@gmail.com">Email</a></li>
+              <li><a href="https://linkedin.com/in/shobhit-vats-s-204427132" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+              <li><a href="https://github.com/shobhitvats" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+              <li><a href="../assets/resume.pdf" download="Shobhit_Vats_Sharma_CV.pdf">Download Resume (PDF)</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 Shobhit Vats Sharma. Built with semantic HTML, WCAG AA contrast &amp; precision.
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/features/search.js"></script>
+</body>
+
+</html>

@@ -1,8 +1,16 @@
-# Personal files and internal project notes
+# Personal files, local build caches, and generated test artifacts
+node_modules/
+.agents/
+graphify-out/
+pdf_out/
+portfolio-full.pdf
 Photos/
 Project Code/
 Project md Files/
 My Description/
-
-
-
+20211200.pdf
+PROJECT.md
+TEST_INFRA.md
+TEST_READY.md
+scratch/
+.DS_Store

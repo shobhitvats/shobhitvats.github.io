@@ -6,281 +6,348 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-K1322K1J2D"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);} 
+  function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-K1322K1J2D');
 </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Beyond the Lab — Shobhit Vats Sharma</title>
   <meta name="description"
-    content="The personal side of Shobhit Vats Sharma — music, art, philosophy, and moments beyond the research lab." />
+    content="The personal side of Shobhit Vats Sharma — music (flute, guitar, keyboard), digital art, campus leadership, and moments beyond the research lab." />
+  <link rel="canonical" href="https://shobhitvats.github.io/beyond.html" />
+  <meta name="author" content="Shobhit Vats Sharma" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="theme-color" content="#9A4D1C" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_IN" />
+  <meta property="og:site_name" content="Shobhit Vats Sharma" />
+  <meta property="og:title" content="Beyond the Lab — Shobhit Vats Sharma" />
+  <meta property="og:description" content="The personal side of Shobhit Vats Sharma — music (flute, guitar, keyboard), digital art, campus leadership, and moments beyond the research lab." />
+  <meta property="og:url" content="https://shobhitvats.github.io/beyond.html" />
+  <meta property="og:image" content="https://shobhitvats.github.io/assets/og-banner.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Shobhit Vats Sharma — Researcher &amp; Systems Builder" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Beyond the Lab — Shobhit Vats Sharma" />
+  <meta name="twitter:description" content="The personal side of Shobhit Vats Sharma — music (flute, guitar, keyboard), digital art, campus leadership, and moments beyond the research lab." />
+  <meta name="twitter:image" content="https://shobhitvats.github.io/assets/og-banner.png" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://shobhitvats.github.io/"},{"@type":"ListItem","position":2,"name":"Beyond the Lab","item":"https://shobhitvats.github.io/beyond.html"}]},{"@type":"WebPage","url":"https://shobhitvats.github.io/beyond.html","name":"Beyond the Lab — Shobhit Vats Sharma","description":"The personal side of Shobhit Vats Sharma — music (flute, guitar, keyboard), digital art, campus leadership, and moments beyond the research lab.","about":{"@id":"https://shobhitvats.github.io/#person","name":"Shobhit Vats Sharma","url":"https://shobhitvats.github.io/"}}]}</script>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <script>const t=localStorage.getItem('svs-theme');if(t)document.documentElement.setAttribute('data-theme',t);</script>
   <link rel="stylesheet" href="css/style.css" />
   <style>
-    /* Beyond page specific styles */
     .editorial-hero {
-      padding: calc(var(--nav-height) + 4rem) 0 6rem;
+      padding: calc(var(--nav-height) + 3.25rem) 0 3.5rem;
       background: linear-gradient(to bottom, var(--bg-alt) 0%, var(--bg) 100%);
       text-align: center;
-    }
-
-    .editorial-title {
-      font-size: clamp(2.5rem, 6vw, 4.5rem);
-      font-family: var(--font-serif);
-      margin-bottom: 1.5rem;
-      color: var(--text);
+      border-bottom: 1px solid var(--border);
     }
 
     .personal-manifesto {
-      max-width: 800px;
-      margin: 0 auto 4rem;
-      font-size: 1.2rem;
+      max-width: 65ch;
+      margin: 1rem auto 0;
+      font-size: 1.12rem;
       line-height: 1.8;
       color: var(--text-secondary);
+    }
+
+    .creative-section {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 3rem;
+      align-items: center;
+      margin-bottom: 4rem;
+    }
+
+    .creative-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .creative-visual-card {
+      background: var(--surface-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
       text-align: center;
-      padding: 0 1.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .creative-section--reversed .creative-visual-card {
+      order: -1;
     }
 
     .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
       gap: 1.5rem;
-      margin-top: 3rem;
+      margin-top: 2rem;
     }
 
     .gallery-item {
       position: relative;
       border-radius: var(--radius-md);
       overflow: hidden;
-      aspect-ratio: 4/3;
+      aspect-ratio: 4 / 3;
       background: var(--surface);
       border: 1px solid var(--border);
+      margin: 0;
     }
 
     .gallery-item img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     .gallery-item:hover img {
-      transform: scale(1.05);
+      transform: scale(1.04);
     }
 
     .gallery-caption {
       position: absolute;
+      inset-inline: 0;
       bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 1.5rem;
-      background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
-      color: white;
+      padding: 1.75rem 1rem 0.9rem;
+      background: linear-gradient(transparent, rgba(11, 15, 23, 0.85));
+      color: #FFFFFF;
+      font-size: 0.86rem;
+      font-weight: 500;
       opacity: 0;
-      transition: opacity 0.3s ease;
+      transition: opacity 0.25s ease;
     }
 
-    .gallery-item:hover .gallery-caption {
+    .gallery-item:hover .gallery-caption,
+    .gallery-item:focus-within .gallery-caption {
       opacity: 1;
     }
 
-    .creative-section {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-      margin-bottom: 6rem;
+    @media (hover: none), (max-width: 768px) {
+      .gallery-caption {
+        opacity: 1;
+      }
+      .creative-section {
+        grid-template-columns: 1fr;
+        gap: 1.75rem;
+      }
+      .creative-section--reversed .creative-visual-card {
+        order: 0;
+      }
     }
 
     .quote-card {
-      padding: 4rem;
-      background: var(--bg-alt);
+      padding: clamp(2rem, 5vw, 3.5rem);
+      background: var(--surface-card);
       border-radius: var(--radius-lg);
       text-align: center;
-      margin: 6rem 0;
       border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
     }
 
     .quote-text {
-      font-size: 1.8rem;
+      font-size: clamp(1.3rem, 3vw, 1.75rem);
       font-family: var(--font-serif);
       font-style: italic;
       color: var(--accent);
-      margin-bottom: 1.5rem;
-    }
-
-    @media (max-width: 768px) {
-      .creative-section {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
+      margin-bottom: 1rem;
+      max-width: 55ch;
+      margin-inline: auto;
     }
   </style>
 </head>
 
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- NAVBAR -->
-  <nav class="navbar" role="navigation" aria-label="Main navigation">
+  <nav class="navbar" aria-label="Main navigation">
     <div class="nav-inner">
-      <a href="index.html" class="nav-logo">Shobhit <span>Vats</span></a>
+      <a href="index.html" class="nav-logo">Shobhit<span>Vats</span></a>
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="projects/index.html">Projects</a></li>
-        <li><a href="beyond.html" class="active">Beyond</a></li>
+        <li><a href="beyond.html" class="active" aria-current="page">Beyond</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="nav-utilities">
+        <button type="button" class="icon-btn" data-cmd-open aria-label="Open quick search (Cmd+K)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="11" cy="11" r="7" />
+            <path d="m21 21-4.3-4.3" />
+          </svg>
+          <span class="kbd-hint">Ctrl K</span>
+        </button>
+        <button type="button" class="icon-btn" data-theme-toggle aria-label="Switch to dark theme" aria-pressed="false">
+          <span data-theme-icon aria-hidden="true">☾</span>
+        </button>
+        <a href="assets/resume.pdf" class="nav-resume-pill" download="Shobhit_Vats_Sharma_CV.pdf">Resume PDF</a>
+        <button type="button" class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section class="editorial-hero">
-    <div class="container">
-      <h1 class="editorial-title reveal">Beyond the Lab</h1>
-      <p class="personal-manifesto reveal">
-        I've always believed that a researcher is more than their data, and an engineer is more than their code. My life
-        is a constant dialogue between the analytical rigor of science and the intuitive harmony of music and art.
-      </p>
-    </div>
-  </section>
+  <main id="main-content">
+    <section class="editorial-hero">
+      <div class="container">
+        <p class="eyebrow">Music, Design &amp; Community</p>
+        <h1 class="reveal">Beyond the Lab</h1>
+        <p class="personal-manifesto reveal">
+          A researcher is more than their dataset, and an engineer is more than their codebase. My life moves in
+          dialogue between analytical rigor in science and the discipline of music, visual art, and craftsmanship.
+        </p>
+      </div>
+    </section>
 
-  <!-- CREATIVE SECTION -->
-  <section class="section" style="padding-top: 0;">
-    <div class="container">
-      <div class="creative-section reveal">
-        <div>
-          <h2 class="section-title">The Musical Journey</h2>
-          <div style="height:1.5rem"></div>
-          <p style="margin-bottom: 1.5rem; line-height: 1.8;">
-            Music is my primary language for expression. As a multi-instrumentalist—fluent in <strong>Flute, Guitar, and
-              Keyboard</strong>—I find that the discipline required for musical mastery often mirrors the patience
-            needed for scientific research.
-          </p>
-          <p style="line-height: 1.8;">
-            Whether it's the mathematical precision of a raga on the flute or the layered harmonies of a keyboard
-            composition, music provides the creative reset that fuels my analytical breakthroughs.
-          </p>
+    <section class="section">
+      <div class="container">
+        <div class="creative-section reveal">
+          <div>
+            <h2 class="section-title">The Musical Journey</h2>
+            <div style="height:1.1rem"></div>
+            <p class="prose-cap" style="margin-bottom:1.1rem;line-height:1.8">
+              Music is my primary language outside code and structures. Playing <strong>Flute, Guitar, and
+              Keyboard</strong> builds the exact blend of pattern memory and patience that computational research demands.
+            </p>
+            <p class="prose-cap" style="line-height:1.8">
+              From improvising classical ragas on bansuri flute to building chord progressions on keyboard, music serves
+              as the creative reset behind deep analytical work.
+            </p>
+          </div>
+          <div class="creative-visual-card">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto 1rem" aria-hidden="true">
+              <path d="M9 18V5l12-2v13" />
+              <circle cx="6" cy="18" r="3" />
+              <circle cx="18" cy="16" r="3" />
+            </svg>
+            <p style="font-family:var(--font-serif);font-style:italic;color:var(--text-primary);font-size:1.1rem">
+              “Where words fail, music speaks.”
+            </p>
+            <p style="font-size:0.84rem;color:var(--text-muted);margin-top:0.35rem">Flute · Guitar · Keyboard</p>
+          </div>
         </div>
-        <div
-          style="background: var(--surface); border-radius: var(--radius-lg); padding: 3rem; text-align: center; border: 1px solid var(--border);">
-          <div style="font-size: 4rem; margin-bottom: 1rem;">🪈 🎸 🎹</div>
-          <p style="font-family: var(--font-serif); font-style: italic; color: var(--text-muted);">
-            "Where words fail, music speaks."
-          </p>
+
+        <div class="creative-section creative-section--reversed reveal">
+          <div>
+            <h2 class="section-title">Digital Art &amp; Visual Design</h2>
+            <div style="height:1.1rem"></div>
+            <p class="prose-cap" style="margin-bottom:1.1rem;line-height:1.8">
+              <strong>Visual design and digital art</strong> directly inform my scientific software work — from framing
+              3D protein geometry in MolBridge to shaping clean research user interfaces and festival brand systems.
+            </p>
+            <p class="prose-cap" style="line-height:1.8">
+              At IISER Pune, I coordinated the Science &amp; Art Club and mentored campus design leads across large-scale
+              exhibitions and events.
+            </p>
+          </div>
+          <div class="creative-visual-card">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto 1rem" aria-hidden="true">
+              <circle cx="13.5" cy="6.5" r=".5" fill="var(--accent)" />
+              <circle cx="17.5" cy="10.5" r=".5" fill="var(--accent)" />
+              <circle cx="8.5" cy="7.5" r=".5" fill="var(--accent)" />
+              <circle cx="6.5" cy="12.5" r=".5" fill="var(--accent)" />
+              <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z" />
+            </svg>
+            <p style="font-family:var(--font-serif);font-style:italic;color:var(--text-primary);font-size:1.1rem">
+              “Design is intelligence made visible.”
+            </p>
+            <p style="font-size:0.84rem;color:var(--text-muted);margin-top:0.35rem">Illustration · Photography · Handcraft</p>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="creative-section reveal" style="direction: rtl;">
-        <div style="direction: ltr;">
-          <h2 class="section-title">Digital Art & Design</h2>
-          <div style="height:1.5rem"></div>
-          <p style="margin-bottom: 1.5rem; line-height: 1.8;">
-            My interest in <strong>Digital Art and Visual Design</strong> isn't just a hobby—it's a critical tool for my
-            scientific work. Being able to visualize complex molecular interactions or design intuitive user interfaces
-            stems from a deep appreciation for aesthetics and composition.
-          </p>
-          <p style="line-height: 1.8;">
-            I've applied this throughout my time at IISER, from leading institutional design teams to creating the
-            visual identity for flagship festivals.
-          </p>
-        </div>
-        <div
-          style="direction: ltr; background: var(--surface); border-radius: var(--radius-lg); padding: 3rem; text-align: center; border: 1px solid var(--border);">
-          <div style="font-size: 4rem; margin-bottom: 1rem;">🎨 ✍️ 🖥️</div>
-          <p style="font-family: var(--font-serif); font-style: italic; color: var(--text-muted);">
-            "Design is intelligence made visible."
-          </p>
+    <!-- OPTIMIZED WEBP MOMENTS GALLERY -->
+    <section class="section section-alt">
+      <div class="container">
+        <h2 class="section-title reveal">Moments &amp; Memories</h2>
+        <p class="section-subtitle reveal">Glimpses of campus arts, music, and photography beyond the terminal</p>
+
+        <div class="gallery-grid reveal">
+          <figure class="gallery-item">
+            <img src="assets/Self.webp" alt="Portrait of Shobhit Vats Sharma" width="1440" height="1440" loading="lazy" decoding="async" />
+            <figcaption class="gallery-caption">A quiet moment of reflection between lab sprints.</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="assets/Art-Club.webp" alt="IISER Pune Art Club creative workshop and exhibition" width="1200" height="1200" loading="lazy" decoding="async" />
+            <figcaption class="gallery-caption">Art Club — coordinating creative initiatives at IISER Pune.</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="assets/Music.webp" alt="Playing the bansuri flute" width="754" height="1200" loading="lazy" decoding="async" />
+            <figcaption class="gallery-caption">Bansuri flute practice session.</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="assets/HandiCraft.webp" alt="Handcrafted artwork made by Shobhit" width="1200" height="675" loading="lazy" decoding="async" />
+            <figcaption class="gallery-caption">Handcrafted artwork and tactile design.</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="assets/Photography.webp" alt="Outdoor photography frame by Shobhit" width="675" height="1200" loading="lazy" decoding="async" />
+            <figcaption class="gallery-caption">Capturing natural light and framing.</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="assets/Guitar.webp" alt="Playing acoustic guitar" width="1200" height="900" loading="lazy" decoding="async" />
+            <figcaption class="gallery-caption">Acoustic guitar sessions after hours.</figcaption>
+          </figure>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- MOMENTS GALLERY -->
-  <section class="section section-alt">
-    <div class="container">
-      <h2 class="section-title reveal">Moments & Memories</h2>
-      <p class="section-subtitle reveal">Glimpses of life beyond the terminal</p>
-
-      <div class="gallery-grid reveal">
-        <div class="gallery-item">
-          <img src="assets/Self.webp" alt="Profile" />
-          <div class="gallery-caption">A moment of reflection.</div>
-        </div>
-        <div class="gallery-item">
-          <img src="assets/Art-Club.jpg" alt="Art Club" />
-          <div class="gallery-caption">Art Club- Leading creative initiatives at IISER Pune.</div>
-        </div>
-        <div class="gallery-item">
-          <img src="assets/Music.png" alt="Music" />
-          <div class="gallery-caption">A little Flute session.</div>
-        </div>
-        <div class="gallery-item">
-          <img src="assets/HandiCraft.jpg" alt="HandiCraft" />
-          <div class="gallery-caption">HandCrafts made by me.</div>
-        </div>
-        <div class="gallery-item">
-          <img src="assets/Photography.jpg" alt="Photography" />
-          <div class="gallery-caption">Capturing the moment.</div>
-        </div>
-        <div class="gallery-item">
-          <img src="assets/Guitar.jpg" alt="Guitar" />
-          <div class="gallery-caption">Playing my guitar.</div>
+    <section class="section">
+      <div class="container">
+        <div class="quote-card reveal">
+          <p class="quote-text">“The most beautiful thing we can experience is the mysterious. It is the source of all true art and all science.”</p>
+          <p style="font-weight:700;color:var(--text-muted)">— Albert Einstein</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- PHILOSOPHY QUOTE -->
-  <section class="container">
-    <div class="quote-card reveal">
-      <p class="quote-text">"The most beautiful thing we can experience is the mysterious. It is the source of all true
-        art and all science."</p>
-      <p style="font-weight: 600; color: var(--text-muted);">— Albert Einstein</p>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="nav-logo">Shobhit <span>Vats</span></a>
-          <p style="margin-top:1rem;font-size:0.9rem;color:var(--text-muted)">
-            Interdisciplinary Researcher · Data Strategy & Problem Solver
+          <a href="index.html" class="nav-logo">Shobhit<span>Vats</span></a>
+          <p style="margin-top:0.75rem;font-size:0.9rem">
+            Interdisciplinary Researcher &amp; Systems Builder · Science, Computation &amp; Operations
           </p>
         </div>
         <div class="footer-links">
           <div>
-            <h4>Navigation</h4>
+            <h2>Navigation</h2>
             <ul>
               <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About</a></li>
+              <li><a href="about.html">About &amp; Experience</a></li>
               <li><a href="projects/index.html">Projects</a></li>
-              <li><a href="beyond.html">Beyond</a></li>
+              <li><a href="beyond.html">Beyond the Lab</a></li>
+              <li><a href="contact.html">Contact</a></li>
             </ul>
           </div>
           <div>
-            <h4>Connect</h4>
+            <h2>Connect &amp; CV</h2>
             <ul>
               <li><a href="mailto:shobhitvats1122@gmail.com">Email</a></li>
-              <li><a href="https://linkedin.com/in/shobhit-vats-s-204427132" target="_blank">LinkedIn</a></li>
-              <li><a href="https://github.com/shobhitvats" target="_blank">GitHub</a></li>
+              <li><a href="https://linkedin.com/in/shobhit-vats-s-204427132" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+              <li><a href="https://github.com/shobhitvats" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+              <li><a href="assets/resume.pdf" download="Shobhit_Vats_Sharma_CV.pdf">Download Resume (PDF)</a></li>
             </ul>
           </div>
         </div>
       </div>
       <div class="footer-bottom">
-        &copy; 2026 Shobhit Vats Sharma. Built with precision and aesthetic care.
+        &copy; 2026 Shobhit Vats Sharma. Built with semantic HTML, WCAG AA contrast &amp; precision.
       </div>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/features/search.js"></script>
 </body>
 
 </html>

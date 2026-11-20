@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <defs>
+    <linearGradient id="svGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#818CF8" />
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="7" fill="#0B0F17" stroke="#2A3B53" stroke-width="1.5" />
+  <!-- Stylized SV Monogram / Node Vector -->
+  <!-- 'S' Path -->
+  <path d="M8 12.5 C8 10 10 8.5 13 8.5 C16 8.5 17 10 17 11.5 C17 14 8 13.5 8 17.5 C8 19.5 9.5 21.5 13 21.5 C15.5 21.5 17 20 17 20" 
+        fill="none" stroke="url(#svGrad)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+  <!-- 'V' Path -->
+  <path d="M17 10.5 L21.5 21.5 L26 10.5" 
+        fill="none" stroke="#38BDF8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+  <!-- Accent Node -->
+  <circle cx="21.5" cy="21.5" r="1.2" fill="#7DD3FC" />
+</svg>

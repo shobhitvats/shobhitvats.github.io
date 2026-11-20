@@ -1,0 +1,34 @@
+# Shobhit Vats Sharma (Shobhit Vats)
+
+> Official portfolio of **Shobhit Vats Sharma** (commonly searched as **Shobhit Vats**) — Final-year BS-MS researcher at IISER Pune and systems builder working across Computational Structural Biology, Biotech Scientific Operations (Founder's Office), Clinical Genomics Knowledge Base Verification & Validation (KB V&V), and STEM LLM Evaluation.
+
+- Canonical Site: https://shobhitvats.github.io/
+- Location: Pune, Maharashtra, India
+- GitHub: https://github.com/shobhitvats
+- LinkedIn: https://www.linkedin.com/in/shobhit-vats-s-204427132
+- Live Scientific Platform (MolBridge): https://molbridge.streamlit.app/
+
+## Primary Pages
+- [Home](https://shobhitvats.github.io/): Overview of research, industry highlights, featured platforms, and supervisor endorsements.
+- [About & Experience](https://shobhitvats.github.io/about.html): Education (IISER Pune BS-MS), timeline (Nucleovir Therapeutics, Velsera, Outlier, Sai Lab), achievements, and endorsements.
+- [Projects & Case Studies](https://shobhitvats.github.io/projects/): Full catalog of scientific software, genomics QA automation, biotech sci-ops, and systems engineering work.
+- [Beyond the Lab](https://shobhitvats.github.io/beyond.html): Music (flute, guitar, keyboard), digital art, and IISER Pune campus leadership (Karavaan, Art Club).
+- [Contact, CVs & Endorsements](https://shobhitvats.github.io/contact.html): Contact channels, open roles (Chief of Staff, Operations, Biotech Sci-Ops, Computational Biology), downloadable resumes, and letters of recommendation.
+
+## Featured Case Studies & Platforms
+- [MolBridge: NonCovalent Atlas](https://shobhitvats.github.io/projects/molbridge.html): Open-access structural bioinformatics platform (Streamlit, FastAPI, Numba/Rust) mapping 15+ noncovalent interaction families.
+- [Velsera — KB V&V Comparator Automation](https://shobhitvats.github.io/projects/velsera.html): Standalone clinical genomics validator & comparator achieving 100% team adoption across 3+ UAT rounds (endorsed by Dr. Gargi Nanda).
+- [Nucleovir Therapeutics — Scientific Operations & Infrastructure](https://shobhitvats.github.io/projects/sciops.html): Founder's Office project systems, digital record organisation, documentation, and internal NAS/Samba setup (certified by Dr. Yogesh Ostwal, PhD).
+- [Outlier — STEM LLM Evaluation, RLHF & Reasoning Audits](https://shobhitvats.github.io/projects/outlier.html): Frontier STEM LLM reasoning verification, hallucination auditing, RLHF critiques, and GEM prompting across Blackbeard, Ather, and Springer.
+- [IISER Pune · Sai Lab — Computational Structural Biology](https://shobhitvats.github.io/projects/sai-lab.html): Master's thesis research under Prof. Saikrishnan Kayarat across >1.2M CSD entries, experimental PDB loops, kinematic null models, ClinVar variants, and 214M AlphaFold v4 models on ParamBrahma HPC.
+- [ΔΔG Protein Stability Calculator](https://shobhitvats.github.io/projects/ddg.html): GPU-accelerated AMBER ff14SB + LCPO SASA calculator with 4-stage crystallographic strain relaxation.
+- [OptiScan Engine](https://shobhitvats.github.io/projects/optiscan.html): Zero-false-positive Python static analysis engine using LibCST for AI coding agents.
+- [Aegis Intelligence Platform](https://shobhitvats.github.io/projects/aegis.html): Stealth Playwright + Chrome MV3 + SQLite Data-as-a-Service engine.
+- [Project Clarity](https://shobhitvats.github.io/projects/clarity.html): AST-driven Python dependency knowledge graphs.
+- [HEPBlenderFusion](https://shobhitvats.github.io/projects/hep.html): Real-time C++17 Geant4 to Blender bridge via gRPC & Protocol Buffers.
+- [Computational Astrology Engine](https://shobhitvats.github.io/projects/computational-astrology.html): 50+ module Swiss Ephemeris mathematical modeling suite.
+
+## Downloadable CVs & Letters
+- [Resume — Operations, Chief of Staff, Systems & Comp Bio (PDF)](https://shobhitvats.github.io/assets/resume.pdf)
+- [Detailed Research CV — Structural Biology & Computation (PDF)](https://shobhitvats.github.io/assets/cv-research.pdf)
+- [Velsera Letter of Recommendation by Dr. Gargi Nanda (PDF)](https://shobhitvats.github.io/assets/recommendation.pdf)

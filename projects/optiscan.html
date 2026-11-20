@@ -1,133 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-K1322K1J2D"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);} 
+  function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-K1322K1J2D');
 </script>
-  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>OptiScan — Shobhit Vats Sharma</title>
-  <link rel="stylesheet" href="../css/style.css"/>
+  <meta name="description"
+    content="OptiScan — zero-false-positive Python static analysis engine built on LibCST to catch silent performance killers for autonomous AI refactoring agents." />
+  <link rel="canonical" href="https://shobhitvats.github.io/projects/optiscan.html" />
+  <meta name="author" content="Shobhit Vats Sharma" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="theme-color" content="#9A4D1C" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_IN" />
+  <meta property="og:site_name" content="Shobhit Vats Sharma" />
+  <meta property="og:title" content="OptiScan — Shobhit Vats Sharma" />
+  <meta property="og:description" content="OptiScan — zero-false-positive Python static analysis engine built on LibCST to catch silent performance killers for autonomous AI refactoring agents." />
+  <meta property="og:url" content="https://shobhitvats.github.io/projects/optiscan.html" />
+  <meta property="og:image" content="https://shobhitvats.github.io/assets/og-banner.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Shobhit Vats Sharma — Researcher &amp; Systems Builder" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="OptiScan — Shobhit Vats Sharma" />
+  <meta name="twitter:description" content="OptiScan — zero-false-positive Python static analysis engine built on LibCST to catch silent performance killers for autonomous AI refactoring agents." />
+  <meta name="twitter:image" content="https://shobhitvats.github.io/assets/og-banner.png" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://shobhitvats.github.io/"},{"@type":"ListItem","position":2,"name":"Projects","item":"https://shobhitvats.github.io/projects/"},{"@type":"ListItem","position":3,"name":"OptiScan","item":"https://shobhitvats.github.io/projects/optiscan.html"}]},{"@type":"TechArticle","url":"https://shobhitvats.github.io/projects/optiscan.html","headline":"OptiScan — Shobhit Vats Sharma","description":"OptiScan — zero-false-positive Python static analysis engine built on LibCST to catch silent performance killers for autonomous AI refactoring agents.","author":{"@id":"https://shobhitvats.github.io/#person","name":"Shobhit Vats Sharma","url":"https://shobhitvats.github.io/"}}]}</script>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <script>const t=localStorage.getItem('svs-theme');if(t)document.documentElement.setAttribute('data-theme',t);</script>
+  <link rel="stylesheet" href="../css/style.css" />
 </head>
+
 <body>
-<nav class="navbar">
-  <div class="nav-inner">
-    <a href="../index.html" class="nav-logo">Shobhit <span>Vats</span></a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="../index.html">Home</a></li><li><a href="../about.html">About</a></li>
-      <li><a href="index.html" class="active">Projects</a></li><li><a href="../contact.html">Contact</a></li>
-    </ul>
-    <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
-  </div>
-</nav>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-<div class="project-hero">
-  <div class="container">
-    <div class="project-hero-meta">
-      <div class="project-breadcrumb"><a href="index.html">Projects</a> / <span>OptiScan</span></div>
-      <span class="badge badge-local">Local Research Project</span>
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">Shobhit<span>Vats</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="index.html" class="active" aria-current="page">Projects</a></li>
+        <li><a href="../beyond.html">Beyond</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-utilities">
+        <button type="button" class="icon-btn" data-cmd-open aria-label="Open quick search (Cmd+K)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="11" cy="11" r="7" />
+            <path d="m21 21-4.3-4.3" />
+          </svg>
+          <span class="kbd-hint">Ctrl K</span>
+        </button>
+        <button type="button" class="icon-btn" data-theme-toggle aria-label="Switch to dark theme" aria-pressed="false">
+          <span data-theme-icon aria-hidden="true">☾</span>
+        </button>
+        <a href="../assets/resume.pdf" class="nav-resume-pill" download="Shobhit_Vats_Sharma_CV.pdf">Resume PDF</a>
+        <button type="button" class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
-    <h1 style="font-size:clamp(1.8rem,4vw,3rem);margin-bottom:0.5rem">🔍 OptiScan</h1>
-    <p style="font-size:1.05rem;font-family:var(--font-serif);font-style:italic;color:var(--text-secondary);margin-bottom:1.5rem">High-Precision Static Analysis & Performance Intelligence — a research-grade, zero-false-positive engine for Python code that targets "silent performance killers" and produces AI-native findings for autonomous refactoring agents.</p>
-    <div class="stat-row">
-      <div class="stat-pill"><span class="stat-num">0%</span><span class="stat-label">False Positives</span></div>
-      <div class="stat-pill"><span class="stat-num">120</span><span class="stat-label">Files/sec</span></div>
-      <div class="stat-pill"><span class="stat-num">11</span><span class="stat-label">Detection Rules</span></div>
-      <div class="stat-pill"><span class="stat-num">v3.0</span><span class="stat-label">Current Version</span></div>
-    </div>
-    <div class="tags" style="margin-top:1rem">
-      <span class="tag">Python</span><span class="tag">LibCST</span><span class="tag">Typer</span>
-      <span class="tag">Rich</span><span class="tag">Streamlit</span><span class="tag">Docker</span><span class="tag">Pydantic V2</span>
-    </div>
-    <div style="margin-top:1.5rem"><a href="index.html" class="btn btn-ghost">← All Projects</a></div>
-  </div>
-</div>
+  </nav>
 
-<div class="container">
-
-  <div class="tldr-box reveal">
-    <h4>TL;DR — Quick Summary</h4>
-    <ul>
-      <li>Unlike standard linters (Pylint, Flake8) that focus on style and syntax, OptiScan targets "silent performance killers" — code patterns that are syntactically correct but computationally catastrophic (O(n²) string concatenation in loops, N+1 query patterns, unbatched I/O).</li>
-      <li>Built on LibCST (Concrete Syntax Tree) — preserving whitespace and comments for "perfect diff" generation — rather than Python's standard AST, which discards formatting.</li>
-      <li>A Three-Layer Filtering System achieves 0% false positive rate: the previous V1 prototype had a 100% false positive rate on string concatenation rules, flagging numeric incrementors (count += 1) as string issues.</li>
-      <li>Produces parallel reports: human-readable Markdown with quantified performance ROI, and AI-native JSON with deterministic line numbers for direct ingestion by autonomous LLM refactoring agents.</li>
-      <li>Hardware-aware multiprocessing via ProcessPoolExecutor bypasses Python's GIL — analysing 120+ files/second on an 8-core CPU.</li>
-    </ul>
-  </div>
-
-  <div class="deep-dive-section reveal">
-    <h2 class="section-title">The Mission: Zero False Positives</h2>
-    <div style="height:1rem"></div>
-    <p style="line-height:1.85;margin-bottom:1rem">Standard linters are built on a philosophy of high recall — catch everything, accept some noise. This is fine for style enforcement, but catastrophic for an AI agent using findings to autonomously refactor production code. A single false positive that causes an AI agent to "fix" code incorrectly destroys trust in the entire system.</p>
-    <p style="line-height:1.85;margin-bottom:1rem">OptiScan's philosophy is the inverse: <strong>prefer a missed true positive over a single false positive</strong>. Every rule is built with multi-layer validation that conservatively flags only when all criteria are definitively met.</p>
-    <div class="callout">Version 1 had a 100% false positive rate on its primary rule. Version 3 has 0%. The evolution from V1 to V3 is the core engineering story of this project.</div>
-  </div>
-
-  <div class="deep-dive-section reveal">
-    <h2 class="section-title">The V1 → V3 Evolution</h2>
-    <div style="height:1rem"></div>
-    <table class="cs-table">
-      <thead><tr><th>Version</th><th>Engine</th><th>False Positive Rate</th><th>Key Achievement</th></tr></thead>
-      <tbody>
-        <tr><td><strong>V1.0</strong></td><td>Basic AST pattern matching</td><td><strong>100%</strong> on string rules</td><td>Conceptual prototype; proved the problem space</td></tr>
-        <tr><td><strong>V2.0</strong></td><td>LibCST (Concrete Syntax Tree)</td><td><strong>0%</strong></td><td>Three-Layer Filter System; "Conservative Flagging" philosophy; production-ready for CI/CD</td></tr>
-        <tr><td><strong>V3.0 (Current)</strong></td><td>LibCST + metadata providers</td><td><strong>0%</strong></td><td>Architectural & Bottleneck rule tiers; AI-perfect JSON schema; full contextual integrity (5-10 lines of surrounding code)</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="deep-dive-section reveal">
-    <h2 class="section-title">Detection Algorithms — The Three-Layer Filter</h2>
-    <div style="height:1rem"></div>
-    <p style="margin-bottom:1rem;line-height:1.8">The challenge that broke V1: distinguishing <code class="mono">result_str += item</code> (inefficient — O(n²)) from <code class="mono">count += 1</code> (perfectly fine — numeric increment). The Three-Layer Filter for PY-PERF-001:</p>
-    <div style="display:flex;flex-direction:column;gap:0.75rem;margin-bottom:1.5rem">
-      <div class="card"><h4>Layer 1 — Name Heuristics</h4><p style="font-size:0.88rem;margin-top:0.4rem">A dictionary of 30+ counter variable name patterns (ct, cnt, index, total, num, i, j, k, count…) is checked against the target variable. If the name matches, the finding is suppressed.</p></div>
-      <div class="card"><h4>Layer 2 — Initialisation Analysis</h4><p style="font-size:0.88rem;margin-top:0.4rem">The visitor tracks the first assignment of each variable within its scope. If initialised as 0 or any integer → marked numeric (suppress). If initialised as "" or any string literal → marked string (candidate).</p></div>
-      <div class="card"><h4>Layer 3 — RHS Type Inference</h4><p style="font-size:0.88rem;margin-top:0.4rem">The right-hand side of the += is inspected. String literals, f-strings, and str() calls confirm the finding. Numeric literals, variable names matching counter heuristics, or arithmetic expressions suppress it.</p></div>
+  <main id="main-content">
+    <div class="project-hero">
+      <div class="container">
+        <div class="project-hero-meta">
+          <div class="project-breadcrumb"><a href="index.html">Projects</a> / <span>OptiScan</span></div>
+          <span class="badge badge-live">Zero False-Positives</span>
+        </div>
+        <h1 style="margin-bottom:0.5rem">OptiScan Engine</h1>
+        <p class="prose-cap" style="font-size:1.08rem;font-family:var(--font-serif);font-style:italic;color:var(--text-secondary);margin-bottom:1.5rem">
+          High-precision static analysis for Python — catching silent O(n²) performance bottlenecks with LibCST and
+          generating deterministic JSON reports for autonomous AI refactoring agents.
+        </p>
+        <div class="stat-row">
+          <div class="stat-pill"><span class="stat-num">0%</span><span class="stat-label">False Positives</span></div>
+          <div class="stat-pill"><span class="stat-num">120</span><span class="stat-label">Files/sec</span></div>
+          <div class="stat-pill"><span class="stat-num">11</span><span class="stat-label">Detection Rules</span></div>
+          <div class="stat-pill"><span class="stat-num">v3.0</span><span class="stat-label">Version</span></div>
+        </div>
+        <div class="tags" style="margin-top:1rem">
+          <span class="tag">Python</span><span class="tag">LibCST</span><span class="tag">Typer</span>
+          <span class="tag">Streamlit</span><span class="tag">Docker</span><span class="tag">Pydantic V2</span>
+        </div>
+        <div style="margin-top:1.5rem"><a href="index.html" class="btn btn-ghost">← All Projects</a></div>
+      </div>
     </div>
 
-    <h3 style="margin-bottom:0.75rem">The Full Rule Catalog</h3>
-    <table class="cs-table">
-      <thead><tr><th>Rule ID</th><th>Category</th><th>Pattern Detected</th><th>Impact</th></tr></thead>
-      <tbody>
-        <tr><td><code class="mono">PY-BOTTLENECK-201</code></td><td>🔴 Critical</td><td>N+1 Query Pattern (data-loading calls inside loops)</td><td>Eliminates 100–10,000+ redundant I/O operations</td></tr>
-        <tr><td><code class="mono">PY-BOTTLENECK-202</code></td><td>🔴 Critical</td><td>Nested Loops — O(n²) complexity</td><td>Reduces to O(n) or O(n log n)</td></tr>
-        <tr><td><code class="mono">PY-BOTTLENECK-203</code></td><td>🔴 Critical</td><td>Tight Loop Hotspots (regex, complex math in loops)</td><td>Enables vectorisation or loop-invariant hoisting</td></tr>
-        <tr><td><code class="mono">PY-PERF-001</code></td><td>🟡 Auto-Fix</td><td>String Concatenation in loops (+= on str)</td><td>O(n²) → O(n) via str.join()</td></tr>
-        <tr><td><code class="mono">PY-PERF-002</code></td><td>🟡 Auto-Fix</td><td>Inefficient Membership (x in dict.keys())</td><td>Avoids view object creation and method lookup</td></tr>
-        <tr><td><code class="mono">PY-PERF-003</code></td><td>🟡 Auto-Fix</td><td>Manual .append() loops (convert to list comprehension)</td><td>Bytecode-level optimisation; only if loop is "pure"</td></tr>
-        <tr><td><code class="mono">PY-ARCH-101</code></td><td>🟠 Manual</td><td>Repeated Computation (method calls as subscripts in loops)</td><td>10-100x reduction via caching or precomputation</td></tr>
-        <tr><td><code class="mono">PY-ARCH-102</code></td><td>🟠 Manual</td><td>Inefficient List Tests (x in large_list)</td><td>O(n) → O(1) by converting to set</td></tr>
-        <tr><td><code class="mono">PY-ARCH-103</code></td><td>🟠 Manual</td><td>Unbatched I/O (open() or write() inside loops)</td><td>10-1,000x reduction in expensive system calls</td></tr>
-        <tr><td><code class="mono">PY-ARCH-104</code></td><td>🟠 Manual</td><td>Large List-Building (should return generators)</td><td>90%+ memory reduction for large datasets</td></tr>
-        <tr><td><code class="mono">PY-ARCH-105</code></td><td>🟠 Manual</td><td>Repeated Attribute Access (obj.attr in tight loops)</td><td>2-5x speedup by caching as local variable</td></tr>
-      </tbody>
-    </table>
-  </div>
+    <div class="container">
+      <section class="tldr-box reveal" aria-labelledby="tldr-heading">
+        <h2 id="tldr-heading" class="tldr-heading">TL;DR — Quick Summary</h2>
+        <ul>
+          <li>Targets silent performance killers in Python (O(n²) string concatenation, N+1 I/O inside loops, repeated attribute lookups).</li>
+          <li>Built on LibCST (Concrete Syntax Tree) preserving comments and formatting for lossless diffs.</li>
+          <li>Three-Layer Filtering System (name heuristics, scope initialisation tracking, RHS type inference) cuts false positives from 100% (V1) to 0% (V3).</li>
+          <li>Multiprocessing via ProcessPoolExecutor analyses 120+ files/second with deterministic line metadata for AI agents.</li>
+        </ul>
+      </section>
 
-  <div class="deep-dive-section reveal">
-    <h2 class="section-title">Outcomes</h2>
-    <div style="height:1rem"></div>
-    <div class="grid-2" style="gap:1rem">
-      <div class="achievement-card"><div class="achievement-icon">🎯</div><div><div class="achievement-title">0% False Positive Rate</div><div class="achievement-sub">From 100% (V1) to 0% (V2+) — enabling full autonomous agent deployment without human review</div></div></div>
-      <div class="achievement-card"><div class="achievement-icon">⚡</div><div><div class="achievement-title">120 Files/Second</div><div class="achievement-sub">Hardware-aware multiprocessing — ProcessPoolExecutor with dynamic core detection bypasses Python GIL</div></div></div>
-      <div class="achievement-card"><div class="achievement-icon">💰</div><div><div class="achievement-title">4-8 min Saved per Finding</div><div class="achievement-sub">Auto-fixable rules save developer manual refactoring time; architectural findings demonstrate 10-60x real-world speedups</div></div></div>
-      <div class="achievement-card"><div class="achievement-icon">🤖</div><div><div class="achievement-title">AI-Agent Ready</div><div class="achievement-sub">Deterministic line numbers from CST metadata enable precise autonomous code edits; priority_score enables triage ordering</div></div></div>
+      <section class="deep-dive-section reveal">
+        <h2 class="section-title">Three-Layer Filter &amp; Rule Catalog</h2>
+        <div style="height:1rem"></div>
+        <div class="grid-3" style="margin-bottom:1.5rem">
+          <div class="card"><h3>Layer 1 — Name Heuristics</h3><p style="font-size:0.87rem;margin-top:0.35rem">Filters 30+ counter patterns (<code class="mono">cnt</code>, <code class="mono">total</code>, <code class="mono">idx</code>) to avoid numeric false alarms.</p></div>
+          <div class="card"><h3>Layer 2 — Init Tracking</h3><p style="font-size:0.87rem;margin-top:0.35rem">Tracks first assignment in scope to distinguish integer accumulators from string builders.</p></div>
+          <div class="card"><h3>Layer 3 — RHS Type Inference</h3><p style="font-size:0.87rem;margin-top:0.35rem">Confirms string concatenation only when string literals, f-strings, or <code class="mono">str()</code> are observed.</p></div>
+        </div>
+
+        <div class="table-scroll" tabindex="0" role="region" aria-label="OptiScan rule catalog">
+          <table class="cs-table">
+            <thead><tr><th>Rule ID</th><th>Tier</th><th>Pattern Detected</th><th>Impact</th></tr></thead>
+            <tbody>
+              <tr><td><code class="mono">PY-BOTTLENECK-201</code></td><td><span class="badge badge-critical">Critical</span></td><td>N+1 query / data-loading inside loops</td><td>Eliminates 100–10,000+ redundant I/O calls</td></tr>
+              <tr><td><code class="mono">PY-BOTTLENECK-202</code></td><td><span class="badge badge-critical">Critical</span></td><td>O(n²) nested membership &amp; iteration</td><td>Reduces complexity to O(n) / O(n log n)</td></tr>
+              <tr><td><code class="mono">PY-PERF-001</code></td><td><span class="badge badge-autofix">Auto-Fix</span></td><td>String concatenation in loops (<code class="mono">+=</code>)</td><td>O(n²) → O(n) via <code class="mono">str.join()</code></td></tr>
+              <tr><td><code class="mono">PY-PERF-002</code></td><td><span class="badge badge-autofix">Auto-Fix</span></td><td>Inefficient <code class="mono">x in dict.keys()</code></td><td>Direct O(1) dictionary key lookup</td></tr>
+              <tr><td><code class="mono">PY-ARCH-103</code></td><td><span class="badge badge-manual">Architectural</span></td><td>Unbatched <code class="mono">open()</code> / <code class="mono">write()</code> in loops</td><td>10–1,000x syscall reduction</td></tr>
+              <tr><td><code class="mono">PY-ARCH-104</code></td><td><span class="badge badge-manual">Architectural</span></td><td>Large eager lists convertible to generators</td><td>90%+ memory footprint reduction</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
     </div>
-  </div>
+  </main>
 
-  <div style="margin:3rem 0;text-align:center">
-    <a href="index.html" class="btn btn-ghost">← All Projects</a>
-  </div>
-</div>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="nav-logo">Shobhit<span>Vats</span></a>
+          <p style="margin-top:0.75rem;font-size:0.9rem">
+            Interdisciplinary Researcher &amp; Systems Builder · Science, Computation &amp; Operations
+          </p>
+        </div>
+        <div class="footer-links">
+          <div>
+            <h2>Navigation</h2>
+            <ul>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../about.html">About &amp; Experience</a></li>
+              <li><a href="index.html">Projects</a></li>
+              <li><a href="../beyond.html">Beyond the Lab</a></li>
+              <li><a href="../contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Connect &amp; CV</h2>
+            <ul>
+              <li><a href="mailto:shobhitvats1122@gmail.com">Email</a></li>
+              <li><a href="https://linkedin.com/in/shobhit-vats-s-204427132" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+              <li><a href="https://github.com/shobhitvats" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+              <li><a href="../assets/resume.pdf" download="Shobhit_Vats_Sharma_CV.pdf">Download Resume (PDF)</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 Shobhit Vats Sharma. Built with semantic HTML, WCAG AA contrast &amp; precision.
+      </div>
+    </div>
+  </footer>
 
-<footer><p>© 2026 Shobhit Vats Sharma · <a href="mailto:shobhitvats1122@gmail.com">shobhitvats1122@gmail.com</a></p></footer>
-<script src="../js/main.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/features/search.js"></script>
 </body>
+
 </html>

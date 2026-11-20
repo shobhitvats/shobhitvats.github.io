@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K1322K1J2D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-K1322K1J2D');
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Computational Structural Biology &amp; NCI Research (IISER Pune · Sai Lab) — Shobhit Vats Sharma</title>
+  <meta name="description"
+    content="Case study of IISER Pune Sai Lab Master's thesis research under Prof. Saikrishnan Kayarat — quantifying chalcogen, pnictogen, and tetrel noncovalent interactions across >1.2M CSD entries, PDB structures, and 214M AlphaFold v4 models on ParamBrahma HPC." />
+  <link rel="canonical" href="https://shobhitvats.github.io/projects/sai-lab.html" />
+  <meta name="author" content="Shobhit Vats Sharma" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="theme-color" content="#9A4D1C" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_IN" />
+  <meta property="og:site_name" content="Shobhit Vats Sharma" />
+  <meta property="og:title" content="Computational Structural Biology &amp; NCI Research (IISER Pune · Sai Lab) — Shobhit Vats Sharma" />
+  <meta property="og:description" content="Case study of IISER Pune Sai Lab Master's thesis research under Prof. Saikrishnan Kayarat — quantifying chalcogen, pnictogen, and tetrel noncovalent interactions across &gt;1.2M CSD entries, PDB structures, and 214M AlphaFold v4 models on ParamBrahma HPC." />
+  <meta property="og:url" content="https://shobhitvats.github.io/projects/sai-lab.html" />
+  <meta property="og:image" content="https://shobhitvats.github.io/assets/og-banner.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Shobhit Vats Sharma — Researcher &amp; Systems Builder" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Computational Structural Biology &amp; NCI Research (IISER Pune · Sai Lab) — Shobhit Vats Sharma" />
+  <meta name="twitter:description" content="Case study of IISER Pune Sai Lab Master's thesis research under Prof. Saikrishnan Kayarat — quantifying chalcogen, pnictogen, and tetrel noncovalent interactions across &gt;1.2M CSD entries, PDB structures, and 214M AlphaFold v4 models on ParamBrahma HPC." />
+  <meta name="twitter:image" content="https://shobhitvats.github.io/assets/og-banner.png" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://shobhitvats.github.io/"},{"@type":"ListItem","position":2,"name":"Projects","item":"https://shobhitvats.github.io/projects/"},{"@type":"ListItem","position":3,"name":"IISER Pune Sai Lab","item":"https://shobhitvats.github.io/projects/sai-lab.html"}]},{"@type":"TechArticle","url":"https://shobhitvats.github.io/projects/sai-lab.html","headline":"Computational Structural Biology & NCI Research (IISER Pune · Sai Lab) — Shobhit Vats Sharma","description":"Case study of IISER Pune Sai Lab Master's thesis research under Prof. Saikrishnan Kayarat — quantifying chalcogen, pnictogen, and tetrel noncovalent interactions across >1.2M CSD entries, PDB structures, and 214M AlphaFold v4 models on ParamBrahma HPC.","author":{"@id":"https://shobhitvats.github.io/#person","name":"Shobhit Vats Sharma","url":"https://shobhitvats.github.io/"}}]}</script>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <script>const t=localStorage.getItem('svs-theme');if(t)document.documentElement.setAttribute('data-theme',t);</script>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">Shobhit<span>Vats</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="index.html" class="active" aria-current="page">Projects</a></li>
+        <li><a href="../beyond.html">Beyond</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-utilities">
+        <button type="button" class="icon-btn" data-cmd-open aria-label="Open quick search">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="11" cy="11" r="7" />
+            <path d="m21 21-4.3-4.3" />
+          </svg>
+          <span class="kbd-hint">Ctrl K</span>
+        </button>
+        <button type="button" class="icon-btn" data-theme-toggle aria-label="Switch to dark theme" aria-pressed="false">
+          <span data-theme-icon aria-hidden="true">☾</span>
+        </button>
+        <a href="../assets/resume.pdf" class="nav-resume-pill" download="Shobhit_Vats_Sharma_CV.pdf">Resume PDF</a>
+        <button type="button" class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <div class="project-hero">
+      <div class="container">
+        <div class="project-hero-meta">
+          <div class="project-breadcrumb"><a href="index.html">Projects</a> / <span>IISER Pune · Sai Lab Research</span></div>
+          <span class="badge badge-live">IISER Pune · Sai Lab</span>
+          <span class="badge badge-research">BS-MS Master's Thesis · May 2024 – Dec 2026</span>
+        </div>
+        <h1 style="margin-bottom:0.55rem">Computational Structural Biology &amp; Proteome-Scale NCI Research</h1>
+        <p class="prose-cap" style="font-size:1.1rem;font-family:var(--font-serif);font-style:italic;color:var(--text-secondary);margin-bottom:1.5rem">
+          Investigating unconventional σ-hole noncovalent interactions and peptide conformational locking across small-molecule
+          crystals (CSD), experimental PDB structures, and 214M AlphaFold DB v4 models under Prof. Saikrishnan Kayarat.
+        </p>
+
+        <div class="stat-row">
+          <div class="stat-pill"><span class="stat-num">&gt;1.2M</span><span class="stat-label">CSD Entries Filtered</span></div>
+          <div class="stat-pill"><span class="stat-num">214M</span><span class="stat-label">AlphaFold v4 Models</span></div>
+          <div class="stat-pill"><span class="stat-num">60%</span><span class="stat-label">ParamBrahma Speedup</span></div>
+          <div class="stat-pill"><span class="stat-num">15+</span><span class="stat-label">NCI Families in MolBridge</span></div>
+        </div>
+
+        <div class="tags" style="margin-top:1rem">
+          <span class="tag">Structural Bioinformatics</span>
+          <span class="tag">Chalcogen / Pnictogen / Tetrel Bonds</span>
+          <span class="tag">CSD &amp; PDB Mining</span>
+          <span class="tag">AlphaFold DB v4</span>
+          <span class="tag">ParamBrahma HPC</span>
+          <span class="tag">gemmi &amp; Biopython</span>
+          <span class="tag">cKDTree</span>
+          <span class="tag">ClinVar &amp; NMR</span>
+        </div>
+
+        <div style="margin-top:1.5rem;display:flex;gap:0.85rem;flex-wrap:wrap">
+          <a href="molbridge.html" class="btn btn-primary">Explore MolBridge Platform →</a>
+          <a href="https://molbridge.streamlit.app" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Launch Live App</a>
+          <a href="https://github.com/shobhitvats/PDB_Python_codes" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">PDB Scripts on GitHub ↗</a>
+          <a href="index.html" class="btn btn-ghost">← All Projects</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <section class="tldr-box reveal" aria-labelledby="tldr-heading">
+        <h2 id="tldr-heading" class="tldr-heading">Overview — IISER Pune · Sai Lab (Prof. Saikrishnan Kayarat)</h2>
+        <ul>
+          <li>Pursuing Integrated BS-MS Dual Degree thesis research in the <strong>Department of Biology, IISER Pune</strong> (<strong>Sai Lab</strong>; Supervisor: <strong>Prof. Saikrishnan Kayarat</strong>; TAC: <strong>Prof. M. S. Madhusudhan</strong>).</li>
+          <li>Derived small-molecule geometric baselines across <strong>&gt;1.2M Cambridge Structural Database (CSD)</strong> entries to separate in-plane σ-hole chalcogen contacts from orthogonal H-bonds and survey Group 15 pnictogen and Group 14 tetrel interactions.</li>
+          <li>Scaled headless <code class="mono">gemmi</code> / <code class="mono">Biopython</code> / <code class="mono">cKDTree</code> pipelines across quality-gated experimental <strong>PDB structures</strong> and <strong>214M AlphaFold DB v4 models</strong> on the <strong>ParamBrahma HPC</strong> cluster (<strong>60% runtime reduction</strong>).</li>
+          <li>Validated motif enrichment with <strong>100,000-walk kinematic polymer null models</strong>, mapped human <code class="mono">CX4C</code> motifs against <strong>10,518 ClinVar</strong> variants, built a wet-lab <strong>NMR/purification</strong> protocol bridge, and engineered <a href="molbridge.html"><strong>MolBridge</strong></a>.</li>
+        </ul>
+      </section>
+
+      <section class="deep-dive-section reveal" aria-labelledby="context-heading">
+        <h2 id="context-heading" class="section-title">Scientific Question &amp; Multi-Scale Validation Strategy</h2>
+        <div style="height:1rem"></div>
+        <p style="line-height:1.85;margin-bottom:1rem">
+          Beyond classical hydrogen bonding and hydrophobic packing, σ-hole interactions mediated by chalcogen (S, Se, Te),
+          pnictogen (N, P, As), and tetrel (C, Si, Ge) atoms play subtle yet consequential roles in local backbone
+          geometry and protein loop stabilization — particularly in conserved cysteine-rich motifs (<code class="mono">CX4C</code> /
+          <code class="mono">CxxC</code>) and toxin scaffolds.
+        </p>
+        <p style="line-height:1.85">
+          Because close interatomic contacts in macromolecular coordinates can easily arise from crystal packing noise,
+          alternate conformations, or backbone proximity alone, our methodology pairs strict crystallographic quality
+          gating with small-molecule CSD angular distributions and stochastic polymer null controls before interpreting
+          any structural signature.
+        </p>
+      </section>
+
+      <section class="deep-dive-section reveal" aria-labelledby="pillars-heading">
+        <h2 id="pillars-heading" class="section-title">Research Progression &amp; Core Contributions</h2>
+        <p class="section-subtitle">End-to-end progression from quantum/crystallographic baselines to proteome-scale mining and open software</p>
+        <div class="grid-2" style="gap:1.25rem">
+          <div class="card">
+            <h3 style="margin-bottom:0.5rem">1. CSD Crystallographic Baseline (&gt;1.2M Entries)</h3>
+            <p style="font-size:0.9rem;line-height:1.75">
+              Executed a 6-stage CCDC Python API and SMARTS filtration cascade (<code class="mono">R1 ≤ 0.05</code>, zero disorder,
+              non-polymeric, ≥4-bond separation) to partition divalent sulfur contacts in <code class="mono">(θ, δ)</code> space into
+              out-of-plane H-bonds versus in-plane σ-hole chalcogen bonds (<code class="mono">n = 259 S···O</code>) and catalog
+              <code class="mono">N = 7,058</code> Group 15 pnictogen sub-vdW contacts.
+            </p>
+          </div>
+          <div class="card">
+            <h3 style="margin-bottom:0.5rem">2. PDB Survey &amp; Ramachandran Dihedral Locking</h3>
+            <p style="font-size:0.9rem;line-height:1.75">
+              Engineered quality-gated PDB pipelines (primary altloc, resolution <code class="mono">≤ 2.50 Å</code>, mean
+              <code class="mono">B_iso ≤ 40 Å²</code>, CD-HIT NR90 clustering) across <code class="mono">N = 8,636 CX4C</code> loops and
+              <code class="mono">1,997</code> sub-vdW pins, showing <code class="mono">Sγ(i+5)···O(i+2)</code> pinning reduces Case 1 Type II
+              dihedral circular variance by <strong>82.2%</strong> (&gt;98% in Gly-locked dual turns).
+            </p>
+          </div>
+          <div class="card">
+            <h3 style="margin-bottom:0.5rem">3. Kinematic Polymer Null Models &amp; Confounders</h3>
+            <p style="font-size:0.9rem;line-height:1.75">
+              Built a vectorized 100,000-walk NeRF kinematic null model (97,589 clash-free backbones), demonstrating that
+              conjoint σ-hole geometry is <strong>188.8× enriched</strong> in venom neurotoxin contacts versus random
+              packing (<strong>5.91×</strong> under proximity-gated Null Model II) and orthogonal to disulfide count.
+            </p>
+          </div>
+          <div class="card">
+            <h3 style="margin-bottom:0.5rem">4. ParamBrahma HPC &amp; 214M AlphaFold v4 Census</h3>
+            <p style="font-size:0.9rem;line-height:1.75">
+              Parallelized structural mining workflows on IISER Pune's ParamBrahma SLURM cluster (achieving a <strong>60%
+              runtime reduction</strong>), screening 214M AlphaFold DB v4 models (32.7M sulfur-proximal pairs) under strict
+              <code class="mono">pLDDT ≥ 70.0</code> gating and cataloging 329,764 candidate C-turns across 5,286 clusters.
+            </p>
+          </div>
+          <div class="card">
+            <h3 style="margin-bottom:0.5rem">5. ClinVar Variant Mapping &amp; Solution NMR Bridge</h3>
+            <p style="font-size:0.9rem;line-height:1.75">
+              Cross-referenced &gt;14,000 human <code class="mono">CX4C</code> motifs against <strong>10,518 ClinVar missense
+              variants</strong> (such as <code class="mono">INS p.Thr97Pro</code>, <code class="mono">BMPR2</code>, <code class="mono">FBN1</code>),
+              and designed an isosteric <code class="mono">Cys→Sec + 13C/15N</code> NMR validation protocol grounded in wet-lab
+              purification and NMR training (JC Lab &amp; CSIR–NCL, May–Aug 2023).
+            </p>
+          </div>
+          <div class="card">
+            <h3 style="margin-bottom:0.5rem">6. Open Scientific Software: MolBridge Platform</h3>
+            <p style="font-size:0.9rem;line-height:1.75">
+              Unified all thesis detectors into <a href="molbridge.html"><strong>MolBridge: NonCovalent Atlas</strong></a> —
+              an open-access Streamlit UI and FastAPI platform mapping 15+ NCI families with <code class="mono">cKDTree</code> +
+              Numba/Rust kernels (<strong>94.1× single-structure speedup</strong> on 4HHB at 100% recall) and provenance
+              hashing.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="deep-dive-section reveal" aria-labelledby="synergy-heading">
+        <h2 id="synergy-heading" class="section-title">How This Connects Across My Work</h2>
+        <p class="section-subtitle">From academic discovery and reproducible pipelines to production software and R&amp;D operations</p>
+        <div class="grid-3">
+          <div class="card">
+            <h3 style="margin-bottom:0.5rem"><a href="molbridge.html" style="color:inherit">MolBridge: NonCovalent Atlas</a></h3>
+            <p style="font-size:0.88rem;line-height:1.7">
+              Public web and API software packaging Sai Lab geometric criteria, quality gating, and fast spatial kernels
+              for the broader structural biology community.
+            </p>
+          </div>
+          <div class="card">
+            <h3 style="margin-bottom:0.5rem"><a href="velsera.html" style="color:inherit">Velsera (KB V&amp;V)</a></h3>
+            <p style="font-size:0.88rem;line-height:1.7">
+              Brought the same biological data rigor, parallel ingestion, and reference-grounded validation into
+              regulated clinical genomics verification.
+            </p>
+          </div>
+          <div class="card">
+            <h3 style="margin-bottom:0.5rem"><a href="sciops.html" style="color:inherit">Nucleovir (Sci-Ops)</a></h3>
+            <p style="font-size:0.88rem;line-height:1.7">
+              Combined scientific context across wet-lab and dry-lab workstreams to build dependable biotech tracking,
+              documentation, and shared storage infrastructure.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="nav-logo">Shobhit<span>Vats</span></a>
+          <p style="margin-top:0.75rem;font-size:0.9rem">
+            Interdisciplinary Researcher &amp; Systems Builder · Science, Computation &amp; Operations
+          </p>
+        </div>
+        <div class="footer-links">
+          <div>
+            <h2>Navigation</h2>
+            <ul>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../about.html">About &amp; Experience</a></li>
+              <li><a href="index.html">Projects</a></li>
+              <li><a href="../beyond.html">Beyond the Lab</a></li>
+              <li><a href="../contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Connect &amp; CV</h2>
+            <ul>
+              <li><a href="mailto:shobhitvats1122@gmail.com">Email</a></li>
+              <li><a href="https://linkedin.com/in/shobhit-vats-s-204427132" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+              <li><a href="https://github.com/shobhitvats" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+              <li><a href="../assets/resume.pdf" download="Shobhit_Vats_Sharma_CV.pdf">Download Resume (PDF)</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 Shobhit Vats Sharma. Built with semantic HTML, WCAG AA contrast &amp; precision.
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/features/search.js"></script>
+</body>
+
+</html>

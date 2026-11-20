@@ -1,0 +1,17 @@
+{
+  "name": "my-profile",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "bash tests/run_e2e_tests.sh",
+    "export:pdf": "node export-portfolio-to-pdf.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "pdf-lib": "^1.17.1",
+    "playwright": "^1.59.1"
+  }
+}
