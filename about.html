@@ -426,6 +426,7 @@
                 <div class="timeline-date">May 2024 – Dec 2026</div>
                 <div class="timeline-role">Graduate Structural Bioinformatics Researcher</div>
                 <div class="timeline-org">IISER Pune — Sai Lab (Prof. Saikrishnan Kayarat)</div>
+                <div style="font-size:0.84rem;color:var(--text-muted);margin-top:0.25rem">Supervisor: Prof. Saikrishnan Kayarat · Expert: Prof. M. S. Madhusudhan · Endorsed via IISER Pune Academic ERP</div>
                 <div class="timeline-desc">
                   Masters thesis research on pnictogen, tetrel &amp; chalcogen noncovalent interactions, peptide motif
                   conformation, ParamBrahma HPC optimization (60% runtime reduction), and MolBridge engineering.
@@ -433,6 +434,8 @@
                 <div style="margin-top:0.85rem;display:flex;gap:0.6rem;flex-wrap:wrap">
                   <a href="projects/sai-lab.html" class="btn btn-outline" style="padding:0.4rem 0.9rem;font-size:0.82rem">Read Lab Case Study →</a>
                   <a href="projects/molbridge.html" class="btn btn-ghost" style="padding:0.4rem 0.9rem;font-size:0.82rem">MolBridge Platform →</a>
+                  <button type="button" class="btn btn-ghost" data-open-modal="sai-eval-modal" aria-haspopup="dialog" aria-expanded="false" style="padding:0.4rem 0.9rem;font-size:0.82rem">Supervisor Evaluation</button>
+                  <button type="button" class="btn btn-ghost" data-open-modal="madhu-eval-modal" aria-haspopup="dialog" aria-expanded="false" style="padding:0.4rem 0.9rem;font-size:0.82rem">Expert Evaluation</button>
                 </div>
               </div>
 
@@ -461,63 +464,129 @@
       </div>
     </section>
 
-    <!-- PROFESSIONAL VALIDATION & MODAL TRIGGERS -->
+    <!-- PROFESSIONAL & ACADEMIC VALIDATION -->
     <section id="recommendation" class="section section-alt">
       <div class="container">
         <div style="text-align:center;margin-bottom:2.5rem">
-          <h2 class="section-title reveal">Professional Validation &amp; Letters</h2>
+          <h2 class="section-title reveal">Professional &amp; Academic Endorsements</h2>
           <p class="section-subtitle reveal" style="margin-inline:auto">
-            Direct endorsements from senior engineering and startup leadership
+            Direct evaluations and recommendations from MS thesis faculty and industry engineering leadership
           </p>
         </div>
 
-        <div class="grid-2">
-          <!-- Velsera LOR Card -->
-          <div class="card reveal" style="display:flex;flex-direction:column;justify-content:space-between">
-            <div>
-              <span class="badge badge-research" style="margin-bottom:1rem">Letter of Recommendation · Velsera</span>
-              <blockquote style="border:none;padding:0;background:transparent;font-size:1.08rem">
-                “Shobhit consistently demonstrated independence, perseverance, and a willingness to engage deeply with
-                feedback. His ability to troubleshoot issues, explain technical concepts clearly, and deliver a
-                practical solution within a regulated scientific environment was particularly impressive.”
-                <div class="quote-attr">Dr. Gargi Nanda
-                  <div class="quote-role">Senior Manager, Knowledge-base · Velsera · 11 March 2026</div>
-                </div>
-              </blockquote>
-            </div>
-            <div style="margin-top:1.5rem;display:flex;gap:0.75rem;flex-wrap:wrap">
-              <button type="button" class="btn btn-primary" id="expandLetterBtn" data-open-modal="recommendation-modal" aria-haspopup="dialog" aria-expanded="false">
-                Read Full Letter
-              </button>
-              <a href="assets/recommendation.pdf" download="Recommendation_Shobhit_Vats_Sharma.pdf" class="btn btn-outline">
-                Download PDF
-              </a>
-              <a href="projects/velsera.html" class="btn btn-ghost">
-                Read Case Study →
-              </a>
-            </div>
+        <!-- Academic & Thesis Faculty Endorsements -->
+        <div style="margin-bottom:2.5rem">
+          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.75rem;margin-bottom:1.25rem">
+            <h3 class="eyebrow reveal" style="margin:0;color:var(--accent)">Academic &amp; MS Thesis Faculty Evaluations · IISER Pune</h3>
+            <span class="badge badge-live reveal">Official ERP Reports · Recommendation: Accept</span>
           </div>
 
-          <!-- Nucleovir Experience Certification Card -->
-          <div class="card reveal" style="display:flex;flex-direction:column;justify-content:space-between">
-            <div>
-              <span class="badge badge-live" style="margin-bottom:1rem">Experience Certification · Nucleovir</span>
-              <blockquote style="border:none;padding:0;background:transparent;font-size:1.08rem">
-                “During his internship as Scientific Operations Intern, Shobhit contributed to an internal project
-                management system, digital data organisation, scientific task tracking, internal storage infrastructure
-                and access permissions, technical documentation, and cross-functional team coordination.”
-                <div class="quote-attr">Dr. Yogesh Ostwal, PhD
-                  <div class="quote-role">Co-Founder &amp; CEO · Nucleovir Therapeutics India Pvt. Ltd. · November 2026</div>
+          <div class="grid-2">
+            <!-- Prof. Saikrishnan Kayarat Card -->
+            <div class="card reveal" style="display:flex;flex-direction:column;justify-content:space-between">
+              <div>
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;flex-wrap:wrap;gap:0.5rem">
+                  <span class="badge badge-research">MS Thesis Supervisor · IISER Pune</span>
+                  <span class="badge badge-live" style="font-size:0.75rem">Verdict: Accept</span>
                 </div>
-              </blockquote>
+                <blockquote style="border:none;padding:0;background:transparent;font-size:1.05rem">
+                  “After the mid-year presentation, Shobhit focused on studying chalcogen bonds in C-X4-C structural motifs seen in a large number of protein families including snake venom toxins and conotoxins... He extended the analysis from PDB to predicted structures in AlphaFold DB. Shobhit completed his cataloging of the pnictogen bond and developed a web server, MolBridge, for identification of non-covalent interactions in 3D structures. Overall, Shobhit had carried out very good work for his MS thesis. Some aspects of his work can be published in peer reviewed journals.”
+                  <div class="quote-attr">Prof. Saikrishnan Kayarat
+                    <div class="quote-role">Professor, Department of Biology · IISER Pune · MS Thesis Supervisor</div>
+                  </div>
+                </blockquote>
+              </div>
+              <div style="margin-top:1.5rem;display:flex;gap:0.75rem;flex-wrap:wrap">
+                <button type="button" class="btn btn-primary" data-open-modal="sai-eval-modal" aria-haspopup="dialog" aria-expanded="false">
+                  Read Full Evaluation
+                </button>
+                <a href="projects/sai-lab.html" class="btn btn-outline">
+                  Read Thesis Case Study →
+                </a>
+              </div>
             </div>
-            <div style="margin-top:1.5rem;display:flex;gap:0.75rem;flex-wrap:wrap">
-              <button type="button" class="btn btn-primary" data-open-modal="nucleovir-modal" aria-haspopup="dialog" aria-expanded="false">
-                View Official Summary
-              </button>
-              <a href="projects/sciops.html" class="btn btn-outline">
-                Read Case Study →
-              </a>
+
+            <!-- Prof. M. S. Madhusudhan Card -->
+            <div class="card reveal" style="display:flex;flex-direction:column;justify-content:space-between">
+              <div>
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;flex-wrap:wrap;gap:0.5rem">
+                  <span class="badge badge-research">MS Thesis Expert · IISER Pune</span>
+                  <span class="badge badge-live" style="font-size:0.75rem">Verdict: Accept</span>
+                </div>
+                <blockquote style="border:none;padding:0;background:transparent;font-size:1.05rem">
+                  “In his thesis Shobhit Vats has produced an old-fashioned conformational study (this is a compliment) along the lines of GN Ramachandran and others... Shobhit has shown through meticulous analysis and concluded that these sequences (when the Cys residues are disulphide bridged) take on specialised geometry (that have unique values on the Ramachandran map) and these values imply the chalcogen bonding between residues. His program MolBridge has been designed to detect such interactions given a structure in PDB format. The thesis has many nuances... Shobhit has been very diligent about controlling for various factors and this makes for a very engaging thesis.”
+                  <div class="quote-attr">Prof. M. S. Madhusudhan
+                    <div class="quote-role">Professor, Department of Biology · IISER Pune · MS Thesis Expert / TAC</div>
+                  </div>
+                </blockquote>
+              </div>
+              <div style="margin-top:1.5rem;display:flex;gap:0.75rem;flex-wrap:wrap">
+                <button type="button" class="btn btn-primary" data-open-modal="madhu-eval-modal" aria-haspopup="dialog" aria-expanded="false">
+                  Read Full Evaluation
+                </button>
+                <a href="projects/molbridge.html" class="btn btn-outline">
+                  Explore MolBridge Platform →
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Industry & Startup Leadership Endorsements -->
+        <div>
+          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.75rem;margin-bottom:1.25rem">
+            <h3 class="eyebrow reveal" style="margin:0;color:var(--accent)">Industry &amp; Startup Leadership Endorsements</h3>
+            <span class="badge badge-live reveal">Clinical Genomics &amp; Biotech Sci-Ops</span>
+          </div>
+
+          <div class="grid-2">
+            <!-- Velsera LOR Card -->
+            <div class="card reveal" style="display:flex;flex-direction:column;justify-content:space-between">
+              <div>
+                <span class="badge badge-research" style="margin-bottom:1rem">Letter of Recommendation · Velsera</span>
+                <blockquote style="border:none;padding:0;background:transparent;font-size:1.08rem">
+                  “Shobhit consistently demonstrated independence, perseverance, and a willingness to engage deeply with
+                  feedback. His ability to troubleshoot issues, explain technical concepts clearly, and deliver a
+                  practical solution within a regulated scientific environment was particularly impressive.”
+                  <div class="quote-attr">Dr. Gargi Nanda
+                    <div class="quote-role">Senior Manager, Knowledge-base · Velsera · 11 March 2026</div>
+                  </div>
+                </blockquote>
+              </div>
+              <div style="margin-top:1.5rem;display:flex;gap:0.75rem;flex-wrap:wrap">
+                <button type="button" class="btn btn-primary" id="expandLetterBtn" data-open-modal="recommendation-modal" aria-haspopup="dialog" aria-expanded="false">
+                  Read Full Letter
+                </button>
+                <a href="assets/recommendation.pdf" download="Recommendation_Shobhit_Vats_Sharma.pdf" class="btn btn-outline">
+                  Download PDF
+                </a>
+                <a href="projects/velsera.html" class="btn btn-ghost">
+                  Read Case Study →
+                </a>
+              </div>
+            </div>
+
+            <!-- Nucleovir Experience Certification Card -->
+            <div class="card reveal" style="display:flex;flex-direction:column;justify-content:space-between">
+              <div>
+                <span class="badge badge-live" style="margin-bottom:1rem">Experience Certification · Nucleovir</span>
+                <blockquote style="border:none;padding:0;background:transparent;font-size:1.08rem">
+                  “During his internship as Scientific Operations Intern, Shobhit contributed to an internal project
+                  management system, digital data organisation, scientific task tracking, internal storage infrastructure
+                  and access permissions, technical documentation, and cross-functional team coordination.”
+                  <div class="quote-attr">Dr. Yogesh Ostwal, PhD
+                    <div class="quote-role">Co-Founder &amp; CEO · Nucleovir Therapeutics India Pvt. Ltd. · November 2026</div>
+                  </div>
+                </blockquote>
+              </div>
+              <div style="margin-top:1.5rem;display:flex;gap:0.75rem;flex-wrap:wrap">
+                <button type="button" class="btn btn-primary" data-open-modal="nucleovir-modal" aria-haspopup="dialog" aria-expanded="false">
+                  View Official Summary
+                </button>
+                <a href="projects/sciops.html" class="btn btn-outline">
+                  Read Case Study →
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -654,6 +723,90 @@
       </div>
       <div class="dialog-footer">
         <a href="projects/sciops.html" class="btn btn-outline">Read Sci-Ops Case Study →</a>
+        <form method="dialog" style="margin:0">
+          <button type="submit" class="btn btn-primary">Close</button>
+        </form>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- NATIVE <dialog>: PROF. SAIKRISHNAN KAYARAT THESIS EVALUATION -->
+  <dialog id="sai-eval-modal" class="modal-dialog" aria-labelledby="sai-modal-title">
+    <div class="dialog-content">
+      <div class="dialog-header">
+        <h2 id="sai-modal-title">MS Thesis Evaluation — Prof. Saikrishnan Kayarat</h2>
+        <form method="dialog" style="margin:0">
+          <button type="submit" class="icon-btn" aria-label="Close evaluation modal">&times;</button>
+        </form>
+      </div>
+      <div class="dialog-body">
+        <div class="dialog-meta-bar">IISER Pune Academic ERP · Department of Biology · MS Thesis Evaluation Report</div>
+        <div style="background:var(--bg-alt);padding:1rem;border-radius:var(--radius-sm);margin-bottom:1.25rem;border:1px solid var(--border)">
+          <div style="display:grid;grid-template-columns:auto 1fr;gap:0.4rem 1rem;font-size:0.9rem">
+            <span style="color:var(--text-muted);font-weight:600">Roll:</span> <span>20211200</span>
+            <span style="color:var(--text-muted);font-weight:600">Candidate:</span> <strong>Shobhit Vats Sharma</strong>
+            <span style="color:var(--text-muted);font-weight:600">Thesis Title:</span> <em>Understanding the Roles of Non-Covalent Interactions in Biomolecular Structural Motifs</em>
+            <span style="color:var(--text-muted);font-weight:600">Supervisor:</span> <span>Prof. Saikrishnan Kayarat (IISER Pune)</span>
+            <span style="color:var(--text-muted);font-weight:600">Thesis Expert:</span> <span>Prof. M. S. Madhusudhan (IISER Pune)</span>
+            <span style="color:var(--text-muted);font-weight:600">Work Place:</span> <span>IISER Pune</span>
+            <span style="color:var(--text-muted);font-weight:600">Recommendation:</span> <span class="badge badge-live" style="width:fit-content">Accept (Sup Reco)</span>
+          </div>
+        </div>
+
+        <h3 style="font-size:1.05rem;margin-bottom:0.5rem;color:var(--accent)">Supervisor Final Report</h3>
+        <blockquote style="margin:0 0 1.25rem 0;padding:1rem 1.25rem;background:var(--bg-card);border-left:3px solid var(--accent);font-size:0.95rem;line-height:1.8">
+          “After the mid-year presentation, Shobhit Vats focussed on studying chalcogen bonds in C-X4-C structural motifs that are seen in a large number of protein families including snake venom toxins and conatoxins. This motif was first characterized in the laboratory by Vishal Adhav in his PhD thesis. He characterized these motifs in a variety of proteins and characterized their structural features highlighting the commonalities and variations. He extended the analysis from PDB to the predicted structures in the AlphaFold database. He has identified the structural motif in more families of proteins that he has described in his thesis. Shobhit completed his cataloging of the pnictogen bond. He has also developed a web server, MolBridge, for identification of non-covalent interactions in 3D structures of biomolecules. Overall, Shobhit had carried out very good work for his MS thesis. Some aspects of his work can be published in peer reviewed journals.”
+        </blockquote>
+
+        <h3 style="font-size:1.05rem;margin-bottom:0.5rem;color:var(--text-secondary)">Supervisor Mid-Year Report</h3>
+        <blockquote style="margin:0 0 1rem 0;padding:0.9rem 1.15rem;background:var(--bg-card);border-left:3px solid var(--border);font-size:0.92rem;line-height:1.75;color:var(--text-secondary)">
+          “Shobhit Vats is working on a research project characterizing three weak noncovalent interactions: chalcogen, pnictogen and tetrel bonds. His work progressing good. He has contributed to the characterization of novel supersecondary structure that contains a chalcogen bond, and analyzed chalcogen bonds formed by trivalent sulfur in the CSD. His had also done a preliminary CSD database analysis for pnictogen bonds. The work progress is very good. Shobhit should focus on completing the analyses on time with quantification of the data. He is also initiated work on creating a webserver for identifying noncovalent interaction in protein structures, compatible with the PDB.”
+        </blockquote>
+      </div>
+      <div class="dialog-footer">
+        <a href="projects/sai-lab.html" class="btn btn-outline">Read Thesis Case Study →</a>
+        <form method="dialog" style="margin:0">
+          <button type="submit" class="btn btn-primary">Close</button>
+        </form>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- NATIVE <dialog>: PROF. M. S. MADHUSUDHAN THESIS EVALUATION -->
+  <dialog id="madhu-eval-modal" class="modal-dialog" aria-labelledby="madhu-modal-title">
+    <div class="dialog-content">
+      <div class="dialog-header">
+        <h2 id="madhu-modal-title">MS Thesis Evaluation — Prof. M. S. Madhusudhan</h2>
+        <form method="dialog" style="margin:0">
+          <button type="submit" class="icon-btn" aria-label="Close evaluation modal">&times;</button>
+        </form>
+      </div>
+      <div class="dialog-body">
+        <div class="dialog-meta-bar">IISER Pune Academic ERP · Department of Biology · MS Thesis Expert Evaluation Report</div>
+        <div style="background:var(--bg-alt);padding:1rem;border-radius:var(--radius-sm);margin-bottom:1.25rem;border:1px solid var(--border)">
+          <div style="display:grid;grid-template-columns:auto 1fr;gap:0.4rem 1rem;font-size:0.9rem">
+            <span style="color:var(--text-muted);font-weight:600">Roll:</span> <span>20211200</span>
+            <span style="color:var(--text-muted);font-weight:600">Candidate:</span> <strong>Shobhit Vats Sharma</strong>
+            <span style="color:var(--text-muted);font-weight:600">Thesis Title:</span> <em>Understanding the Roles of Non-Covalent Interactions in Biomolecular Structural Motifs</em>
+            <span style="color:var(--text-muted);font-weight:600">Thesis Expert:</span> <span>Prof. M. S. Madhusudhan (IISER Pune)</span>
+            <span style="color:var(--text-muted);font-weight:600">Supervisor:</span> <span>Prof. Saikrishnan Kayarat (IISER Pune)</span>
+            <span style="color:var(--text-muted);font-weight:600">Work Place:</span> <span>IISER Pune</span>
+            <span style="color:var(--text-muted);font-weight:600">Recommendation:</span> <span class="badge badge-live" style="width:fit-content">Accept (Exp Reco)</span>
+          </div>
+        </div>
+
+        <h3 style="font-size:1.05rem;margin-bottom:0.5rem;color:var(--accent)">Expert Final Report</h3>
+        <blockquote style="margin:0 0 1.25rem 0;padding:1rem 1.25rem;background:var(--bg-card);border-left:3px solid var(--accent);font-size:0.95rem;line-height:1.8">
+          “In his thesis Shobhit Vats has produced an old-fashioned conformational study (this is a compliment) along the lines of GN Ramachandran and others. For his thesis, Shobhit has studied all instances of Cys-X4-Cys residues in protein structures. He has done this separately for structures in the PDB and in the Alphafold database. Further, Shobhit has created an analysis pipeline tool called MolBridge that analyses such sequences for non-colvalent sulphur mediated chalcogen bonding. What are these gamma-hole interactions? Shobhit has shown through meticulous analysis that and concluded that these sequences (when the Cys residues are disulphide bridged) take on specialised geometry (that have unique values on the Ramachandran map) and these values imply the chalcogen bonding between residues. His program MolBridge has been designed to detect such interactions given a structure in PDB format. The thesis has many nuances of such structures (what types of turns are favoured, how the alphafold models are biased, etc.). Shobhit has been very diligent about controlling for various factors (statistical tests have been used appropriately) and this makes for a very engaging thesis.”
+        </blockquote>
+
+        <h3 style="font-size:1.05rem;margin-bottom:0.5rem;color:var(--text-secondary)">Expert Mid-Year Report</h3>
+        <blockquote style="margin:0 0 1rem 0;padding:0.9rem 1.15rem;background:var(--bg-card);border-left:3px solid var(--border);font-size:0.92rem;line-height:1.75;color:var(--text-secondary)">
+          “Shobhit Vats Sharma is working on different types of tetrel bonds in proteins. He has studied structures from the (small molecule) Cambridge Database and the PDB. His thesis has two major mains - a) Characterising these interactions in known structures and b) using the physical characteristics of these interactions to correct/characterise of predict similar interactions.”
+        </blockquote>
+      </div>
+      <div class="dialog-footer">
+        <a href="projects/molbridge.html" class="btn btn-outline">Explore MolBridge Platform →</a>
         <form method="dialog" style="margin:0">
           <button type="submit" class="btn btn-primary">Close</button>
         </form>

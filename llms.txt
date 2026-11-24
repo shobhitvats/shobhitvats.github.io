@@ -10,7 +10,7 @@
 
 ## Primary Pages
 - [Home](https://shobhitvats.github.io/): Overview of research, industry highlights, featured platforms, and supervisor endorsements.
-- [About & Experience](https://shobhitvats.github.io/about.html): Education (IISER Pune BS-MS), timeline (Nucleovir Therapeutics, Velsera, Outlier, Sai Lab), achievements, and endorsements.
+- [About & Experience](https://shobhitvats.github.io/about.html): Education (IISER Pune BS-MS), timeline (Nucleovir Therapeutics, Velsera, Outlier, Sai Lab), achievements, and endorsements from thesis faculty (Prof. Saikrishnan Kayarat, Prof. M. S. Madhusudhan) and industry leadership (Dr. Gargi Nanda, Dr. Yogesh Ostwal, PhD).
 - [Projects & Case Studies](https://shobhitvats.github.io/projects/): Full catalog of scientific software, genomics QA automation, biotech sci-ops, and systems engineering work.
 - [Beyond the Lab](https://shobhitvats.github.io/beyond.html): Music (flute, guitar, keyboard), digital art, and IISER Pune campus leadership (Karavaan, Art Club).
 - [Contact, CVs & Endorsements](https://shobhitvats.github.io/contact.html): Contact channels, open roles (Chief of Staff, Operations, Biotech Sci-Ops, Computational Biology), downloadable resumes, and letters of recommendation.
@@ -20,7 +20,7 @@
 - [Velsera — KB V&V Comparator Automation](https://shobhitvats.github.io/projects/velsera.html): Standalone clinical genomics validator & comparator achieving 100% team adoption across 3+ UAT rounds (endorsed by Dr. Gargi Nanda).
 - [Nucleovir Therapeutics — Scientific Operations & Infrastructure](https://shobhitvats.github.io/projects/sciops.html): Founder's Office project systems, digital record organisation, documentation, and internal NAS/Samba setup (certified by Dr. Yogesh Ostwal, PhD).
 - [Outlier — STEM LLM Evaluation, RLHF & Reasoning Audits](https://shobhitvats.github.io/projects/outlier.html): Frontier STEM LLM reasoning verification, hallucination auditing, RLHF critiques, and GEM prompting across Blackbeard, Ather, and Springer.
-- [IISER Pune · Sai Lab — Computational Structural Biology](https://shobhitvats.github.io/projects/sai-lab.html): Master's thesis research under Prof. Saikrishnan Kayarat across >1.2M CSD entries, experimental PDB loops, kinematic null models, ClinVar variants, and 214M AlphaFold v4 models on ParamBrahma HPC.
+- [IISER Pune · Sai Lab — MS Thesis & Computational Structural Biology](https://shobhitvats.github.io/projects/sai-lab.html): Master's thesis ("Understanding the Roles of Non-Covalent Interactions in Biomolecular Structural Motifs") under Prof. Saikrishnan Kayarat and Prof. M. S. Madhusudhan across >1.2M CSD entries, experimental PDB loops, kinematic null models, ClinVar variants, and 214M AlphaFold v4 models on ParamBrahma HPC (upcoming peer-reviewed paper in preparation).
 - [ΔΔG Protein Stability Calculator](https://shobhitvats.github.io/projects/ddg.html): GPU-accelerated AMBER ff14SB + LCPO SASA calculator with 4-stage crystallographic strain relaxation.
 - [OptiScan Engine](https://shobhitvats.github.io/projects/optiscan.html): Zero-false-positive Python static analysis engine using LibCST for AI coding agents.
 - [Aegis Intelligence Platform](https://shobhitvats.github.io/projects/aegis.html): Stealth Playwright + Chrome MV3 + SQLite Data-as-a-Service engine.
